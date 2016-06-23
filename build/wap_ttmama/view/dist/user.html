@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+<title>wap_ttmama</title> 
+<meta name="keywords" content=""> 
+<meta name="description" content=""> 
+<link rel="ttmama" href="favicon.ico"> 
+<link rel="ttmama Icon" href="favicon.ico"> 
+<!--[if lt IE 9]> 
+
+<![endif]--> 
+
+<!--[if IE 6]> 
+
+<![endif]--> 
+<script type="text/javascript">
+	(function (doc, win) {
+		var now
+		var start = new Date().getTime();
+	    var docEl = doc.documentElement;
+	    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	    var recalc = function () {
+	        var clientWidth = docEl.clientWidth;
+	        if (!clientWidth) return;
+	        if (clientWidth<640){
+	            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+	        }else{
+	          docEl.style.fontSize = 100 * ( 640 / 640) + 'px';
+	        } 
+	    };
+
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document, window);
+	document.addEventListener('DOMContentLoaded', function(){
+		// console.log(DOMContentLoaded)
+		var loadObj = document.getElementById("ctn-loading")
+		loadObj.style.display="none";
+		loadObj.style.opacity = 0;
+	}, false);
+</script>
+<link href="/static/user.12d159ef.css" rel="stylesheet"></head> 
+<body>
+	<div id="app">
+      	<div class="bg">
+    		<router-view><%-server_html%></router-view>
+    		<div id="ctn-loading" class="ctn-loading">
+    			<div class="prompt-loading">
+    				<div class="loading-img"></div>
+    				<p class="loading-text">加载中...</p>
+    			</div>
+    		</div>
+     	</div>
+   </div>
+   <script>
+    <%-server_data%>
+    </script>
+<script src="/static/vendors.a0bf945c.js"></script><script src="/static/user.a0bf945c.js"></script></body>
+</html>

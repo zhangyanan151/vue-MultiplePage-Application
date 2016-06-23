@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html style="font-size: 1px;">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0,user-scalable=no" /> 
+<title>wap_ttmama</title> 
+<meta name="keywords" content=""> 
+<meta name="description" content=""> 
+<link rel="ttmama" href="favicon.ico" > 
+<link rel="ttmama Icon" href="favicon.ico" /> 
+<!--[if lt IE 9]> 
+
+<![endif]--> 
+<link rel="stylesheet" type="text/css" href="static/index.css"><!--自己的样式-->
+<!--[if IE 6]> 
+
+<![endif]--> 
+<script type="text/javascript">
+	(function (doc, win) {
+		var now
+		var start = new Date().getTime();
+	    var docEl = doc.documentElement;
+	    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+	    var recalc = function () {
+	        var clientWidth = docEl.clientWidth;
+	        if (!clientWidth) return;
+	        if (clientWidth<640){
+	            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+	        }else{
+	          docEl.style.fontSize = 100 * ( 640 / 640) + 'px';
+	        } 
+	    };
+
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document, window);
+	document.addEventListener('DOMContentLoaded', function(){
+		// console.log(DOMContentLoaded)
+		var loadObj = document.getElementById("ctn-loading")
+		loadObj.style.display="none";
+		loadObj.style.opacity = 0;
+	}, false);
+</script>
+</head> 
+<body>
+	<div id="app">
+      	<div class="bg">
+    		<div id="ctn-loading" class="ctn-loading">
+    			<div class="prompt-loading">
+    				<div class="loading-img"></div>
+    				<p class="loading-text">加载中...</p>
+    			</div>
+    		</div>
+    		<router-view><%-server_html%></router-view>
+     	</div>
+   </div>
+   <script>
+    <%-server_data%>
+    </script>
+ <!--这2个文件 在发版的时候要注释掉 只是在开发时引入-->
+<script type='text/javascript' src="/static/vendors.js"></script>
+<script type='text/javascript' src="/static/index.js"></script>
+</body>
+</html>

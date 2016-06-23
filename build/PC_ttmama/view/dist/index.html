@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<title>测试渲染</title>
+   
+    <style type="text/css">
+
+        /*.test-transition {*/
+            /*transition: all .1s ease;*/
+        /*}*/
+
+        /*.test-enter {*/
+            /*opacity: 0;*/
+            /*transform: translate3d(10px, 0, 0);*/
+        /*}*/
+        /*.test-leave {*/
+            /*opacity: 0;*/
+            /*transform: translate3d(-10px, 0, 0);*/
+        /*}*/
+        h2{
+            font-size: 1rem;
+        }
+        p{
+            font-size: .8rem;
+        }
+        img{
+            max-width: 100%;
+        }
+
+        div::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+
+
+    </style>
+  <link href="/static/app.c42947d1.css" rel="stylesheet"></head>
+  <body>
+   <div id="app">
+     
+      <div class="page-group">
+
+    <router-view><%-server_html%></router-view>
+
+     </div>
+
+   </div>
+    <script>
+    <%-server_data%>
+</script>
+
+
+  <script src="/static/vendors.ba4e8cb3.js"></script><script src="/static/app.ba4e8cb3.js"></script></body>
+  
+</html>
