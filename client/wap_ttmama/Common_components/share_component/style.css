@@ -1,0 +1,62 @@
+/*分享弹出层样式*/
+.fenx-row{transition:all 0.5s; width: 100%; height: auto; position: fixed; left:0; padding-bottom: 1.5em; background-color: #eee; z-index: 9999999;}
+.fenx-fxd{ width:96%; margin: 0 auto; }
+.fenx-fxd .fxd{ height: 45px; line-height: 48px; font-size: 15px; text-align: center; color: #707070;}
+.icon-fx{ overflow: hidden; position: relative;}
+.cancel{ width: 94%; margin: 0 auto; border-radius:30px; background-color: #73c0bc; color: #fff; font-size: 15px; padding: .7em 0; margin-top: .5em; text-align: center;}
+
+.bgg{transition:all 0.5s; position: fixed; z-index: 990; top: 0; right:0; bottom:0; left: 0; -moz-opacity: 0.5; opacity: 0.5; filter: alpha(opacity=50); background-color: #000;}
+
+#bdshare{
+    width: 100%;
+}
+.bds_tools_32 .bds_douban,
+.bds_tools_32 .bds_kaixin001,
+.bds_tools_32 .bds_qzone,
+.bds_tools_32 .bds_renren,
+.bds_tools_32 .bds_tsina,
+.bds_tools_32 .bds_tqq{
+	display: block;
+	width: 23.3%;
+	float: left;
+	text-align: center;
+	height: 80px;
+}
+.fenx-fxd .bds_tools_32 a{
+    width: 23.3%;
+    padding-left: 0!important;
+    height: 55px!important;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    background-image: none;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.fenx-fxd .bds_tools_32 a:before{
+	width: 55px;
+	height: 55px;
+	display: block;
+	content: "";
+	margin: 0 auto;
+	background-image: url(../../assets/shareIcon.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.fenx-fxd .bds_tools_32 a.bds_douban:before{
+    background-position: -69px -683px;
+}
+.fenx-fxd .bds_tools_32 a.bds_kaixin001:before{
+    background-position: -69px -748px;
+}
+.fenx-fxd .bds_tools_32 a.bds_qzone:before{
+    background-position: -69px -497px;	
+}
+.fenx-fxd .bds_tools_32 a.bds_renren:before{
+	background-position: -69px -622px;
+}
+.fenx-fxd .bds_tools_32 a.bds_tsina:before{
+    background-position: -69px -309px	
+}
+.fenx-fxd .bds_tools_32 a.bds_tqq:before{
+	background-position: -69px -433px;
+}

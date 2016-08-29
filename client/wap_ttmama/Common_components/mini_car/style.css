@@ -1,0 +1,23 @@
+.mini-cart{
+	position: relative;
+	display: inline-block;
+	width: 25px;
+	height: 30px;
+	margin: 0 auto;
+	background: url(../../assets/icon04.png) center bottom no-repeat;
+	background-size: 25px;
+}
+.mini-cart .red-num{
+	position: absolute;
+	top: 1px;
+	right: -8px;
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: #FE0000;
+	color: #fff;
+	text-align: center;
+	line-height: 15px;
+	font-size: 12px;
+}

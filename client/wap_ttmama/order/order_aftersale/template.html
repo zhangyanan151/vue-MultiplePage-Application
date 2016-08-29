@@ -1,0 +1,33 @@
+<header class="order-head">
+	<a class="page-back" href="javascript:history.go(-1)">返回</a>
+	<span class="page-title">售后列表</span>
+</header>
+<div class="aftersale-con" v-if="data!=null">
+	<div class="order-item" v-for="item of data.data" @click="returnSche(item.order_id,item.return_id)">
+		<div class="order-tit">
+			<span class="order-id">退货单号：{{item.return_id}}</span>
+			<span class="aftersale-status">{{item.status=='1'?'未操作':item.status=='2'?'审核中':item.status=='3'?'接受申请':item.status=='4'?'已完成':item.status=='5'?'已拒绝':item.status=='6'?'已收货':item.status=='7'?'已质检':item.status=='8'?'补差价':item.status=='9'?'已拒绝退款':item.status=='10'?'等待入仓':item.status=='15'?'等待退款':item.status=='0'?'已撤销':''}}</span>
+		</div>
+		<div class="order-main">
+			<div class="order-main-item" v-for="obj of item.product_data">
+				<div class="item-img">
+					<img :src="obj.image_url" alt="">
+				</div>
+				<div class="item-info">
+					<h2 class="item-tit">{{obj.name}}</h2>
+					<p class="item-spec">颜色规格：{{obj.spec_desc.spec_value | orderSpec}}</p>
+				</div>
+				<div class="item-p">
+					<p class="item-price">{{obj.price | currency '￥'}}</p>
+					<p class="item-num">&times;{{obj.num}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="order-total">
+			<span class="total-num">共{{item.total_num}}件商品</span><span>退款金额：<span class="total-price return-money">{{item.return_price | currency '￥'}}元</span></span>
+		</div>
+		<div class="order-opts">
+			<span class="order-btn-g" @click="showDetail(item.order_id,$event)">订单详情</span>
+		</div>
+	</div>
+</div>

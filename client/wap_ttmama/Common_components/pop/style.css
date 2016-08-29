@@ -1,0 +1,53 @@
+@import '~vux/vux.css';
+.spinner-box{
+	padding: 50px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1000;
+	text-align: center;
+	background-color: #d0d0d0;
+	font-size: 0;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+.spinner-s{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -14px;
+	margin-top: -14px;
+}
+.mask_transparent{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+}
+.spinner-text{
+	font-size: 12px;
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    text-align: center;
+}
+.dialog-box{
+	width: auto;
+    height: 100px;
+    padding: 0 30px;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    background-color: #E2E2E2;
+    color: #454545;
+    border-radius: 3px;
+    text-align: center;
+    opacity: .9;
+    font-size: 12px;
+    line-height: 100px;
+    z-index: 999;
+}

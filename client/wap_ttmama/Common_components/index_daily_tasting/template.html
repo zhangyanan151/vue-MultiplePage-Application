@@ -1,0 +1,23 @@
+<div class="index_daily_tasting">
+	<div class="title">
+		<h2>
+		    <span class="tit-icon">&nbsp;</span>
+		    <span class="tit-green">新品尝鲜(每日5款)</span>
+		</h2>
+	</div>
+	<div class="tasting-area">
+		<ul class="tasting-box">
+			<li class="tasting-item" v-for="item in dailyTasting[0].data">
+				<div class="item-img">
+					<a href="{{item.link}}"><img class="lazy" :src="defaultImg" alt="" data-original="{{item.pic}}"></a>
+				</div>
+				<div class="item-tit">
+					<span v-text="item.name"></span>
+				</div>
+				<div class="item-price">
+					<span class="new-price" v-text="item.price | currency '￥'"></span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

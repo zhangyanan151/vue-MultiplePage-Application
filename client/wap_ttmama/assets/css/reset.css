@@ -1,0 +1,128 @@
+*{ margin:0; padding:0;outline: 0;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0; background:transparent; outline:0; border:0; font: normal 14px/1.5 "Microsoft Yahei",STXihei,hei,Lucida,Arial,Helvetica,"宋体",sans-serif;}
+html{ font-size:100px;height: 100%;}
+body{background:#eee; font-size: 100%; font: inherit; outline: 0;-webkit-text-size-adjust: none;-webkit-tap-highlight-color: rgba(0,0,0,0); zoom:1;overflow-x:hidden;}
+li{list-style-type:none;}
+ol,ul {list-style:none;}  
+img{vertical-align:top;border:0; margin:0; overflow:hidden;display:block;}
+
+.clear:after{content: ""; display: block; width:0; height:0; clear: both;}
+.fl{float:left!important;}
+.fr{float:right!important;}
+
+body{
+	-webkit-overflow-scrolling:touch;
+    height:100%;
+}
+#app{
+    height:100%;
+}
+.bg{
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto;
+	position: relative;
+    background-color: #eee;
+    /*padding-bottom: 44px;*/
+    min-height:100%;
+    box-sizing:border-box;
+}
+.ctn-loading{
+	transition: opacity .5s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: #eee;
+}
+.prompt-loading{
+	width: 100%;
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    border-radius: 5px;
+    color: #051b28;
+    background: none;
+}
+.loading-img{
+	margin: 0 auto;
+    padding: .5em 0;
+    text-indent: 32px;
+    line-height: 64px;
+    /*background: url(../loading.png) center center no-repeat;*/
+	background: url(../loading_ok.gif) center center no-repeat;
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+    /*animation: roro 1.2s linear infinite;*/
+}
+@keyframes roro
+{
+	0%   {transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+	100% {transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+}
+input.choose-inp {
+    -webkit-appearance: none;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input.choose-inp:checked{
+    border-color: #76C1BC;
+    background: #76C1BC url(../dg.png) center center no-repeat;
+    background-size: 0.3rem;
+}
+input{
+    -webkit-appearance: none;
+}
+input.choose-inp-r{
+    -webkit-appearance: none;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+input.choose-inp-r:checked{
+    border-color: #F94D4D;
+    background: #F94D4D url(../dg.png) center center no-repeat;
+    background-size: 0.3rem;
+}
+.bg .weui_dialog{
+    width: 70%;
+    border-radius: 10px;
+}
+.bg .weui_dialog_title{
+    font-size: 16px;
+}
+.bg .weui_dialog_ft{
+    font-size: 16px;
+    margin-top: 12px;
+}
+.bg .weui_dialog_ft a{
+    color: #0E79E1;
+}
+.bg .weui_btn_dialog.default{
+    color: #0E79E1;
+    font-weight: 400;
+}
+.slider .swiper .item .img img{
+    width: 100%;
+}
+.slider .swiper .item .desc{
+    background-image: none;
+}
+.slider .indicator{
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+    bottom: 0;
+}
+.slider .icon_dot.active{
+    background-color: #76C1BC;
+}

@@ -1,0 +1,22 @@
+<div class="swiper-container" id={{child_data.box_id}}>
+    <div class="swiper-wrapper">
+
+        <div v-for = 'item in child_data.imgs' class="swiper-slide" track-by="$index">
+            <!-- <a v-bind:href="item.link ? item.link : '444'"> -->
+            <!-- 下面一行代码 必须写成item[link] 这种形式 而不能写成 item.link 。 因为 .link 是 javascript 内置的方法（.link 这样写获取不到item 的 link 属性）-->
+            <a v-bind:href="item[link]?item[link]:'javascript:;' ">
+                <img v-bind:src="item.pic?item.pic:item">
+            </a>
+        </div>
+       
+    </div>
+    <div class="swiper-pagination"></div>
+</div>  
+
+
+
+<!--  <div class="test_div" v-for= '(index, item) in child_data.imgs' track-by="$index">
+     {{ index }} {{ item }}
+     {{item }}
+     
+ </div> -->

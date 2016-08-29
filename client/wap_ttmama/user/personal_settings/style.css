@@ -1,0 +1,104 @@
+@import '~vux/vux.css';
+div,ul,li{
+    box-sizing: border-box;
+}
+.bg {
+    background: #eee;
+}
+
+.countBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6.4rem;
+    padding-top: .8rem;
+    font-size: 14px;
+}
+.nameBox,.sexBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6.4rem;
+    padding-top: .8rem;
+    font-size: 14px;
+}
+.countBox .countItem,
+.sexBox .countItem {
+    position: relative;
+    width: 100%;
+    height: 42px;
+    overflow: hidden;
+    padding-left: 12px;
+    line-height: 42px;
+    border-bottom: 1px solid #eee;
+    color: #000;
+    background: #fff;
+}
+.countBox .countItem {
+    background: #fff url(../../assets/RightArrow.png) 6rem center no-repeat;
+    background-size: 8px;
+}
+.countBox .countItem:first-of-type {
+    height: 56px;
+    line-height: 56px;
+}
+.countBox .countItem:nth-of-type(2) {
+    background: #fff;
+}
+.countBox .countInfo {
+    float: right;
+    width: 4rem;
+    overflow: hidden;
+    margin-right: .6rem;
+    text-align: right;
+    color: #b6b6b6;
+}
+.countBox .countItem:last-child .countInfo {
+    padding-top: 10px;
+}
+.countBox .countItem:nth-of-type(2) .countInfo {
+    margin-right: 0;
+    padding-right: 20px;
+}
+.countBox .countInfo img,
+.countBox .countInfo canvas {
+    display: inline-block;
+    width: .6rem;
+    height: .6rem;
+    border-radius: .6rem;
+    margin-top: .15rem;
+}
+
+.nameBox p{
+    padding: 12px;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+.nameBox input {
+    width: 100%;
+    height: 42px;
+    padding-left: 12px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 16px;
+    background: #fff;
+}
+.weui_cell {
+    padding: 0;
+}
+.weui_cell_ft.with_arrow:after {
+    content: none;
+}
+.dp-header .dp-item {
+    color: #017AFF;
+}
+.weui_cell_ft {
+    color: #b6b6b6;
+}
+.weui_icon {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+}

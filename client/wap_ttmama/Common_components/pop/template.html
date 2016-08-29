@@ -1,0 +1,11 @@
+<div :class="popType=='text'?'dialog-box':'spinner-box'">
+	<div class="mask_transparent"></div>
+	<template v-if="popType=='spin' || popType=='spinText'">
+		<div class="spinner-s">
+			<spinner :type="type" slot="value"></spinner>
+		</div>
+	</template>
+	<template v-if="popType=='text' || popType=='spinText'">
+		<span :class="popType=='text'?'':'spinner-text'" v-text="popText"></span>
+	</template>
+</div>

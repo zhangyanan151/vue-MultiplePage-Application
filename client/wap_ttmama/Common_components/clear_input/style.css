@@ -1,0 +1,9 @@
+.clear_input {
+	display: inline-block;
+    position: absolute;
+    top: 14px;
+    width: 18px;
+    height: 18px;
+    background: url(../../assets/clear.png) no-repeat;
+    background-size: 13px;
+}

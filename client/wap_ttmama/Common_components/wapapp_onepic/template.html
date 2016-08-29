@@ -1,0 +1,8 @@
+<div class="wop-area">
+	<div class="wop-box" :style="{width:wapappOnepic.is_sidemargin=='true'?wapappOnepic.width/100+'rem':'6.4rem',height:wapappOnepic.height/100+'rem',marginTop:wapappOnepic.margin_top/100+'rem',marginBottom:wapappOnepic.margin_bottom/100+'rem'}">
+	    <a href="{{wapappOnepic.pdata.link}}">
+	        <!-- <img class="lazy" data-original="{{wapappOnepic.pdata.pic}}" :src="defaultImg" alt=""> -->
+	        <x-img :src="wapappOnepic.pdata.pic"></x-img>
+	    </a>
+    </div>
+</div>

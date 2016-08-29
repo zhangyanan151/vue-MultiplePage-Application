@@ -1,0 +1,8 @@
+<div v-for = 'item in child_data' class="single-img-container" id={{child_data.box_id}}>
+	<div v-for = 'img_item in item.data' class="img_item">
+		<a v-bind:href="img_item.link">
+		    <img v-bind:src="img_item.pic">
+		</a>
+	</div>
+</div>  
+

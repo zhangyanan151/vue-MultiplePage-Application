@@ -1,0 +1,213 @@
+.address-head{
+	width: 6.4rem;
+	height: 50px;
+	background-color: #FEFEFE;
+	text-align: center;
+	line-height: 50px;
+	border-bottom: 1px solid #ACACAC;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	box-sizing: border-box;
+	z-index: 999;
+}
+.address-head .page-back{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-indent: 50px;
+	overflow: hidden;
+	background: url(../../assets/back.png) center center no-repeat;
+	background-size: 25px;
+}
+.address-head .page-title{
+	font-size: 16px;
+	font-weight: 600;
+	font-family: "微软雅黑";
+}
+.address-add{
+	width: 6.4rem;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	background-color: #76C1BC;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+}
+.address-container{
+	width: 6.4rem;
+	padding: 50px 0;
+}
+.address-item{
+	width: 6.4rem;
+	margin-top: 10px;
+	position: relative;
+}
+.address-item-m{
+	width: 6.4rem;
+	height: 2.1rem;
+	background-color: #fff;
+	overflow: hidden;
+	position: relative;
+	z-index: 11;
+}
+.address-desc{
+	width: 6rem;
+	margin: 0 0.2rem;
+	border-bottom: 1px solid #E3E3E3;
+}
+.address-user{
+	padding: 0.15rem 0;
+	font-size: 15px;
+	color: #1B1B1B;
+	font-weight: 600;
+}
+.address-mobile{
+	display: inline-block;
+	margin-left: 40px;
+}
+.address-adr{
+	font-size: 14px;
+	line-height: 18px;
+	height: 36px;
+	color: #707070;
+	margin-bottom: 5px;
+}
+.addr-def{
+	width: 6rem;
+	padding: 0.15rem 0.2rem;
+}
+.addr-def input, .addr-def label{
+	vertical-align: middle;
+}
+.check-label{
+	margin-left: 5px;
+	color: #707070;
+}
+.item-dele-coll{
+	width: 1.9rem;
+	height: 2.1rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+}
+.item-dele-coll .item-collection,.item-dele-coll .item-delete{
+	width: 0.95rem;
+	height: 2.1rem;
+	line-height: 2.1rem;
+	float: left;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+}
+.item-dele-coll .item-collection{
+	background-color: #F3BE3C;
+}
+.item-dele-coll .item-delete{
+	background-color: #76C1BC;
+}
+.item-hide{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 20;
+	opacity: 0;
+	/*display: none;*/
+}
+.edit-addr-con{
+	width: 6.4rem;
+	min-height: 100%;
+	background-color: #fff;
+	position: absolute;
+	top: 0px;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+.edit-item{
+	width: 6.4rem;
+	padding: 10px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #C8C7CC;
+	position: relative;
+	overflow: hidden;
+}
+.edit-item label{
+	color: #707070;
+	width: 1.3rem;
+	display: inline-block;
+	float: left;
+}
+.edit-item input{
+	width: 4.7rem;
+}
+.no-border{
+	border: none;
+}
+.border-top{
+	border-top: 1px solid #C8C7CC;
+}
+.edit-submit-btn{
+	width: 5rem;
+	height: 50px;
+	margin: 30px auto 0 auto;
+	background-color: #76C1BC;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 5px;
+}
+.addr-sel{
+	width: 4.6rem;
+	float: left;
+}
+.addr-sel .picker-dialog{
+	background-color: #A0A0A0;
+}
+.addr-sel .vux-header{
+	color: #000;
+}
+.addr-sel .weui_cell_ft{
+	color: #000;
+}
+.addr-sel .weui_cell{
+	padding: 0;
+}
+.addr-sel .weui_cell_ft{
+	text-align: left;
+}
+.addr-sel .vux-popup-picker-value{
+	width: 4.4rem;
+}
+.address-empty{
+	width: 6.4rem;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+.address-empty-box{
+	width: 6.4rem;
+	margin-top: 2rem;
+	text-align: center;
+	color: #A0A0A0;
+}
+.empty-img{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0 auto 10px auto;
+	background: url(../../assets/IDcardPlaceholderImg.png) center center no-repeat;
+	background-size: 100%;
+}

@@ -1,0 +1,46 @@
+<div class="search-box">
+	<search label-color="#E7E8EA" placeholder="查询全球精选宝宝产品" cancel-text="取消" ></search>
+</div>
+<div class="classify-menu">
+	<div class="menu ui-border-r">
+		<scroller lock-x >
+	      <div class="menu-left">
+	        <ul>
+	          <li v-for="item in menuData" class="ui-border-b" :class="$index===showIndex?'ui-active':''" @click="showItem($index)"><span>{{item.title}}</span></li>
+	        </ul>
+	      </div>
+	    </scroller>
+    </div>
+    <div class="menu-container" v-for="item in menuData">
+    	<template v-if="$index===showIndex">
+	    	<scroller lock-x >
+				<div class="menu-main">
+					<div class="menu-big-img">
+						<a href="/details?product_id={{item.cat_lv1_url.split('-')[1].split('.')[0]}}" :style="{backgroundImage:'url('+item.cat_lv1_logo+')'}">
+							
+						</a>
+					</div>
+					<ul class="menu-ul">
+						<li class="menu-li" v-for="data in item.items">
+							<div class="menu-li-tit">
+								<span class="menu-li-tit">{{data.title}}</span>
+								<a class="menu-li-more" href="/list?cat_id={{data.cat_id}}">显示更多</a>
+							</div>
+							<ul>
+								<li class="menu-li-li" v-for="obj in data.items">
+									<a class="pro-img" href="/list?cat_id={{obj.cat_id}}">
+										<img :src="obj.cat_lv1_logo" alt="">
+									</a>
+									<div class="pro-tit">
+										<span :style="{fontSize:obj.title.length>7?'9px':''}">{{obj.title}}</span>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+	    	</scroller>
+    	</template>
+    </div>
+</div>
+<foot-index state="all"></foot-index>

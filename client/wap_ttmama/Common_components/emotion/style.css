@@ -1,0 +1,536 @@
+.add-comm-box{
+	width: 6.4rem;
+	height: 40px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	z-index: 999;
+	background-color: #FAFAFA;
+}
+.add-comm-label{
+	display: block;
+	float: left;
+	width: 5rem;
+	height: 25px;
+	margin: 7px 0;
+	border: 1px solid #D1D2D4;
+	border-radius: 3px;
+	background-color: #fff;
+	font-size: 12px;
+	line-height: 23px;
+	padding: 0 5px;
+	box-sizing: border-box;
+	color: #D1D2D4;
+	outline: none;
+	resize: none;
+	-webkit-appearance: none;
+}
+.comment-content{
+	position: absolute;
+	left: 0.65rem;
+	width: 5rem;
+	height: 25px;
+	bottom: 0;
+	top: 7px;
+	border: 1px solid #D1D2D4;
+	border-radius: 3px;
+	background-color: #fff;
+	font-size: 12px;
+	line-height: 23px;
+	padding: 0 5px;
+	box-sizing: border-box;
+	overflow-y: scroll;
+}
+.comment-content:after{
+	content: attr(data-beforeData);
+	color: #D1D2D4;
+	font-size: 12px;
+	line-height: 23px;
+}
+.add-comm-ipt{
+	float: left;
+	width: 0.65rem;
+	height: 40px;
+	background: url(../../assets/emotion_icon.png) center center no-repeat;
+	background-size: 22px;
+}
+.add-comm-send{
+	width: 0.6rem;
+	height: 24px;
+	margin: 7px 2px 7px 0;
+	float: right;
+	background-color: #73C0BC;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 25px;
+	color: #fff;
+	font-size: 12px;
+}
+.input-mask{
+	width: 6.4rem;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	z-index: 1000;
+}
+.comm-box2 .add-comm-box{
+	z-index: 1001;
+}
+.comm-box2 .add-comm-label{
+	color: #1B1B1B;
+	font-size: 13px;
+
+}
+.add-comm-ipt.jianpan{
+	background: url(../../assets/jianpan.png) center center no-repeat;
+	background-size: 22px;
+}
+.comm-emotion{
+	width: 6.4rem;
+	height: 3rem;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	background-color: #f6f6f6;
+	z-index: 1001;
+}
+.ttmama-emotion-swiper{
+	width: 6.4rem!important;
+	height: 3rem;
+	overflow: hidden;
+	position: relative;
+}
+.ttmama-emotion{
+	display: inline-block;
+	width: 0.8rem;
+	height: 0.8rem;
+	text-align: center;
+	line-height: 0.8rem;
+}
+.ttmama-emotion-i{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+.ttmama-emotion-sp{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	text-indent: 20px;
+	overflow: hidden;
+}
+.Delete_motion-last{
+	position: absolute;
+	bottom: 0.6rem;
+	right: 0;
+}
+.Expression_1{
+	background: url(../../assets/emotion/Expression_1@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_2{
+	background: url(../../assets/emotion/Expression_2@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_3{
+	background: url(../../assets/emotion/Expression_3@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_4{
+	background: url(../../assets/emotion/Expression_4@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_5{
+	background: url(../../assets/emotion/Expression_5@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_6{
+	background: url(../../assets/emotion/Expression_6@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_7{
+	background: url(../../assets/emotion/Expression_7@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_8{
+	background: url(../../assets/emotion/Expression_8@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_9{
+	background: url(../../assets/emotion/Expression_9@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_10{
+	background: url(../../assets/emotion/Expression_10@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_11{
+	background: url(../../assets/emotion/Expression_11@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_12{
+	background: url(../../assets/emotion/Expression_12@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_13{
+	background: url(../../assets/emotion/Expression_13@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_14{
+	background: url(../../assets/emotion/Expression_14@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_15{
+	background: url(../../assets/emotion/Expression_15@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_16{
+	background: url(../../assets/emotion/Expression_16@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_17{
+	background: url(../../assets/emotion/Expression_17@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_18{
+	background: url(../../assets/emotion/Expression_18@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_19{
+	background: url(../../assets/emotion/Expression_19@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_20{
+	background: url(../../assets/emotion/Expression_20@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_21{
+	background: url(../../assets/emotion/Expression_21@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_22{
+	background: url(../../assets/emotion/Expression_22@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_23{
+	background: url(../../assets/emotion/Expression_23@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_24{
+	background: url(../../assets/emotion/Expression_24@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_25{
+	background: url(../../assets/emotion/Expression_25@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_26{
+	background: url(../../assets/emotion/Expression_26@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_27{
+	background: url(../../assets/emotion/Expression_27@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_28{
+	background: url(../../assets/emotion/Expression_28@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_29{
+	background: url(../../assets/emotion/Expression_29@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_30{
+	background: url(../../assets/emotion/Expression_30@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_31{
+	background: url(../../assets/emotion/Expression_31@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_32{
+	background: url(../../assets/emotion/Expression_32@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_33{
+	background: url(../../assets/emotion/Expression_33@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_34{
+	background: url(../../assets/emotion/Expression_34@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_35{
+	background: url(../../assets/emotion/Expression_35@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_36{
+	background: url(../../assets/emotion/Expression_36@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_37{
+	background: url(../../assets/emotion/Expression_37@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_38{
+	background: url(../../assets/emotion/Expression_38@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_39{
+	background: url(../../assets/emotion/Expression_39@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_40{
+	background: url(../../assets/emotion/Expression_40@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_41{
+	background: url(../../assets/emotion/Expression_41@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_42{
+	background: url(../../assets/emotion/Expression_42@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_43{
+	background: url(../../assets/emotion/Expression_43@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_44{
+	background: url(../../assets/emotion/Expression_44@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_45{
+	background: url(../../assets/emotion/Expression_45@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_46{
+	background: url(../../assets/emotion/Expression_46@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_47{
+	background: url(../../assets/emotion/Expression_47@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_48{
+	background: url(../../assets/emotion/Expression_48@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_49{
+	background: url(../../assets/emotion/Expression_49@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_50{
+	background: url(../../assets/emotion/Expression_50@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_51{
+	background: url(../../assets/emotion/Expression_51@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_52{
+	background: url(../../assets/emotion/Expression_52@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_53{
+	background: url(../../assets/emotion/Expression_53@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_54{
+	background: url(../../assets/emotion/Expression_54@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_55{
+	background: url(../../assets/emotion/Expression_55@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_56{
+	background: url(../../assets/emotion/Expression_56@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_57{
+	background: url(../../assets/emotion/Expression_57@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_58{
+	background: url(../../assets/emotion/Expression_58@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_59{
+	background: url(../../assets/emotion/Expression_59@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_60{
+	background: url(../../assets/emotion/Expression_60@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_61{
+	background: url(../../assets/emotion/Expression_61@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_62{
+	background: url(../../assets/emotion/Expression_62@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_63{
+	background: url(../../assets/emotion/Expression_63@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_64{
+	background: url(../../assets/emotion/Expression_64@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_65{
+	background: url(../../assets/emotion/Expression_65@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_66{
+	background: url(../../assets/emotion/Expression_66@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_67{
+	background: url(../../assets/emotion/Expression_67@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_68{
+	background: url(../../assets/emotion/Expression_68@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_69{
+	background: url(../../assets/emotion/Expression_69@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_70{
+	background: url(../../assets/emotion/Expression_70@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_71{
+	background: url(../../assets/emotion/Expression_71@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_72{
+	background: url(../../assets/emotion/Expression_72@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_73{
+	background: url(../../assets/emotion/Expression_73@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_74{
+	background: url(../../assets/emotion/Expression_74@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_75{
+	background: url(../../assets/emotion/Expression_75@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_76{
+	background: url(../../assets/emotion/Expression_76@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_77{
+	background: url(../../assets/emotion/Expression_77@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_78{
+	background: url(../../assets/emotion/Expression_78@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_79{
+	background: url(../../assets/emotion/Expression_79@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_80{
+	background: url(../../assets/emotion/Expression_80@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_81{
+	background: url(../../assets/emotion/Expression_81@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_82{
+	background: url(../../assets/emotion/Expression_82@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_83{
+	background: url(../../assets/emotion/Expression_83@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_84{
+	background: url(../../assets/emotion/Expression_84@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_85{
+	background: url(../../assets/emotion/Expression_85@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_86{
+	background: url(../../assets/emotion/Expression_86@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_87{
+	background: url(../../assets/emotion/Expression_87@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_88{
+	background: url(../../assets/emotion/Expression_88@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_89{
+	background: url(../../assets/emotion/Expression_89@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_90{
+	background: url(../../assets/emotion/Expression_90@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_91{
+	background: url(../../assets/emotion/Expression_91@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_92{
+	background: url(../../assets/emotion/Expression_92@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_93{
+	background: url(../../assets/emotion/Expression_93@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_94{
+	background: url(../../assets/emotion/Expression_94@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_95{
+	background: url(../../assets/emotion/Expression_95@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_96{
+	background: url(../../assets/emotion/Expression_96@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_97{
+	background: url(../../assets/emotion/Expression_97@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_98{
+	background: url(../../assets/emotion/Expression_98@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_99{
+	background: url(../../assets/emotion/Expression_99@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Expression_100{
+	background: url(../../assets/emotion/Expression_100@2x.png) center no-repeat;
+	background-size: 100%;
+}
+.Delete_motion{
+	background: url(../../assets/emotion/Emotion_detele@2x.png) center no-repeat;
+	background-size: 100%;
+}

@@ -1,0 +1,242 @@
+<template v-if="data!=null && showTag=='main'">
+<header class="checkout-head">
+	<a class="page-back" href="javascript:history.go(-1)">返回</a>
+	<span class="page-title">填写订单</span>
+</header>
+<div class="checkout-container">
+	<template v-if="data.def_addr.addr_id">
+		<div class="address-con" @click="showTag='address'">
+			<div class="user-info">
+				<p class="user-info-1"><span class="user-name">{{data.def_addr.name}}</span><span class="user-phone">{{data.def_addr.mobile}}</span></p>
+				<p class="user-info-2">{{data.def_addr.area | addressFormat}}{{data.def_addr.addr}}</p>
+			</div>
+			<div class="chose-address">
+				<span class="right-text def-addr">{{data.def_addr.def_addr=='1'?'默认':''}}</span><i class="right-arrow"></i>
+			</div>
+		</div>
+	</template>
+	<template v-else>
+		<div class="address-null" @click="showTag='address'">
+			<span>+添加收货地址</span>
+		</div>
+	</template>
+	<div class="checkout-item" @click="showTag='list'">
+		<div class="goods-item">
+			<template v-for="item of goodsList" v-if="$index < 3">
+				<div class="goods-img">
+					<img :src="item.img" alt="" >
+					<template v-if="item.type=='gift'">
+						<span class="gift-text">赠品</span>
+					</template>
+				</div>
+			</template>
+			<template v-if="data.aCart.items_quantity > 3">
+				<div class="goods-more"></div>
+			</template>
+		</div>
+		<div class="goods-de">
+			<span class="right-text">共{{data.aCart.items_quantity}}件</span><i class="right-arrow"></i>
+		</div>
+	</div>
+<!-- 	<div class="checkout-item" @click="selectPayment">
+		<div class="left-span">
+			<span>支付方式</span>
+		</div>
+		<div class="right-span">
+			<span class="right-text">{{data.def_payment_name}}</span><i class="right-arrow-m"></i>
+		</div>
+	</div> -->
+	<div class="checkout-item" @click="showTag='tax'">
+		<div class="left-span">
+			<span>发票信息</span>
+		</div>
+		<div class="right-span">
+			<span class="right-text" v-text="tax.tax_type=='false'?'不开发票':tax.tax_type=='personal'?'个人':tax.tax_company"></span><i class="right-arrow-m"></i>
+		</div>
+	</div>
+	<div class="checkout-item" @click="showCoupon">
+		<div class="left-span">
+			<span>优惠券</span><span class="coupon">{{data.coupon_lists.length==0?'无可用':data.coupon_lists.length+'张可用'}}</span>
+		</div>
+		<div class="right-span">
+			<span class="right-text">{{couponText}}</span><i class="right-arrow-m"></i>
+		</div>
+	</div>
+	<div class="checkout-item" @click="showDltype">
+		<div class="left-span">
+			<span>配送方式</span>
+		</div>
+		<div class="right-span">
+			<span class="right-text">{{data.def_dltype.dt_name}}</span><i class="right-arrow-m"></i>
+		</div>
+	</div>
+	<div class="checkout-item-me">
+		<input type="text" class="checkout-message" placeholder="给我们留言 (选填45字以内)" v-model="memo">
+	</div>
+	<div class="checkout-item-mon">
+		<div class="order-money">
+			<div class="left-span">
+				<span>商品金额</span>
+			</div>
+			<div class="right-span">
+				<span>{{data.order_detail.cost_item | currency '￥'}}</span>
+			</div>
+		</div>
+		<div class="order-money">
+			<div class="left-span">
+				<span>已优惠</span>
+			</div>
+			<div class="right-span">
+				<span>{{data.order_detail.pmt_amount | currency '￥'}}</span>
+			</div>
+		</div>
+		<div class="order-money">
+			<div class="left-span">
+				<span>运费</span>
+			</div>
+			<div class="right-span">
+				<span>{{data.order_detail.cost_freight | currency '￥'}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="checkout-bot">
+	<div class="total-money">
+		<span>合计：</span><span class="blue-text">{{data.order_detail.total_amount | currency '￥'}}</span>
+	</div>
+	<div class="create-order" @click="createOrder">
+		提交订单
+	</div>
+</div>
+</template>
+<template v-if="showTag=='list'">
+	<header class="checkout-head">
+		<span class="page-back" @click="showTag='main'">返回</span>
+		<span class="page-title">商品清单</span>
+	</header>
+	<div class="list-container">
+		<ul>
+			<li class="list-item" v-for="item in goodsList">
+				<div class="item-img">
+					<img :src="item.img" alt="">
+					<template v-if="item.type=='gift'">
+						<span class="gift-text">赠品</span>
+					</template>
+				</div>
+				<div class="item-desc">
+					<h2 class="item-name">{{item.data.name}}</h2>
+					<p class="item-spec">{{item.data.spec_info==null?'规格：默认':item.data.spec_info}}</p>
+					<p class="item-price"><span class="price">{{item.data.price.buy_price | currency '￥'}}</span><span class="mktprice">{{item.data.price.price | currency '￥'}}</span><span class="quantity">&times;{{item.data.quantity}}</span></p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</template>
+<template v-if="showTag=='address'">
+	<my-address></my-address>
+</template>
+<template v-if="showTag=='tax'">
+	<header class="checkout-head">
+		<span class="page-back" @click="taxBack">返回</span>
+		<span class="page-title">发票信息</span>
+		<span class="page-right" @click="taxSure">确定</span>
+	</header>
+	<div class="tax-container">
+		<div class="tax-con">
+			<div class="tax-item border-top">
+				<span class="tax-tit">发票信息</span>
+			</div>
+			<div class="tax-item">
+				<input type="checkbox" class="choose-inp" id="tax-check-0" :checked="!is_tax" @click="choseTax('0')"><label for="tax-check-0" class="check-label">不开发票</label>
+			</div>
+			<div class="tax-item">
+				<input type="checkbox" class="choose-inp" id="tax-check-1" :checked="is_tax" @click="choseTax('1')"><label for="tax-check-1" class="check-label">开发票</label>
+			</div>
+		</div>
+		<template v-if="is_tax">
+			<div class="tax-con">
+				<div class="tax-item border-top">
+					<span class="tax-tit">发票类型：</span><span>普通发票</span>
+				</div>
+			</div>
+			<div class="tax-con">
+				<div class="tax-item border-top">
+					<span class="tax-tit">发票抬头</span>
+				</div>
+				<div class="tax-item">
+					<input type="checkbox" class="choose-inp" id="tax-type-0" :checked="tax_type=='personal'" @click="choseTaxType('0')"><label for="tax-type-0" class="check-label">个人</label>
+				</div>
+				<div class="tax-item">
+					<input type="checkbox" class="choose-inp" id="tax-type-1" :checked="tax_type=='company'" @click="choseTaxType('1')"><label for="tax-type-1" class="check-label">单位</label>
+					<input type="text" placeholder="单位名称" v-model="tax_company" class="tax-company" v-el:tax-company @focus="tax_type='company'">
+				</div>
+			</div>
+			<div class="tax-con">
+				<div class="tax-item border-top">
+					<span class="tax-tit">发票内容</span>
+				</div>
+				<div class="tax-item">
+					<input type="radio" class="choose-inp" id="tax_content" checked><label for="tax_content" class="check-label">明细</label>
+				</div>
+			</div>
+		</template>
+	</div>
+</template>
+<template v-if="showTag=='coupon'">
+	<header class="checkout-head">
+		<span class="page-back" @click="showTag='main'">返回</span>
+		<span class="page-title">我的优惠券</span>
+		<span class="page-right" @click="useCoupon">确定</span>
+	</header>
+	<div class="coupon-container">
+		<div class="coupon-item" v-for="item in data.coupon_lists">
+			<div class="coupon-item-box" :class="couponChose==$index?'checked':''" @click="couponClick($index)">
+				<div class="coupon-item-chose">
+					<input type="checkbox" class="choose-inp-r" :checked="couponChose==$index" >
+				</div>
+				<div class="coupon-item-desc">
+					<p class="coupon-name">{{item.coupons_info.cpns_name}}</p>
+					<p class="coupon-time">{{item.time.to_time |DateParseParam 'yyyy-MM-dd'}}到期</p>
+				</div>
+				<div class="coupon-item-type">
+					<span class="coupon-type-name">优惠券</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+<template v-if="showTag=='dltype'">
+	<header class="checkout-head">
+		<span class="page-back" @click="showTag='main'">返回</span>
+		<span class="page-title">配送方式</span>
+	</header>
+	<div class="dltype-container">
+		<div class="dltype-box">
+			<div class="dltype-item" v-for="item in data.dltype_list" @click="changeDltype($index)">
+				<img class="dltype-img" :src="item.dt_img_url==''?defaultImg:item.dt_img_url" alt="">
+			</div>
+		</div>
+	</div>
+</template>
+<template v-if="showTag == 'payment'">
+	<header class="checkout-head">
+		<span class="page-back" @click="showTag='main'">返回</span>
+		<span class="page-title">支付方式</span>
+	</header>
+	<div class="dltype-container">
+		<div class="dltype-box">
+			<div class="dltype-item" v-for="item in paymentList" @click="changePay($index)">
+				<div class="dltype-img">
+					<span class="pay-img ":class="item.app_id"></span>
+					<span class="pay-text" :class="item.app_name.length>5?'pay-text-mi':''">{{item.app_name}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+<template v-if="isLoading">
+	<pop pop-type="spin"></pop>
+</template>
+<template v-if="isAlert">
+	<pop pop-type="text" :pop-text="alertText"></pop>
+</template>

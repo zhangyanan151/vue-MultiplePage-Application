@@ -1,0 +1,179 @@
+.card-head {
+	width: 6.4rem;
+	height: 50px;
+	background-color: #FEFEFE;
+	text-align: center;
+	line-height: 50px;
+	border-bottom: 1px solid #ACACAC;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	box-sizing: border-box;
+	z-index: 999;
+}
+.card-head .page-back {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-indent: 50px;
+	overflow: hidden;
+	background: url(../../assets/back.png) center center no-repeat;
+	background-size: 25px;
+}
+.card-head .page-title {
+	font-size: 16px;
+	font-weight: 600;
+	font-family: "微软雅黑";
+}
+.card-add {
+	width: 6.4rem;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	background-color: #76C1BC;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+}
+.card-container {
+	width: 6.4rem;
+	padding: 50px 0;
+}
+.card-item {
+	position: relative;
+	width: 6.4rem;
+	margin-top: .18rem;
+	padding: .15rem .2rem;
+	background: #fff;
+
+}
+
+.card-item .card-info{
+	padding-bottom: 12px;
+	margin-bottom: 6px;
+	border-bottom: 1px solid #eee;
+}
+.card-item .idcard,
+.card-item .default {
+	color: #aaa;
+}
+.card-item p {
+	padding: 2px 0;
+}
+.default input, .default label{
+	vertical-align: middle;
+}
+.default .defSelect {
+	display: inline-block;
+	width: .3rem;
+	height: .3rem;
+	border: 1px solid #ddd;
+	border-radius: .15rem;
+}
+.default .defSelect[checked=true]{
+	border-color: #76c1bc;
+	background: #76c1bc url(../../assets/dg.png) center center no-repeat;
+    background-size: .3rem;
+}
+.default .card-label{
+	margin-left: 5px;
+	color: #707070;
+}
+
+.edit-card-con {
+	width: 6.4rem;
+	min-height: 100%;
+	background-color: #fff;
+	position: absolute;
+	top: 0px;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+.edit-item {
+	width: 6.4rem;
+	padding: 10px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #C8C7CC;
+	position: relative;
+	overflow: hidden;
+}
+.edit-item label {
+	color: #707070;
+	width: 1.3rem;
+	display: inline-block;
+	float: left;
+}
+.edit-item input {
+	width: 4.6rem;
+}
+
+.pic-box {
+	width: 6.4rem;
+	padding: 10px;
+	box-sizing: border-box;
+	color: #707070;
+	overflow: hidden;
+}
+.pic-box .item-pic {
+	float: left;
+	position: relative;
+	margin-right: 10px;
+}
+.pic-box .item-pic div img,
+.pic-box .item-pic div canvas {
+	display: block;
+	margin-top: 10px;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 2px dashed #eee;
+	border-radius: 8px;
+	background:url(../../assets/add.png) center center no-repeat;
+}
+.pic-box .item-pic div{
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.border-top{
+	border-top: 1px solid #C8C7CC;
+}
+.edit-submit-btn{
+	width: 5rem;
+	height: 50px;
+	margin: 30px auto 0 auto;
+	background-color: #76C1BC;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 5px;
+}
+
+.card-empty{
+	width: 6.4rem;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+.card-empty-box{
+	width: 6.4rem;
+	margin-top: 2rem;
+	text-align: center;
+	color: #A0A0A0;
+}
+.empty-img{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0 auto 10px auto;
+	background: url(../../assets/IDcardPlaceholderImg.png) center center no-repeat;
+	background-size: 100%;
+}
+

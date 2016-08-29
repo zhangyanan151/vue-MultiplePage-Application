@@ -1,0 +1,604 @@
+
+
+
+<body>
+    <share-component></share-component>
+    <div class="detail-bd">
+        <div class="detail-herder">
+            <a href="javascript:pageBack();" class="detail-a-back">
+                <span>返回</span>
+            </a>
+            <h2>商品详情</h2>
+            <a href="javascript:void(0);" class="new-a-tm">
+                <span>团妈键</span>
+            </a>
+        </div>
+        <div class="detail-proudct">
+
+            <tab-slide :child_data='tab_slide'></tab-slide>
+            
+            <div class="detail-title">
+                <h1>
+                    <a href="javascript:void(0);">{{all_data.name}}</a>
+                </h1>
+                <div class="detail-price">
+                    <span class="discountPrice">￥{{ all_data.now_product.price }}</span>
+                    <span class="price">￥{{ all_data.now_product.mktprice }}</span>
+                    <!--<span class="memberprice">会员价格 : <em>¥122.00</em></span>-->    
+                </div>
+            </div>
+            <div class="fenx">
+                <div class="fenx_width">
+                    <a href="javascript:void(0);" class="fx"> <i></i>
+                        &nbsp;分享到 &gt;
+                    </a>
+                    <a href="javascript:void(0);" data-goods_id={{all_data.goods_id}} data-isfav={{all_data.is_fav}} class="sc"> <i></i>
+                        &nbsp;收藏（
+                        <span>{{all_data.fav_count}}</span>
+                        ）
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="miblebox">
+            <div class="huod" onclick="window.location.href= '/wap/product-promotions-3554-14426-108c90d2aeb910fe4578ae77f1e54007.html';return false">
+                <span class="wenz">活动信息</span>
+                <i class="hdd">减价</i>
+                <span class="zhank">&gt;</span>
+            </div>
+            <div class="list-entry">
+                <span class="wenz">{{all_data.now_product.spec_info}}</span>
+                <span class="zhank"> &gt; </span>
+            </div>
+            <!--<div class="info" onclick="window.location.href= '/wap/product-goodsDiscussInit-3554-14426.html';return false">    
+            -->
+            <!--<span class="wenz">成交记录 ( 1 )</span>
+            -->
+            <!--<span class="zhank">></span>
+            -->
+            <!--</div>-->
+        </div>
+        <div class="score">
+            <div class="score_pf" onclick="window.location.href= '/wap/product-goodsDiscussInit-3554-14426.html';return false">
+                <span class="wenz">商品评分 :</span>
+                <span class="xxx"> 
+                    <em class="stars stars-0">
+                        <span class="below">
+                            <i class="icon star">/</i>
+                            <i class="icon star">/</i>
+                            <i class="icon star">/</i>
+                            <i class="icon star">/</i>
+                            <i class="icon star">/</i>
+                        </span>
+                        <span class="above">
+                            <i class="icon star">.</i>
+                            <i class="icon star">.</i>
+                            <i class="icon star">.</i>
+                            <i class="icon star">.</i>
+                            <i class="icon star">.</i>
+                        </span>
+                    </em> 
+                </span>
+                <span class="transactions">累计评价：{{all_data.discuss_count}}</span>
+                <span class="zhank">&gt;</span>
+            </div>
+        </div>
+        <div class="detail-entry">
+            <div class="show-details-btn">
+                <a href="javascript:;">图文</a>
+            </div>
+            <div class="row01">
+                <span class="bbxq">宝贝详情</span>
+                <!--<span class="ckpic">查看图文详情</span>
+                -->
+            </div>
+
+            <dl class="detalis-entry">
+                <dt class="tille1">基本属性</dt>
+                <div class="text1">
+                    {{{all_data.base_information}}}
+                    <!-- <p v-for='item in all_data.base_information_txt.split("\n")' track-by="$index">    
+                    <span>{{item}}</span>
+                    </p>
+                    -->
+                    <!-- 
+                                    <p v-for='item in base_information_txt' track-by="$index">    
+                    <span>{{item}}</span>
+                    </p>
+                    -->
+                </div>
+            </dl>
+            <dl class="detalis-entry">
+                <dt class="tille1">产品介绍</dt>
+                <div class="text1">
+                <!-- <div style="margin: 0px; padding: 0px; line-height: 18px; widows: auto;"> <font face="Microsoft Yahei" size="3">罗拔臣是个经典的英国品牌，保留了一贯英伦风格和传统，在香港有长久的历史，享有很高的知名度。</font>
+                </div>
+                -->
+                {{{all_data.product_intruduce}}}
+                </div>
+            </dl>
+            <dl class="detalis-entry">
+                <dt class="tille1">产品卖点</dt>
+                <div class="text1">
+                <!-- <div style="margin: 0px; padding: 0px; line-height: 18px; widows: auto;"> <font face="Microsoft Yahei" size="3">颜色自然，浓浓的水果香气和味道，口感柔软有弹性。便于涂抹的好果酱。甜甜的，满口留香，回味无穷。吃过才会知道，品尝的味道。</font>
+                </div>
+                -->
+                                {{{all_data.sale_focusabout}}}
+                </div>
+            </dl>
+            <dl class="detalis-entry">
+                <dt class="tille1">品牌介绍</dt>
+                <div class="text1">{{{all_data.use_introduce}}}</div>
+            </dl>
+
+        </div>
+        <div class="detail-pic">
+            <section class="select">
+                <p>大家还买了</p>
+            </section>
+            <div class="products">
+                <div class="item-bd">
+
+                    <div class="item">
+                        <a href="/wap/product-16449.html" class="pica">
+                        <img src="http://img.ttmama.com/public/images/c9/07/27/61a69042f6a5bbc8eddb705e8b8a477b82fb6112.jpg?1461923610#h"></a>
+                        <a href="/wap/product-16449.html" class="title">迪士尼Disney 魔术长条气球 带打气筒亲子游戏儿童玩具 魔术气球</a>
+
+                        <p class="products-price">￥18.80</p>
+                    </div>
+
+                    <div class="item">
+                        <a href="/wap/product-16446.html" class="pica">
+                        <img src="http://img.ttmama.com/public/images/79/56/a3/ff53849b3408ab19723a0762051ddc7b3b587bf0.jpg?1461921207#h"></a>
+                        <a href="/wap/product-16446.html" class="title">迪士尼FIRSTPARTY儿童生日派对套装气球泡泡手拍喇叭吹龙 party</a>
+                        <p class="products-price">￥13.80</p>
+                    </div>
+
+                    <div class="item">
+                        <a href="/wap/product-16443.html" class="pica">
+                        <img src="http://img.ttmama.com/public/images/e6/a2/60/a2ea5c56b8e12c08fa73f59c5c55ab8a56a11d44.jpg?1461919678#h"></a>
+                        <a href="/wap/product-16443.html" class="title">托马斯&amp;朋友 派对吹泡泡套装 圆型数字型双头吹泡泡户外玩具</a>
+                        <p class="products-price">￥10.80</p>
+                    </div>
+                </div>
+            </div>
+            <div class="products">
+                <div class="item-bd">
+
+                    <div class="item">
+                        <a href="/wap/product-16442.html" class="pica">
+                        <img src="http://img.ttmama.com/public/images/ff/9c/93/c83db47dfcefbcdb115968b92b06931fc58dbbbc.jpg?1461913913#h"></a>
+                        <a href="/wap/product-16442.html" class="title">法国 BEABA 宝宝婴儿面条米饭料理器 蒸煮篮适合辅食机solo和duo</a>
+
+                        <p class="products-price">￥88.00</p>
+                    </div>  
+
+                    <div class="item">
+                        <a href="/wap/product-16432.html" class="pica">
+                        <img src="http://img.ttmama.com/public/images/40/4b/c0/77d47500fe8bcfbe92aa5d6ac5974b601a5d981d.jpg?1461898679#h"></a>
+                        <a href="/wap/product-16432.html" class="title">德国施德楼 儿童软陶4色套装-机器人系列/小仙女系列益智安全无毒</a>
+
+                        <p class="products-price">￥90.00</p>
+                    </div>
+
+                    <div class="item">
+                        <a href="/wap/product-16430.html" class="pica">
+                        <img src="http://img.ttmama.com/public/images/4c/4d/69/3280e6264c14826d7746b33d7e5721a02329ee2f.jpg?1461898084#h"></a>
+                        <a href="/wap/product-16430.html" class="title">德国施德楼 8色16色蜂蜡蜡笔 天然无毒蜡笔套装 儿童绘画涂鸦</a>
+
+                        <p class="products-price">￥63.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-cart-box">
+                <a href="http://www.ttmama.com/wap/" class="btn-cart_1">
+                    <img src="http://www.ttmama.com/wap_themes/ttwap/images/btn-cart_1.png" alt="">    
+                    <span>首页</span>
+                </a>
+                <a href="/wap/openim-chat-14426-http:;xie;;xie;www;dian;ttmama;dian;com;xie;index;dian;php;xie;wap;xie;product;jh;14426;dian;html.html" class="btn-cart_2">
+                    <img src="http://www.ttmama.com/wap_themes/ttwap/images/btn-cart_2.png" alt="">    
+                    <span>客服</span>
+                </a>
+                <a href="/wap/cart.html" class="btn-cart_3">
+                    <img src="http://www.ttmama.com/wap_themes/ttwap/images/btn-cart_3.png" alt="">    
+                    <span>购物车</span>
+                </a>
+                <a class="btn-cart" data-nostore="0 ">加入购物车</a>
+            </div>
+        </div>
+
+        <div class="new-tm-tab">
+            <div class="new-tbl-type">
+                <a href="/index.html?ignore_ua_check=0" class="new-tbl-cell">
+                    <span class="icon">首页</span>
+                    <p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="/wap/openim-chat.html" class="new-tbl-cell">
+                    <span class="icon2">客服</span>
+                    <p style="color:#6e6e6e;">客服</p>
+                </a>
+                <a href="/wap/member.html" class="new-tbl-cell">
+                    <span class="icon4">会员</span>
+                    <p style="color:#6e6e6e;">会员</p>
+                </a>
+                <a href="/wap/cart.html" class="new-tbl-cell new-tbb">
+                    <span class="icon3">购物车</span>
+                    <p style="color:#6e6e6e;">购物车</p>
+                </a>
+            </div>
+        </div>
+        <div>
+
+            <div class="list-cosi">
+                <div class="listbd">
+                    <div class="cosi01">
+                        <div class="cosi02">
+                            <div class="ros01">
+                                <h1>英国罗拔臣Robertson’s黑加仑果酱340g 2岁+</h1>
+                                <p class="detail-price">
+                                    <span class="discountPrice">￥35.00</span>
+                                    <span class="price">￥39.00</span>
+                                </p>
+                            </div>
+                        </div>
+                    <div class="cosi-img">
+                        <img alt="英国罗拔臣Robertson’s黑加仑果酱340g 2岁+" src="http://img.ttmama.com/public/images/7f/06/2a/6a03f5bc19d0986ae211bc2b79dba1d8031609aa.jpg?1449122691#h">
+                    </div>
+                    <div class="dgsc-pr">
+                        <div class="list-cm list-cm01">
+                            <h3 class="bt">选择数量:</h3>
+                            <p class="option">
+                                <a class="btn-del">-</a>
+                                    <input type="text" name="cart_goodsnum" class="fm-txt" value="1" min="1" max="">    
+                                <a class="btn-add">+</a>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="dgsc-ft">
+                        <a href="javascript:void(0);" class="c-btn-blue">
+                            <span>返 回</span>
+                        </a>
+                        <a href="javascript:void(0);" class="c-btn-orgn" data-nostore="0" data-cart_max="24" data-cart_goodsid="3554" data-cart_productid="14426">
+
+                            <!-- <span>加入购物车</span>
+                            -->
+                            <span>加入购物车</span>
+                            <!-- <span>加入购物车</span>
+                            -->
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="hidden" name="btype" class="btype">
+    <input type="hidden" name="goods[goods_id]" value={{all_data.goods_id}}>
+    <input type="hidden" name="goods[product_id]" value={{all_data.now_product.product_id}}>
+    <input type="hidden" name="min" value="1" class="min-num">
+    <input type="hidden" name="max" value="24" class="max-num">
+    <input type="hidden" name="mini_cart" value="true">
+
+    <script src="http://www.ttmama.com/wap_themes/ttwap/images/js/detail.js"></script>
+    <script src="http://www.ttmama.com/wap_themes/ttwap/images/js/tools.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var heightP = -$(".fenx-row").height();
+            $(".fenx-row").css({'bottom':heightP});
+        });
+
+        $(".cosi01").on('click','i',function() {
+
+            //$(this).siblings().removeClass('sel');
+            //$(this).addClass('sel');
+            var product_id = $(this).data('product_id');
+            if(product_id == '' || product_id == 'undefined') {
+                return false;
+                //tools.error.show('数据错误，请刷新重试',2000);
+            }
+            $.ajax({
+                url: "/wap/product-ajax_product.html",
+                beforeSend : function() {tools.loading.show();},
+                complete : function() {tools.loading.hide();},
+                dataType : 'json',
+                type : 'POST',
+                data: {product_id:product_id},
+                error : function() {
+                    tools.error.show('网络错误，请重试！',2000);
+                },
+                success: function(d) {
+                    if( (typeof d.error) !== 'undefined') {
+                        tools.error.show(d.error,2000);return false;
+                    }
+
+                    $('.cosi-img > img').attr('src',d.default_image);
+                    var html = '';
+
+                    $.each(d.spec.goods,function(key,spec) {
+
+                        html += '<div class="list-cm"><h3 class="bt">选择'+d.spec.specification.spec_name[key]+'：</h3><p class="dgsc-pc">';
+
+                        $.each(spec,function(item_key,item) {
+                            if(item_key == d.spec.product[key]) {
+                                html += '<i data-spec='+d.spec.specification.spec_name[key]+' data-product_id="'+d.product_id+'" class="sel"> '+item.spec_value+'</i>';
+                            }else {
+                                if(item.product_id) {
+                                    html += '<i data-spec='+d.spec.specification.spec_name[key]+' data-product_id="' + item.product_id + '">' + item.spec_value + '</i>';
+                                }
+                            }
+                        });
+                        html += '</p></div>';
+                    });
+
+                    var numhtml = $('.list-cm').last().clone();
+
+                    $('.dgsc-pr').html(html);
+                    $('.dgsc-pr').append(numhtml);
+
+                    $('.c-btn-orgn').data('cart_max', d.store.store);
+                    $('.c-btn-orgn').data('cart_goodsid', d.goods_id);
+                    $('.c-btn-orgn').data('cart_productid', d.product_id);
+    //            data-  data- data-="
+    //            $('.c-btn-orgn').data('cart_max',);
+                    // 优惠价格和 实际价格
+                    $('.discountPrice').text(d.price);
+                    $('.price').text(d.mktprice);
+                    // 是否可买
+                    if(d.store.store >= 1) {
+                        $(".c-btn-orgn").data('nostore',0);
+                        $(".c-btn-orgn > span").text('加入购物车');
+                        $(".btn-cart").data('nostore',0);
+                        $(".btn-cart").text('加入购物车');
+                    }else {
+                        $(".c-btn-orgn").data('nostore',1);
+                        $(".c-btn-orgn > span").text('商品缺货中');
+                        $(".btn-cart").data('nostore',1);
+                        $(".btn-cart").text('商品缺货中');
+                    }
+
+                    chang_spec();
+                }
+            });
+        });
+
+        // 购物车商品数量增加
+        $(".cosi01").on('click','.btn-add',function() {
+            var num = $(this).prev().val();
+            num = (num > 0)?parseInt(num):1;
+            num++;
+            $(this).prev().val(num);
+        });
+        // 购物车商品数量减少
+        $(".cosi01").on('click','.btn-del',function() {
+            var num = $(this).next().val();
+            num = (num > 1)?parseInt(num):2;
+            num--;
+            $(this).next().val(num);
+        });
+        // 收藏
+        $('.sc').click(function () {
+            var login = "nologin";
+            if(login === 'nologin') {
+                // window.location.href = "/wap/passport-login.html";
+                window.location.href = "http://www.baidu.com";
+                return false;
+            }
+            if($(this).data('isfav') == '1') {
+                tools.error.show('您已经收藏该商品!',2000);
+                return false;
+            }
+            var gid = $(this).data('goods_id');
+            if(gid == '') {
+                tools.error.show('商品错误，请重新选择！',2000);
+            }
+            $.ajax({
+                url: "/wap/member-ajax_fav.html",
+                beforeSend : function() {tools.loading.show();},
+                complete : function() {tools.loading.hide();},
+                dataType : 'json',
+                type : 'POST',
+                data: {gid:gid,type:'goods'},
+                error : function() {tools.error.show('网络错误，请重试！',2000);},
+                success: function(d) {
+                    if( (typeof d.success) !== 'undefined' ) {
+                        $('.sc > span').text( parseInt($('.sc > span').text()) + 1);
+                        tools.success.show(d.success,2000);
+                    }else {
+                        tools.error.show(d.error,2000);
+                    }
+                }
+            });
+        });
+
+
+        /****       未实现具体       ****/
+
+    // 加入购物车
+        $('.c-btn-orgn').click(function() {
+            if( $(this).data('nostore') == '1') {
+                return false;
+            }
+    //    console.log();
+            var max = $(this).data('cart_max');
+            var goods_id = $(this).data('cart_goodsid');
+            var product_id = $(this).data('cart_productid');
+            var num = $("input[name='cart_goodsnum']").val();
+    //        console.log(num+'----'+max)
+            if(num > max) {
+                tools.error.show('库存不足，最多可购买'+max+'件',2000);return false;
+            }
+            $.ajax({
+                url: "/wap/cart-add-goods.html",
+                dataType : 'json',
+                type : 'POST',
+                data: {goods:{goods_id:goods_id,product_id:product_id,num:num},min:1,max:max,mini_cart:true,},
+                beforeSend:function() {
+                    tools.loading.show();
+                },
+                complete:function() {
+                    tools.loading.hide();
+                },
+                error : function() {
+                    tools.error.show('网络错误，请重试！',2000);
+                },
+                success: function(d) {
+                    if(d.success){
+                        tools.success.show(d.success,2000);
+                    }else {
+                        tools.error.show(d.error,2000);
+                    }
+                }
+            });
+        });
+        //tools.success.show('aa');
+        $(function($){
+            chang_spec();
+        })
+
+        var chang_spec = function() {
+            // 找到已经选择的规格
+            var spec = [];
+            $('.dgsc-pr').find('i').each(function() {
+                if($(this).hasClass('sel')) {
+                    spec.push($(this).data('spec')+'：'+$(this).text());
+                }
+            });
+
+            //console.log();
+
+            $('.list-entry > .wenz').text(spec.join());
+        }
+    </script>
+
+    <p>&nbsp;</p>
+    <div class="msg" id="success">
+      <table align="center">
+            <tbody>
+                <tr>
+                  <td>
+                    <div class="checkout-success"></div>
+                  </td>
+                </tr>
+            </tbody>
+      </table>
+    </div>
+    <script>
+        (function(){
+            $('.J-tab .trigger').on('tap',function(e){
+                if($(this).attr('data-url') && $(this).attr('data-url') != 'true'){
+                    $.get($(this).attr('data-url'),function(re){
+                        $($('.J-tab .panel')[$(this).index()]).append(re);
+                    }.bind(this));
+                    $(this).attr('data-url','true');
+                }
+                $(this).add($('.J-tab .panel')[$(this).index()]).addClass('act').siblings('.act').removeClass('act');
+            });
+
+            function changeVerify(element, hasEvent) {
+                $.each(element,function(){
+                    var url;
+                    var img;
+                    var el = this;
+                    if(el.tagName === 'IMG') {
+                        img = el;
+                        url = el.getAttribute('src').split('?')[0];
+                    }
+                    else if(el.tagName === 'A') {
+                        img = el.previousElementSibling;
+                        url = el.getAttribute('href');
+                    }
+                    if(hasEvent) $(el).on('touchend click', function(e){e.preventDefault();}).on('tap longTap', changeCode.bind(el, img, url));
+                    else changeCode(img, url);
+                });
+            }
+            function changeCode(img, url){
+                url = url || img.src.split('?')[0];
+                var random = +new Date;
+                img.src = url + '?' + random;
+                return false;
+            }
+            changeVerify($('form .auto-change-verify-handle'), true);
+
+            $(document).on('submit', 'form', function(){
+                var sel = $('.region select'),
+                    region_false = false;
+                $.each(sel,function(){
+                    if((this.style.visibility == 'visible') && (this.selectedIndex==0))
+                        region_false = true;
+                });
+                if(region_false){
+                    alert('请选择完整地区！');
+                    return false;
+                }
+
+                var required = $(this).find('input[required]');
+
+                if(required.length){
+                    var checkEmpty = false, ipt;
+                    $.each(required,function(){
+                        ipt = $(this);
+                        if(ipt.val()=='' && ipt.offset().height){
+                            checkEmpty = ipt;
+                            if(ipt.attr('data-caution'))
+                                alert(ipt.attr('data-caution'));
+                            return false;
+                        }
+                    });
+                    if( checkEmpty )return false;
+                }
+                if($(this).attr('data-type') == 'ajax'){
+                    var self = $(this);
+                    $(this).find('[type=submit]').prop('disabled', true);
+                    $[$(this).attr('method')]($(this).attr('action'),$(this).serialize(),function(re){
+                        try{
+                            re = JSON.parse(re);
+                        }catch(e) {}
+                        var update = self.attr('data-update');
+                        if(re.error){
+                            if($('form .auto-change-verify-handle').length > 0){
+                                $('form .auto-change-verify-handle').trigger('tap');
+                            }
+                            self.find('[type=submit]').prop('disabled', false);
+                            return alert(re.error);
+                        }else{
+                            if($(update).size()) {
+                                $(update).html(re);
+                            }
+                            else {
+                                $('#success .checkout-success').html(re.success);
+                                new Dialog('#success',{title:'提交成功！',type:'noclose'});
+                                setTimeout(function(){location.href = re.redirect},1000);
+                            }
+                        }
+                    });
+                    return false;
+                }else{
+                    return true;
+                }
+            });
+
+
+            var e = $.fn.cookie('UNAME')?$.fn.cookie('UNAME'):'',
+                cartNum = $.fn.cookie('S[CART_NUMBER]')?$.fn.cookie('S[CART_NUMBER]'):'';
+            if(e){
+                $("#footerloginuname").text(decodeURIComponent(e));
+                $("#footerlogout").show();
+                if($("#footerlogin"))
+                $("#footerlogin").hide();
+            }else{
+                $("#footerlogin").show();
+                if($("#footerlogout"))
+                $("#footerlogout").hide();
+            }
+            if(cartNum)$('.cart-num').html(cartNum).show();
+            else $('.cart-num').hide();
+        })();
+    </script>
+
+    </div>
+    <div class="show-detail-box"></div>
+</body>

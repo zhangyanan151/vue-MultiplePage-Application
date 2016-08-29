@@ -1,0 +1,14 @@
+.cancel-container{
+	width: 6.4rem;
+	position: absolute;
+	left: 0;
+	top: 50px;
+	bottom: 0;
+	background-color: #fff;
+}
+.cancel-type{
+	width: 6.4rem;
+	line-height: 40px;
+	text-indent: 0.2rem;
+	border-bottom: 1px solid #C8C7CC;
+}

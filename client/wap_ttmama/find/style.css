@@ -1,0 +1,169 @@
+@import '~vux/vux.css';
+.find-tit-box{
+    width: 100%;
+    overflow: hidden;
+    margin:0 auto;
+    min-width: 3.2rem;
+    background: #FFF;
+    margin-bottom: 0.2rem;
+}
+.find-tit-top{
+    width: 6rem;
+    padding: 0 0.2rem;
+    height: 58px;
+    overflow: hidden;
+    margin: 0 auto; 
+    display: flex;
+}
+.find-tit-top .find-tit-top-l{
+    float: left;
+    width: 70%;
+}
+.find-tit-top .find-tit-top-l h2{
+    color: #4a4a4a;
+    line-height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.find-tit-top .find-tit-top-l h2 a{
+    color: #4a4a4a;
+    text-decoration: none;
+}
+.find-tit-top .find-tit-top-l span{
+    color: #a0a09b;
+    font-size: 10px;
+}
+.find-tit-top .find-tit-top-r{
+    display: block;
+    width: 30%;
+    float: left;
+}
+.find-tit-top .find-tit-top-r a{
+    display: inline-block;
+    width: 40px;
+    height: 58px;
+    float: right;
+}
+.find-tit-top .find-tit-top-r .find-tit-top-r-1{
+    background: url(../assets/coll.png) center center no-repeat;
+    background-size: 24px;
+}
+.find-tit-top .find-tit-top-r .find-tit-top-r-3{
+    background: url(../assets/coll_y.png) center center no-repeat;
+    background-size: 24px;
+}
+.find-tit-top .find-tit-top-r .find-tit-top-r-2{
+    background: url(../assets/share.png) center center no-repeat;
+    background-size: 24px;
+}
+.find-tit-mid{
+    width: 6.4rem;
+    overflow:hidden; 
+}
+.find-tit-mid a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.find-tit-mid a img{
+    width: 100%;
+    height: 100%;
+}
+.find-tit-foo{
+    height: 36px;
+    overflow:hidden; 
+}
+.find-tit-foo ul{
+    overflow: hidden;
+}
+.find-tit-foo ul li{
+    float: left;
+    width:32.5%;
+    height: 18px;
+    margin: 9px 0;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 18px;
+}
+.find-tit-foo ul li i{
+    overflow: hidden;
+    display: inline-block;
+    width: 0.4rem;
+    height: 18px;
+    vertical-align: middle;
+}
+.find-tit-foo ul li .i-1{
+    background: url(../assets/liulan2.png) center center no-repeat;
+    background-size: 94%;
+}
+.find-tit-foo ul li .i-2{
+    background: url(../assets/pinglun2.png) center center no-repeat;
+    background-size: 78%;
+}
+.find-tit-foo ul li .i-3{
+    background: url(../assets/zan2.png) center center no-repeat;
+    background-size: 70%;
+}
+.find-tit-foo ul li span{
+    margin-left: 10px;
+    color: #9b9b9b;
+    font-size: 12px;
+    line-height: 18px;
+}
+.find-head{
+    width: 6.4rem;
+    height: 40px;
+    position: fixed;
+    left: 50%;
+    margin-left: -3.2rem;
+    top: 0;
+    background-color: #F9F9F9;
+    opacity: 0.98;
+    box-sizing: border-box;
+    z-index: 999;
+}
+.find-head::after{
+    display: block;
+    width: 6.4rem;
+    height: 1px;
+    content: "";
+    background-color: #B3B3B3;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleY(0.5);
+}
+.head-box{
+    width: 6rem;
+    margin: 0 auto;
+    overflow-x: scroll;
+}
+.box1{
+    height: 40px;
+}
+.box1-item{
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    color: #737373;
+}
+.box1-item-is{
+    color: #49B9A9;
+}
+.box1-item-is .item-tit{
+    display: inline-block;
+    padding: 0 3px;
+    height: 40px;
+    border-bottom: 2px solid #49B9A9;
+    box-sizing: border-box;
+}
+.find-container{
+    margin-top: 40px;
+}

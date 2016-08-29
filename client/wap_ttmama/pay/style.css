@@ -1,0 +1,139 @@
+div,li{
+	box-sizing: border-box;
+}
+.pay-head{
+	width: 6.4rem;
+	height: 50px;
+	position: fixed;
+	left: 50%;
+	margin-left: -3.2rem;
+	top: 0;
+	background-color: #F3F3F3;
+	border-bottom: 1px solid #B2B2B2;
+	line-height: 50px;
+	text-align: center;
+	z-index: 99;
+}
+.page-back{
+	display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    text-indent: 50px;
+    overflow: hidden;
+    background: url(../assets/back.png) center center no-repeat;
+    background-size: 25px;
+}
+.page-title{
+    display: inline-block;
+    width: 90px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    font-family: "微软雅黑";
+}
+.page-right{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+	line-height: 50px;
+	text-align: center;
+	overflow: hidden;
+	font-size: 14px;
+	color: #1B1B1B;
+}
+.pay-container{
+	width: 6.4rem;
+	margin-top: 50px;
+}
+.pay-type{
+	width: 6.4rem;
+	height: 60px;
+	overflow: hidden;
+	background:#fff url(../assets/next.png) 98% center no-repeat;
+	background-size: 8px;
+	border-bottom: 1px solid #DCDCDC;
+}
+.pay-icon{
+	float: left;
+	width: 60px;
+	height: 60px;
+}
+.pay-icon.malipay{
+	background: url(../assets/AlipayLogo.png) center center no-repeat;
+	background-size: 40px;
+}
+.pay-icon.wxpay{
+	background: url(../assets/WechatPayLogo.png) center center no-repeat;
+	background-size: 40px;
+}
+.pay-icon.wxpayjsapi{
+	background: url(../assets/WechatPayLogo.png) center center no-repeat;
+	background-size: 40px;
+}
+.pay-icon.wapupacp{
+	background: url(../assets/UnionPayLogo.png) center center no-repeat;
+	background-size: 40px;
+}
+.pay-info{
+	width: 4.8rem;
+	height: 30px;
+	margin: 15px 0;
+	float: left;
+}
+.pay-name{
+	font-size: 14px;
+	line-height: 15px;
+	color: #1B1B1B;
+}
+.pay-name-info{
+	font-size: 12px;
+	line-height: 15px;
+	color: #707070;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.pay-money{
+	float: right;
+	line-height: 40px;
+	color: #76C1BC;
+	margin-right: 10px;
+}
+.pay-list-box{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.list-tit{
+	text-align: center;
+	color: #1B1B1B;
+	line-height: 30px;
+	border-bottom: 1px solid #DCDCDC;
+}
+.pay-item{
+	width: 3.2rem;
+	height: 80px;
+	float: left;
+	padding: 10px 0;
+	overflow: hidden;
+}
+.pay-money-area{
+	width: 6.4rem;
+	background-color: #fff;
+	border-bottom: 1px solid #DCDCDC;
+	overflow: hidden;
+	line-height: 40px;
+}
+.pay-money-area span{
+	color: #1B1B1B;
+	margin-left: 10px;
+}

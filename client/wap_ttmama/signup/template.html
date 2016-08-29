@@ -1,0 +1,101 @@
+<div class="bd mtm">
+    <div class="header">
+        <a @click="signup_back($event)" href="javascript:history.back()" class="page-back"><span>返回</span></a>
+        <h2>注册</h2>
+    </div>
+    <form method="post" class="signup-form" autocomplete="off" action="#">
+        <fieldset>
+            <div class="inputBox" v-show="unameShow">
+                <input type="text" id="uname" name="uname" placeholder="手机号" v-model="uname" @keyup="uname.length > 0 ? unameClear = true : unameClear = false" />
+                <!--清空输入框组件-->
+                <template v-if="unameClear">
+                    <clearinput :show-clear.sync="unameClear" :input-text.sync="uname"  :right-dis=6></clearinput>
+                </template>
+            </div>
+            <div class="inputBox" v-show="vcodeShow">
+                <input type="text" id="vcode" name="vcode" placeholder="请输入手机验证码"  v-model="vcode" />
+                <div class="vcode_first" v-show="vcodeGet"><span>{{ countdown }}</span>秒后重试</div>
+                <div class="vcode_again" v-show="!vcodeGet" @click="regetVerify">重新获取</div>
+            </div>
+            <div class="inputBox" v-show="pwdShow">
+                <input :type="eye ? 'password':'text' " id="password" name="password" placeholder="请设置登录密码"  v-model="password" @keyup="password.length > 0 ? pwdClear = true : pwdClear = false" />
+                <span class="eye" @click="eye = !eye" :class="eye ? 'eye1':'eye2' "></span>
+                <!--清空输入框组件-->
+                <template v-if="pwdClear">
+                    <clearinput :show-clear.sync="pwdClear" :input-text.sync="password" :right-dis=40></clearinput>
+                </template>
+            </div>
+            <div class="inputBox" v-show="pwdShow">
+                <input :type="eye ? 'password':'text' " id="pwd_confirm" name="pwd_confirm" placeholder="请确认登录密码"  v-model="psw_confirm" @keyup="psw_confirm.length > 0 ? pwd2Clear = true : pwd2Clear = false" />
+                <span class="eye" @click="eye = !eye" :class="eye ? 'eye1':'eye2' "></span>
+                <!--清空输入框组件-->
+                <template v-if="pwd2Clear">
+                    <clearinput :show-clear.sync="pwd2Clear" :input-text.sync="psw_confirm"  :right-dis=40></clearinput>
+                </template>
+            </div>
+            <div class="both"></div>
+        </fieldset>
+    </form>
+    <div class="dgsc-ft marg">
+        <a @click="signup_next" href="javascript:;" class="c-btn-blue"><span>下一步</span></a>
+    </div>
+    <div class="protocol" v-show="unameShow">
+        <em :class="{'prot_ok': prot_on }" @click="prot_on=!prot_on">
+            <input type="hidden" id="license" name="license" :value=" prot_on?'on':'off' "/>注册即同意
+        </em>
+        <span @click="portShow = true" class="prot_text">汤团妈妈服务协议</span>
+    </div>
+    <!--注册汤团妈妈用户协议内容-->
+    <div class="signup_prot" v-show="portShow">
+        <div class="bd mtm">
+            <div class="header">
+                <a @click="portShow = false" href="javascript:;" class="close"><span>确定</span></a>
+                <h2>注册协议</h2>
+            </div>
+            <div class="content">
+                <h3> 一、确认与接纳</h3>
+                <p>用户通过注册程序阅读本服务条款并点击“同意”或“接受”按钮完成注册，或以任何行为实际使用、享受汤团妈妈的服务，即表示用户与汤团妈妈已达成协议，自愿接受本服务条款的所有内容。如用户不同意本服务条款的条件，则不能使用汤团妈妈服务以及注册成为用户。汤团妈妈及其涉及到的产品、服务、相关软件的所有权和运营权归汤团妈妈所有，汤团妈妈享有对活动的监督、提示、检查、纠正及处罚权利。</p>
+                <h3>二、用户使用基本规则</h3>
+                <p>（1）遵守中国有关的法律和法规；</p>
+                <p>（2）不得为任何非法目的而使用网络服务系统，遵守所有与网络服务有关的网络协议、规定和程序；不得利用汤团妈妈网络服务系统进行任何可能对互联网的正常运转造成不利影响的行为；</p>
+                <p>（3）不得进行任何未经汤团妈妈许可的商业广告行为；不得对汤团妈妈的任何数据作商业性利用，包括但不限于在未经汤团妈妈事先书面同意的情况下，以复制、传播等任何方式使用所展示的资料；</p>
+                <p>（4）不得使用虚假、冒充他人或其他方的信息注册汤团妈妈后发布评论或其他内容；不得以虚构或歪曲事实的方式不当评价其他会员，不得采取不正当方式制造或提高自身的信用度，不得采取不正当方式制造或提高（降低）其他会员的信用度；</p>
+                <p>（5）不得使用任何装置、软件或例行程序干预或试图干预汤团妈妈的正常运作或正在进行的任何交易、活动；不得采取任何将导致不合理的庞大数据负载加诸汤团妈妈网络设备的行动；</p>
+                <p>（6）不得利用网络服务进行任何不利于汤团妈妈的行为。</p>
+                <h3>三、账户、密码以及注册信息</h3>
+                <p>1、用户注册成功后，将拥有一个汤团妈妈专用帐号及相应的密码，该帐号和密码将成为用户登录本商城、使用本商城服务、进行交易、完成支付以及享受售后服务的凭证。</p>
+                <p>2、每位用户只允许在汤团妈妈拥有一个有效账户，如有证据证明或本商城有理由相信用户存在恶意注册多个账户的情形，本商城有权采取取消订单、冻结或关闭账户等措施，给汤团妈妈造成损失的，用户承担赔偿责任。</p>
+                <p>3、使用汤团妈妈服务过程中，用户有义务保管好个人账号及密码，并对他人使用私人计算机作出限制。用户不得以任何形式擅自转让或授权他人使用自己的汤团妈妈帐号及密码。</p>
+                <p>4、用户不得采用测试、欺骗等任何非法手段，盗取其他用户的账户信息或对他人进行骚扰。</p>
+                <p>5、汤团妈妈承诺仅根据本网站服务目的使用用户个人信息。服务目的包括但不限于交易确认、交易支付、客户回访、政策更新、用户通知、发送促销信息、商业信息以及其他与交易和服务相关的辅助服务等。</p>
+                <h3>四、用户隐私保护</h3>
+                <p>尊重用户个人隐私是汤团妈妈的一项基本政策，因此，本商城一定不会向任何第三方披露、转让、出租或者出售交易用户名单、交易记录等涉及消费者个人信息的数据以及用户保存在本商城各项服务中的非公开内容，除非汤团妈妈在诚信基础上认为透露这些信息是必要的。这些信件在以下四种情况是必要的：</p>
+                <p>(1)遵守有关法律规定，遵从本站合法服务程序。 </p>
+                <p>(2)保持维护本站的商标所有权。 </p>
+                <p>(3)在紧急情况下竭力维护用户个人和社会大众的隐私安全。 </p>
+                <p>(4)符合其它相关的要求。</p>
+                <h3>五、知识产权</h3>
+                <p>1、汤团妈妈对本网站上全部内容享有绝对的、完全的所有权及知识产权，或已取得权利人的合法授权，内容包括：文字、图片、图表、照片、软件、声音、图像，以及广告中的全部内容。</p>
+                <p>2、未经汤团妈妈书面同意，用户不得用任何方式对汤团妈妈网站内容进行修改，也不得复制、下载网页内容、数据、信息进行转售或商业利用。</p>
+                <p>3、对于用户发布和保存在本网站上的内容，用户授予汤团妈妈及其关联公司独家的、全球通用的、永久的、免费的许可使用权利(并有权在多个层面对该权利进行再授权)。</p>
+                <h3>六、服务条款的修改及服务修订</h3>
+                <p>1、用户接受，随着市场环境、网络环境以及汤团妈妈自身发展，我们会在必要时修改服务条款，服务条款一旦发生变动，我们将会以站内公告、站内信、电子邮件或其他书面方式将修改后的条款予以公布或通知。</p>
+                <p>2、一旦用户选择继续使用汤团妈妈的服务，则表示用户已接受经修订的条款及服务，当用户与汤团妈妈发生争议时，应以最新的服务条款为准。除另行明确声明外，任何使汤团妈妈服务范围扩大或功能增强的新内容均受本条款约束。</p>
+                <h3>七、违约责任承担</h3>
+                <p>1、如果用户未遵守本服务条款的任何一项，汤团妈妈有权立即终止提供一切服务，并保留通过法律手段追究责任的权利。</p>
+                <p>2、汤团妈妈已经建立了规范的消费纠纷受理及解决机制，用户和汤团妈妈一致同意，有关本条款以及使用汤团妈妈服务产生的争议双方首先通过汤团妈妈专业客服部门进行友好协商沟通，并力求和解解决，当协商不能时，任何一方有权选择采取诉讼方式，并应由汤团妈妈所在地有管辖权的人民法院管辖。若有任何服务条款与法律相抵触，这些条款将按尽可能接近的方法重新解析，而其它条款则保持对双方产生法律效力和影响。</p>
+                <h3>八、其他</h3>
+                <p>1、本服务条款中的任何条款无论因何种原因完全或部分无效或不具有执行力，其余条款仍应有效并且有约束力。</p>
+                <p>2、本服务条款的标题、序号均为方便阅读而设定，不影响条款实际含义及其效力。</p>
+                <p>3、本服务条款自公布及适用的当天生效，有效期持续至更新版本发布之时。</p>
+                <p>4、在汤团妈妈自营网站公开测试期间因为网站漏洞或攻击造成的恶意订单，汤团妈妈保留是否退还已付款和拒绝发货的权利。</p>
+                <p>5、以上条款的解释权归汤团妈妈最终所有。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--消息提示框组件-->
+<template v-if="signup_tips">
+    <pop pop-type="text" :pop-text="showText"></pop>
+</template>

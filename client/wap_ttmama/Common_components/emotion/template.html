@@ -1,0 +1,58 @@
+<div class="add-comm-box" v-show="!commInput && !emotionInput">
+	<div class="add-comm-ipt" :class="emotionInput?'jianpan':''" @click="choseInput"></div>
+	<label class="add-comm-label" @click="openInput">评论</label>
+	<div class="add-comm-send" @click="openInput">发送</div>
+</div>
+<div class="comm-box2" v-if="commInput || emotionInput">
+	<div class="input-mask" @click="closeInp"></div>
+	<div class="add-comm-box" :style="{bottom:emotionInput?'3rem':'0'}">
+		<div class="add-comm-ipt" @click="choseInput" :class="emotionInput?'jianpan':''"></div>
+		<div class="comment-content"  @click="openInput" contentEditable="true" v-el:comment-input @focus="inputFocus" @keyup="inputFocus"></div>
+		<div class="add-comm-send" @click="submit">发送</div>
+	</div>
+	<div class="comm-emotion" v-if="emotionInput">
+		<swiper height="3rem" :aspect-ratio="1" v-if="emotionList">
+			<swiper-item  class="black">
+				<div v-for="(key,value) in emotionList" class="ttmama-emotion" v-if="$index<23" @click="addEmotion(key)">
+					<i :class="value" class="ttmama-emotion-i"></i>
+				</div>
+				<div class="ttmama-emotion Delete_motion-last" @click="delEmotion">
+					<i class="Delete_motion ttmama-emotion-i"></i>
+				</div>
+			</swiper-item>
+			<swiper-item  class="black">
+				<div v-for="(key,value) in emotionList" class="ttmama-emotion" v-if="$index>=23 && $index<46" @click="addEmotion(key)">
+					<i :class="value" class="ttmama-emotion-i"></i>
+				</div>
+				<div class="ttmama-emotion Delete_motion-last" @click="delEmotion">
+					<i class="Delete_motion ttmama-emotion-i"></i>
+				</div>
+			</swiper-item>
+			<swiper-item  class="black">
+				<div v-for="(key,value) in emotionList" class="ttmama-emotion" v-if="$index>=46 && $index<69" @click="addEmotion(key)">
+					<i :class="value" class="ttmama-emotion-i"></i>
+				</div>
+				<div class="ttmama-emotion Delete_motion-last" @click="delEmotion">
+					<i class="Delete_motion ttmama-emotion-i"></i>
+				</div>
+			</swiper-item>
+			<swiper-item  class="black">
+				<div v-for="(key,value) in emotionList" class="ttmama-emotion" v-if="$index>=69 && $index<92" @click="addEmotion(key)">
+					<i :class="value" class="ttmama-emotion-i"></i>
+				</div>
+				<div class="ttmama-emotion Delete_motion-last" @click="delEmotion">
+					<i class="Delete_motion ttmama-emotion-i"></i>
+				</div>
+			</swiper-item>
+			<swiper-item  class="black">
+				<div v-for="(key,value) in emotionList" class="ttmama-emotion" v-if="$index>=92" @click="addEmotion(key)">
+					<i :class="value" class="ttmama-emotion-i"></i>
+				</div>
+				<div class="ttmama-emotion Delete_motion-last" @click="delEmotion">
+					<i class="Delete_motion ttmama-emotion-i"></i>
+				</div>
+			</swiper-item>
+		</swiper>
+
+	</div>
+</div>

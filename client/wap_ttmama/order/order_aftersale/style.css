@@ -1,0 +1,13 @@
+.aftersale-con{
+	width: 6.4rem;
+	margin-top: 50px;
+	position: absolute;
+}
+.order-tit .aftersale-status{
+	line-height: 40px;
+	color: #76C1BC;
+	margin-right: 2px;
+}
+.return-money{
+	color: #76C1BC;
+}

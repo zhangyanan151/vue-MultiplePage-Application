@@ -1,0 +1,24 @@
+.detail-bd{ min-width: 300px; max-width: 640px; margin: 0 auto;  border:1px #d6d6d6 solid;  }
+
+.detail-bd .detail-herder{ background:url(../../assets/herder-1px.png) repeat-x;position: relative; height: 45px; z-index: 888;font-size: 1em;line-height: 1.25em;border-bottom: 1px solid #b7b7b7}
+.detail-herder .detail-a-back{position: absolute;top: 7px;left: 15px;width: 30px;height: 32px;}
+.detail-herder .detail-a-back span{display: inline-block;width: 10px;height: 18px;margin-top: 6px;background: url(../../assets/ittb_02.png) center no-repeat;background-size: 90%;text-indent: -9999px;}
+.detail-herder h2{height: 44px;line-height: 44px;font-weight: normal;font-size: 16px;color: #707070;text-align: center;}
+.detail-herder .new-a-tm{position: absolute;top: 7px;right: 10px;width: 37px;height: 30px;}
+.detail-herder .new-a-tm span{display: inline-block;width: 37px;height: 30px; text-indent: -9999px; background: url(../../assets/dd_03.png) center no-repeat; background-size: 60%;}
+
+
+
+/*右侧菜单*/
+.new-tm-tab{ width: 57px; height:auto; border: 1px #ccc solid; position:fixed; z-index:10004; top: 46px; right: -58px; background: #fff; display: none;}
+.new-tm-tab .new-tbl-type{ display: block; width: 100%;}
+.new-tm-tab .new-tbl-cell {font-size: 12px;color: #707070;text-align: center; width: 80%; display: block; border-bottom: 1px #a0a0a0 solid;
+    text-decoration: none; margin: 0 auto; padding-bottom: .8em; margin-top: .8em; margin-bottom: .8em;}
+.new-tm-tab .new-tbb{ border-bottom: none; margin-bottom: 0;}
+.new-tm-tab .new-tbl-cell span{vertical-align: text-top;}
+.new-tm-tab .icon{ background-position: 1px 3px; background-size: 26px;}
+.new-tm-tab .icon2{ background-position: 0px -114px; background-size: 24px;}
+.new-tm-tab .icon3{ background-position: 1px -191px; background-size: 26px;}
+.new-tm-tab .icon4{ background-position: 4px -256px; background-size: 26px;}
+.new-tm-tab .icon,.new-tm-tab .icon2,.new-tm-tab .icon3,.new-tm-tab .icon4{display: inline-block;width: 26px;height: 22px;text-indent: -9999px; margin: 0 auto;background-image: url(../../assets/foot_nav.png);background-repeat: no-repeat;}
+.new-tm-tab .new-tbb{border-bottom: none;margin-bottom: 0;}

@@ -1,0 +1,55 @@
+<div class="loginBox">
+    <div class="header">
+        <a href="javascript:history.back()" class="page-back" @click="pageBack($event)"><span>返回</span></a>
+        <h2>{{pageTitle}}</h2>
+        <template v-if="loginShow">
+            <a class="signup" href="/signup">注册</a>
+        </template>
+    </div>
+    <template v-if="loginShow">
+        <form method="post" class="login-form" autocomplete="off" action="#">
+            <fieldset>
+                <div class="inputBox">
+                    <input type="text" id="uname" name="uname" placeholder="手机号" v-model="uname" @keyup="uname.length > 0 ? unameClear = true : unameClear = false" @blur="unameClear = false" />
+                    <!--清空输入框组件-->
+                    <template v-if="unameClear">
+                        <clearinput :show-clear.sync="unameClear" :input-text.sync="uname" :right-dis=6></clearinput>
+                    </template>
+                </div>
+                <div class="inputBox">
+                    <input :type="eye ? 'password':'text' " id="password" name="password" placeholder="请输入密码"  v-model="password" @keyup="password.length > 0 ? pwdClear = true : pwdClear = false"  @blur="pwdClear = false" @keyup.enter="login_succ" />
+                    <span class="eye" @click="eye = !eye" :class="eye ? 'eye1':'eye2' "></span>
+                    <!--清空输入框组件-->
+                    <template v-if="pwdClear">
+                        <clearinput :show-clear.sync="pwdClear" :input-text.sync="password" :right-dis=36></clearinput>
+                    </template>
+                </div>
+                <div class="both"></div>
+            </fieldset>
+        </form>
+        <div class="login-btn">
+            <a @click="login_succ" href="javascript:;" class="c-btn-blue"><span>登录</span></a>
+        </div>
+        <a href="javascript:;" class="found-pwd" @click="foundStart">找回密码</a>
+        <div class="thirdBox">
+            <p class="thirdText">第三方登陆</p>
+            <div class="thirdLink">
+                <a href="javascript:;" id="qqLogin"></a>
+                <a href="javascript:;" id="wchatLogin"></a>
+                <a href="javascript:;" id="tbLogin"></a>
+            </div>
+        </div>
+    </template>
+    <template v-if="foundShow">
+        <found-pwd></found-pwd>
+    </template>
+</div>
+
+<!--消息提示框组件-->
+<template v-if="pop_tips">
+    <pop pop-type="text" :pop-text="showText"></pop>
+</template>
+
+<template v-if="isLoading">
+    <pop pop-type="spin"></pop>
+</template>

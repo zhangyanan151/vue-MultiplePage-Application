@@ -1,0 +1,12 @@
+<div class="outer-container">
+	<div class="content">
+		<div class="canvas" v-bind:style="{ width: indexCustom.width/100 + 'rem', height: indexCustom.height/100 + 'rem' }">
+			<div class="img_box" v-for= 'item in indexCustom.pdata' v-bind:style="{ top: item.top/100 + 'rem', left: item.left/100 + 'rem', width: item.width/100 + 'rem', height: item.height/100 + 'rem' }">
+				<a v-bind:href='item.link' class="box-link">
+					<x-img :src="item.pic" class="inner-img" :style="{ width: item.width/100 + 'rem', height: item.height/100 + 'rem' }"></x-img>
+				</a>
+			</div>  	
+
+		</div>
+	</div>
+</div>

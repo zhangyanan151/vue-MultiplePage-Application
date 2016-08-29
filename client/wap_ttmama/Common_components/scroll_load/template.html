@@ -1,0 +1,25 @@
+<div class="scroll-load-goods-list clear to-top{{' ' + column_number}} ">
+
+  <div class="title clear">
+      <h2><span class="tit-icon">&nbsp;</span> 商品列表</h2>
+  </div>
+
+  <div class="item"  v-for = 'item in page_data.items'>
+
+    <div class="item-img">
+      <a :href="">
+        <img class="lazy" :src="item.image_default_url"  style="display: block;">
+      </a>
+    </div>
+
+    <div class="item-text">
+        <span>{{item.name}}</span>
+    </div>
+
+    <div class="item-price">
+        <span class="new-price">{{item.mktprice | currency '￥'}}</span>
+        <!-- <span class="old-price">{{}}</span> -->
+    </div>
+    {{line_columns}}
+  </div>
+</div>

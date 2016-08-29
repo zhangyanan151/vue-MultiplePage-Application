@@ -1,0 +1,17 @@
+<div class="bgg" v-show="shareShow" @click="hide"></div>
+<div class="fenx-row" v-el:sharebox :style="{bottom:bottom}">
+    <div class="fenx-fxd">
+        <p class="fxd">分享到 </p>     
+        <div class="icon-fx">
+            <div  id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare bdsharebuttonbox bitcom" data-tag="share_1" data="{'url':'{{url}}'}">
+                <a class="bds_douban" data-cmd="douban" href="#"></a>
+                <a class="bds_kaixin001" data-cmd="kaixin001"></a>
+                <a class="bds_qzone" data-cmd="qzone"></a>
+                <a class="bds_renren" data-cmd="renren"></a>
+                <a class="bds_tsina" data-cmd="tsina"></a>
+                <a class="bds_tqq" data-cmd="tqq"></a>
+            </div>
+        </div>
+        <div class="cancel" @click="hide">取 消</div>
+    </div>
+</div>

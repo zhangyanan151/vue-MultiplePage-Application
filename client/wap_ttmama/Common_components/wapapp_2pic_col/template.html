@@ -1,0 +1,16 @@
+<div class="w2c-box">
+<div class="w2c-area" :style="{width:wapapp2picCol.width/100+'rem',height:wapapp2picCol.height/100+'rem',marginTop: wapapp2picCol.margin_top/100+'rem'}">
+    <div class="w2c-l-pic" :style="{width: wapapp2picCol.pic_width/100+'rem',height:wapapp2picCol.pic_height/100+'rem'}">
+    	<a href="{{wapapp2picCol.pdata.ad_pic_link}}">
+    		<!-- <img :src="wapapp2picCol.pdata.pic"> -->
+            <x-img :src="wapapp2picCol.pdata.pic"></x-img>
+    	</a>
+    </div>
+    <div class="w2c-r-pic" :style="{width: wapapp2picCol.pic_width/100+'rem',height:wapapp2picCol.pic_height/100+'rem'}">
+    	<a href="{{wapapp2picCol.pdata.ad_pic2_link}}">
+    		<!-- <img :src="wapapp2picCol.pdata.pic2"> -->
+            <x-img :src="wapapp2picCol.pdata.pic2"></x-img>
+    	</a>
+    </div>
+</div>
+</div>

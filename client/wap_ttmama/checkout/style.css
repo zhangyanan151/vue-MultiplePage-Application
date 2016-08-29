@@ -1,0 +1,473 @@
+.checkout-head{
+	width: 6.4rem;
+	height: 50px;
+	background-color: #FEFEFE;
+	text-align: center;
+	line-height: 50px;
+	border-bottom: 1px solid #ACACAC;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	box-sizing: border-box;
+	z-index: 999;
+}
+.checkout-head .page-back{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-indent: 50px;
+	overflow: hidden;
+	background: url(../assets/back.png) center center no-repeat;
+	background-size: 25px;
+}
+.checkout-head .page-title{
+	font-size: 16px;
+	font-weight: 600;
+	font-family: "微软雅黑";
+}
+.address-con{
+	width: 6.4rem;
+	height: 1.58rem;
+	margin: 10px auto 0 auto;
+	background: #fff url(../assets/group.png) left center repeat-x;
+	background-size: 100%;
+}
+.user-info{
+	width: 4.6rem;
+	float: left;
+	box-sizing: border-box;
+}
+.user-info-1{
+	margin-top: 0.3rem;
+	padding: 0 0 0 10px;
+	font-size: 15px;
+	font-weight: 600;
+}
+.user-info-1 .user-phone{
+	margin-left: 1.5rem;
+	line-height: 30px;
+}
+.user-info-2{
+	padding: 0 0 0 10px;
+	color: #777777;
+	line-height: 15px;
+}
+.chose-address{
+	width: 1.4rem;
+	float: right;
+	height: 1.58rem;
+	line-height: 1.58rem;
+	text-align: center;
+}
+.right-text{
+	color: #A0A0A0;
+	vertical-align: middle;
+}
+.right-text.def-addr{
+	display: inline-block;
+	width: 0.8rem;
+}
+.right-arrow{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url(../assets/next.png) center center no-repeat;
+	background-size: 9px;
+	vertical-align: middle;
+}
+.right-arrow-m{
+	display: inline-block;
+	width: 15px;
+	height: 12px;
+	background: url(../assets/next.png) center center no-repeat;
+	background-size: 8px;
+	vertical-align: middle;
+}
+.checkout-item{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0.25rem 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.goods-img{
+	float: left;
+	width: 1.08rem;
+	height: 1.08rem;
+	border: 1px solid #DFDFDF;
+	box-sizing: border-box;
+	margin-right: 10px;
+	position: relative;
+}
+.goods-img img{
+	width: 100%;
+	height: 100%;
+	background: url(../assets/default.png) center center no-repeat;
+	background-size: 100%;
+}
+.gift-text{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #76C1BC;
+	text-align: center;
+	font-size: 12px;
+	line-height: 13px;
+	color: #fff;
+}
+.goods-more{
+	width: 0.5rem;
+	height: 1.08rem;
+	float: left;
+	background: url(../assets/more-gray.png) center center no-repeat;
+	background-size: 90%;
+}
+.goods-item{
+	width: 4.5rem;
+	float: left;
+	overflow: hidden;
+}
+.goods-de{
+	width: 1.2rem;
+	height: 1.08rem;
+	line-height: 1.08rem;
+	text-align: right;
+	float: right;
+}
+.left-span{
+	width: 3rem;
+	float: left;
+	color: #1B1B1B;
+	font-size: 15px;
+}
+.right-span{
+	width: 3rem;
+	float: right;
+	text-align: right;
+}
+.checkout-item-me{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0.15rem 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.checkout-message{
+	width: 6rem;
+	line-height: 30px;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	text-indent: 5px;
+	-webkit-appearance: none;
+}
+.checkout-item-mon{
+	width: 6.4rem;
+	background: #fff;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.order-money{
+	width: 6.4rem;
+	overflow: hidden;
+	padding: 0.25rem 10px;
+	box-sizing: border-box;
+}
+.order-money .right-span{
+	color: #76C1BC;
+}
+.checkout-bot{
+	width: 6.4rem;
+	height: 50px;
+	position: fixed;
+	left: 50%;
+	bottom: 0;
+	margin-left: -3.2rem;
+	border-top: 1px solid #DCDCDC;
+	background-color: #fff;
+	z-index: 999;
+	box-sizing: border-box;
+}
+.total-money{
+	line-height: 50px;
+	text-indent: 10px;
+	width: 4rem;
+	float: left;
+	font-size: 15px;
+	color: #4A4A4A;
+}
+.blue-text{
+	color:  #76C1BC;
+}
+.create-order{
+	width: 2rem;
+	height: 50px;
+	background-color: #F4BE3D;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 50px;
+	float: right;
+}
+.checkout-container{
+	padding:50px 0;
+}
+.list-container{
+	width: 6.4rem;
+	height: auto;
+	padding-top: 50px;
+	background-color: #fff;
+}
+.list-item{
+	width: 6.4rem;
+	padding: 12px 0.15rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid #C8C7CC;
+	overflow: hidden;
+}
+.list-item .item-img{
+	width: 1.51rem;
+	height: 1.51rem;
+	float: left;
+	border: 1px solid #DCDCDC;
+	box-sizing: border-box;
+	position: relative;
+}
+.list-item .item-img img{
+	width: 100%;
+}
+.item-desc{
+	width: 4.59rem;
+	height: 1.51rem;
+	float: left;
+	box-sizing: border-box;
+	padding-left: 10px;
+	position: relative;
+}
+.item-name{
+	font-size: 14px;
+	line-height: 18px;
+	max-height: 36px;
+	overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+.item-spec{
+	font-size: 13px;
+	color: #A7A7A7;
+	line-height: 30px;
+}
+.item-price{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	line-height: 30px;
+	width: 4.59rem;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.item-price .price{
+	font-size: 16px;
+	color: #4AB9A9;
+}
+.item-price .mktprice{
+	font-size: 13px;
+	text-decoration: line-through;
+	color: #A0A0A0;
+	margin-left: 10px;
+}
+.item-price .quantity{
+	display: inline-block;
+	float: right;
+	color: #A0A0A0;
+	font-size: 13px;
+}
+.page-right{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 50px;
+	padding: 0 30px; 
+}
+.tax-container{
+	width: 6.4rem;
+	height: auto;
+	padding-top: 50px;
+}
+.tax-con{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+}
+.tax-item{
+	width: 6.4rem;
+	padding: 0.2rem 10px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #C8C7CC;
+}
+.tax-item .choose-inp,.tax-item .check-label{
+	vertical-align: middle;
+}
+.tax-tit{
+	color: #707070;
+}
+.tax-item .check-label{
+	color: #1B1B1B;
+}
+.tax-company{
+	width: 4.6rem;
+	line-height: 30px;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	vertical-align: middle;
+	margin-left: 10px;
+	text-indent: 10px;
+}
+.border-top{
+	border-top: 1px solid #C8C7CC;
+}
+.no-border{
+	border: none;
+}
+.coupon{
+	display: inline-block;
+	margin-left: 5px;
+	font-size: 12px;
+	color: #fff;
+	background-color: #F4BE3D;
+	border-radius: 3px;
+	padding: 0px 3px;
+}
+.coupon-container{
+	width: 6.4rem;
+	min-height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+.coupon-item{
+	width: 6.4rem;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.coupon-item-box{
+	width: 6rem;
+	height: 1.5rem;
+	border: 2px solid #FCA6A6;
+	border-radius: 10px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.coupon-item-chose{
+	width: 0.96rem;
+	float: left;
+	text-align: center;
+	line-height: 1.5rem;
+}
+.coupon-item-desc{
+	width: 3.3rem;
+	float: left;
+	overflow: hidden;
+	padding: 0.35rem 0;
+}
+.coupon-item-desc .coupon-name{
+	font-size: 16px;
+	color: #F94D4D;
+	font-weight: 600;
+	line-height: 0.4rem;
+}
+.coupon-item-desc .coupon-time{
+	color: #707070;
+	font-size: 12px;
+	line-height: 0.4rem;
+}
+.coupon-item-type{
+	float: left;
+	width: 1.74rem;
+	height: 1.2rem;
+	text-align: center;
+	line-height: 1.2rem;
+	margin: 0.15rem 0;
+	border-left: 2px dashed #FC9595;
+	box-sizing: border-box;
+}
+.coupon-item-type .coupon-type-name{
+	font-size: 14px;
+	color: #F94D4D;
+	font-weight: 600;
+}
+.coupon-item-box.checked{
+	background-color: #FEDBDB;
+	border-color: #FEDBDB;
+}
+.address-null{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0.25rem 0;
+	text-align: center;
+}
+.dltype-container{
+	width: 6.4rem;
+	min-height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+.dltype-box{
+	width: 6rem;
+	margin: 0 auto;
+}
+.dltype-item{
+	width: 3rem;
+	height: 1.18rem;
+	float: left;
+	margin-top: 20px;
+}
+.dltype-item .dltype-img{
+	width: 2.56rem;
+	height: 1.18rem;
+	margin: 0 auto;
+	border: 1px solid #DCDCDC;
+	box-sizing: border-box;
+}
+.pay-img{
+	display: inline-block;
+	width: 1.1rem;
+	height: 1.18rem;
+	float: left;
+}
+.pay-text{
+	display: inline-block;
+	width: 1.42rem;
+	line-height: 1.18rem;
+}
+.pay-text.pay-text-mi{
+	font-size: 10px;
+}
+.pay-img.unionpayapp{
+	background: url(../assets/UnionPayLogo.png) center center no-repeat;
+	background-size: 0.67rem;
+}
+.pay-img.wxpayapp{
+	background: url(../assets/WechatPayLogo.png) center center no-repeat;
+	background-size: 0.67rem;
+}
+.pay-img.alipayapp{
+	background: url(../assets/AlipayLogo.png) center center no-repeat;
+	background-size: 0.67rem;
+}

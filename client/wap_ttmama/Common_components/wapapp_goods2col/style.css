@@ -1,0 +1,59 @@
+.wg2-area{
+	width: 6.4rem;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.wg2-item{
+	width: 3rem;
+	height: auto;
+	float: left;
+	overflow: hidden;
+	border-radius: 4px;
+	margin-right: 0.08rem;
+    box-sizing: border-box;
+}
+.wg2-item:nth-child(2n) {
+	margin-right: 0;
+}
+.wg2-item-img{
+	width: 3rem;
+	overflow: hidden;
+}
+.wg2-item-img img{
+	width: 3rem;
+	height: 3rem;
+}
+.wg2-item-text{
+	width: 2.6rem;
+	margin: 0 auto;
+	text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    color: #313131;
+    line-height: 30px;
+    margin-bottom: 10px;
+    color: #706F74;
+}
+.wg2-item-price{
+	text-align: center;
+    font-size: 12px;
+    color: #73C0BC;
+    width: 2.6rem;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 16px;
+    white-space: nowrap;
+}
+.wg2-item-price .wg2-new-price{
+	font-size: 14px;
+}
+.wg2-mkprice{
+	margin-left: 5px;
+	text-decoration: line-through;
+	color: #A5A5A5;
+}

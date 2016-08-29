@@ -1,0 +1,19 @@
+<div class="wg2-area" :style="{width:wapappGoods2col.is_sidemargin=='true'?'6.08rem':'6.4rem',marginTop: wapappGoods2col.margin_top/100+'rem',marginBottom: wapappGoods2col.margin_bottom/100+'rem'}">
+    <template v-for="item in wapappGoods2col.pdata">
+        <div class="wg2-item" v-show="item.name!=null && item.id!=null" :style="{border:wapappGoods2col.is_border=='true'?'1px solid #DEDEDE':'none'}">
+            <div class="wg2-item-img">
+                <a href="{{item.link}}">
+                    <!-- <img :src="item.pic"> -->
+                    <x-img :src="item.pic"></x-img>
+                </a>
+            </div>
+            <div class="wg2-item-price">
+                <span class="wg2-new-price" v-text="item.price | currency '￥'" :style="{color:'#'+wapappGoods2col.color}"></span>
+                <span class="wg2-mkprice" v-text="item.mktprice | currency '￥'"></span>
+            </div>
+            <div class="wg2-item-text">
+                <span v-text="item.name"></span>
+            </div>
+        </div>
+    </template>
+</div>

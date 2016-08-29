@@ -1,0 +1,67 @@
+<template v-if="tag == 'default'">
+	<header class="address-head">
+		<span class="page-back" @click="addrBack">返回</span>
+		<span class="page-title">地址管理</span>
+	</header>
+	<template v-if="addData != null && addData.length != 0">
+		<div class="address-container">
+			<div class="address-item" v-for="item in addData">
+				<div class="address-item-m" v-touch:pan="moveLeft($event,$index)" v-touch-options:pan="{ direction: 'left', threshold: 20 }" id="addr-item-{{$index}}">
+					<div class="address-desc" @click="addrItemTap($index, $event)">
+						<p class="address-user"><span>{{item.name}}</span><span class="address-mobile">{{item.mobile}}</span></p>
+						<p class="address-adr">{{item.area | addressFormat}}{{item.addr}}</p>
+					</div>
+					<div class="addr-def">
+						<input type="checkbox" class="choose-inp" id="addr-def-{{$index}}" checked="{{item.def_addr==1}}" @click="setDefaultAddr($index,$event)"><label class="check-label" for="addr-def-{{$index}}">设为默认</label>
+					</div>
+				</div>
+				<div class="item-dele-coll">
+					<div class="item-collection" @click="editAddr($index,$event)">编辑</div>
+					<div class="item-delete" @click="deleteAddr($index,$event)">删除</div>
+				</div>
+			</div>
+			<div class="item-hide" :style="{'zIndex': hideIndex}" v-show="leftId!==null" v-touch:tap="hideTap" v-touch:pan="hideTap"></div>
+		</div>
+	</template>
+	<template v-else>
+		<div class="address-empty">
+			<div class="address-empty-box">
+				<div class="empty-img"></div>
+				<p>暂无地址信息</p>
+			</div>
+		</div>
+	</template>
+	<template v-if="isLoading">
+	<pop pop-type="spin"></pop>
+	</template>
+	<div class="address-add" @click="addAddr">
+		<span>+ 添加新地址</span>
+	</div>
+</template>
+<template v-if="tag == 'editAddr' || tag == 'addAddr'">
+	<header class="address-head">
+		<span class="page-back" @click="tag = 'default'">返回</span>
+		<span class="page-title">添加新地址</span>
+	</header>
+	<div class="edit-addr-con">
+		<div class="edit-item">
+			<label>收件人：</label><input type="text" v-model="addrInfo.addrName" v-el:addr-name>
+		</div>
+		<div class="edit-item">
+			<label>联系方式：</label><input type="text" v-model="addrInfo.addrMobile">
+		</div>
+		<div class="edit-item">
+			<label>所在地址：</label>
+			<div class="addr-sel"><address title="" :value.sync="addrInfo.addrValue" :list="addrList"></address></div>
+		</div>
+		<div class="edit-item no-border">
+			<label>详细地址：</label><input type="text" v-model="addrInfo.addrDesc">
+		</div>
+		<div class="edit-submit-btn" @click="submitAddr">
+			<span>保存并使用</span>
+		</div>
+	</div>
+</template>
+<template v-if="showAlert">
+	<pop pop-type="text" :pop-text="showText"></pop>
+</template>

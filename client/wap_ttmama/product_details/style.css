@@ -1,0 +1,466 @@
+@import '~vux/vux.css';
+.detail-head{
+	width: 6.4rem;
+	height: 45px;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-left: -3.2rem;
+	background-color: #fff;
+	z-index: 99;
+}
+.detail-head-con{
+	width: 6.4rem;
+	height: 45px;
+	position: relative;
+	box-sizing: border-box;
+}
+.detail-head-con::after{
+	display: block;
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 6.4rem;
+	height: 1px;
+	border-bottom: 1px solid #B8B8B8;
+	transform: scaleY(.5);
+}
+.page-back{
+	position: absolute;
+    left: 0;
+    width: 1rem;
+    height: 45px;
+    overflow: hidden;
+    float: left;
+    text-indent: -1rem;
+    background: url(../assets/back.png) 25% center no-repeat;
+    background-size: 24px;
+    z-index: 10;
+}
+.detail-top-r{
+	width: 1.2rem;
+	height: 45px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+}
+.detail-tit-box{
+	width: 6.4rem;
+	height: 45px;
+}
+.detail-tit-box .tit-box{
+	width: 3rem;
+	height: 45px;
+	margin: 0 auto;
+}
+.detail-tit-box .vux-tab .vux-tab-item{
+	font-size: 16px;
+	background: none;
+}
+.detail-top-r .goods-coll{
+	display: inline-block;
+	float: left;
+	width: 0.6rem;
+	height: 45px;
+	background: url(../assets/coll.png) center center no-repeat;
+	background-size: 20px;
+}
+.detail-top-r .goods-coll.goods-coll-y{
+	background: url(../assets/coll_y.png) center center no-repeat;
+	background-size: 20px;
+}
+.detail-top-r .goods-share{
+	display: inline-block;
+	float: left;
+	width: 0.6rem;
+	height: 45px;
+	background: url(../assets/share.png) center center no-repeat;
+	background-size: 20px;
+}
+.detail-foot{
+	width: 6.4rem;
+	height: 50px;
+	position: fixed;
+	left: 50%;
+	margin-left: -3.2rem;
+	bottom: 0;
+	background-color: #EFEFEF;
+	z-index: 99;
+}
+.detail-foot::before{
+	display: block;
+	position: absolute;
+	top: -1px;
+	content: "";
+	width: 6.4rem;
+	height: 1px;
+	border-bottom: 1px solid #E1E3E2;
+	transform: scaleY(.5);
+}
+.detail-foot .service{
+	display: inline-block;
+	width: 1.22rem;
+	height: 50px;
+	float: left;
+	text-align: center;
+}
+.detail-foot .service i{
+	display: block;
+	width: 1.22rem;
+	height: 30px;
+	background: url(../assets/customer.png) center bottom no-repeat;
+	background-size: 25px;
+}
+.detail-foot .foot-line{
+	width: 1px;
+	height: 40px;
+	border-right: 1px solid #DBDBDB;
+	float: left;
+	margin: 5px 0;
+}
+.detail-foot .cart{
+	width: 1.22rem;
+	height: 50px;
+	float: left;
+	text-align: center;
+}
+.detail-foot .cart .mini-cart{
+	display: block;
+	/*margin: 4px auto 0 auto;*/
+}
+.detail-foot .foot-text{
+	font-size: 10px;
+	line-height: 10px;
+	color: #000;
+}
+.detail-foot .add-cart,.detail-foot .add-order{
+	width: 1.96rem;
+	float: right;
+	text-align: center;
+	line-height: 50px;
+	font-size: 16px;
+	color: #fff;
+}
+.detail-foot .add-cart{
+	background-color: #F3BE3E;
+}
+.detail-foot .add-order{
+	background-color: #76C1BC;
+}
+.detail-area{
+	width: 6.4rem;
+	min-height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+.detail-container{
+	position: relative;
+	margin-top: 45px;
+	margin-bottom: 50px;
+}
+.detail-title{
+	width: 6.4rem;
+	padding: 0 0.2rem;
+	margin-top: 0.2rem;
+	box-sizing: border-box;
+}
+.detail-title h2{
+	font-size: 16px;
+	color: #313131;
+}
+.detail-main{
+	background-color: #fff;
+}
+.detail-price{
+	width: 6.4rem;
+	padding: 0 0.2rem;
+	box-sizing: border-box;
+	position: relative;
+}
+.detail-price .price{
+	font-size: 26px;
+	color: #76C1BC;
+}
+.detail-price .mktprice{
+	font-size: 10px;
+	color: #A0A0A0;
+	text-decoration: line-through;
+	margin-left: 10px;
+}
+.brand{
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	background-color: #000;
+	color: #fff;
+	line-height: 24px;
+	padding: 0 5px;
+	font-size: 12px;
+}
+.sale-num{
+	width: 6.4rem;
+	padding: 0.2rem;
+	text-align: right;
+	color: #373737;
+	box-sizing: border-box;
+}
+.product-spec{
+	width: 6.4rem;
+	margin-top: 10px;
+	padding: 0.2rem;
+	box-sizing: border-box;
+	background: #fff url(../assets/RightArrow.png) 6.1rem center no-repeat;
+	background-size: 8px;
+}
+.product-spec-t{
+	color: #1D1D1D;
+}
+.product-spec-c{
+	color: #696969;
+	margin-left: 50px;
+}
+.product-comment{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0.2rem;
+	box-sizing: border-box;
+}
+.product-comment-t{
+	color: #1D1D1D;
+}
+.product-discuss{
+	width: 6rem;
+	margin: 0.2rem auto 0 auto;
+	border-bottom: 1px solid #DFDFDF;
+	overflow: hidden;
+}
+.discuss-point{
+	display: inline-block;
+	float: left;
+	font-size: 30px;
+	color: #9E9E9E;
+	line-height: 50px;
+}
+.discuss-star{
+	width: 2rem;
+	float: left;
+	margin-left: 20px;
+}
+.star{
+	width: 80px;
+	height: 20px;
+	position: relative;
+}
+.star .star-above,.star .star-below{
+	width: 80px;
+	height: 20px;
+	position: absolute;
+	left: 0;
+	top: 0;	
+	overflow: hidden;
+}
+.star .star-below span{
+	position: absolute;
+	display: block;
+	width: 80px;
+	height: 20px;
+	background: url(../assets/star-below.png) left center no-repeat;
+	background-size: 100%;
+	z-index: 1;
+}
+.star .star-above span{
+	position: absolute;
+	display: block;
+	width: 80px;
+	height: 20px;
+	background: url(../assets/star-above.png) left center no-repeat;
+	background-size: 100%;
+	z-index: 2;
+}
+.discuss-g{
+	color: #747474;
+	font-size: 12px;
+	line-height: 26px;
+}
+.discuss-count{
+	display: inline-block;
+	float: right;
+	line-height: 50px;
+	color: #747474;
+}
+.no-discuss{
+	width: 1.88rem;
+	margin: 10px auto 0 auto;
+	border: 1px solid #C9C9C9;
+	border-radius: 5px;
+	color: #A5A5A5;
+	text-align: center;
+	line-height: 28px;
+}
+.discuss-item{
+	width: 6rem;
+	margin-top: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+}
+.discuss-item-top{
+	overflow: hidden;
+}
+.discuss-item-top .user{
+	float: left;
+}
+.discuss-item-top .user i{
+	width: 0.52rem;
+	height: 0.52rem;
+	border-radius: 50%;
+	display: block;
+	float: left;
+	background: url(../assets/user-s.png) center center no-repeat;
+	background-size: 100%;
+}
+.discuss-item-top .user span{
+	line-height: 0.52rem;
+	margin-left: 10px;
+	color: #030303;
+	font-size: 12px;
+}
+.discuss-item-top .user-star{
+	position: absolute;
+	right: 0;
+	top: 5px;
+}
+.dis-item-con p{
+	margin-top: 10px;
+	color: #030303;
+}
+.dis-item-con .dis-img{
+	width: 70px;
+	height: 70px;
+	float: left;
+	background: url(../assets/default.png) center center no-repeat;
+	background-size: 100%;
+}
+.dis-item-con .dis-img-box{
+	overflow: hidden;
+}
+.dis-item-con .dis-desc{
+	font-size: 10px;
+	color: #999999;
+}
+.dis-item-con .dis-desc .dis-desc-time{
+	display: block;
+	float: right;
+}
+.more-comment{
+	width: 1.88rem;
+	margin: 20px auto 0 auto;
+	border: 1px solid #76C1BC;
+	border-radius: 5px;
+	color: #76C1BC;
+	text-align: center;
+	line-height: 28px;
+}
+.com-con{
+	color: #373737;
+	margin-top: 10px;
+}
+.goods-link-box{
+	margin-top: 10px;
+	width: auto;
+	overflow-x: scroll;
+}
+.goods-link-item{
+	display: block;
+	width: 100px;
+	padding: 0 5px;
+	float: left;
+	box-sizing: border-box;
+}
+.goods-link-item .link-img{
+	display: block;
+	width: 90px;
+	height: 90px;
+}
+.goods-link-item .link-tit{
+	font-size: 12px;
+	color: #040404;
+	height: 30px;
+    line-height: 15px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+.goods-link-item .link-price{
+	font-size: 12px;
+	color: #76C1BC;
+	text-align: center;
+}
+.content-pic{
+	width: 6.4rem;
+	height: auto;
+}
+.content-pic img{
+	width: 6.4rem;
+}
+.comment-container{
+	width: 6.4rem;
+	background-color: #fff;
+}
+.comment-container .discuss-item{
+	width: 6.4rem;
+	padding: 0.2rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid #CBCBCB;
+	margin-top: 0;
+}
+.comment-container .discuss-item-top .user-star{
+	right: 0.2rem;
+	top: 0.2rem;
+}
+.comment-reply{
+	width: 6rem;
+	margin-top: 10px;
+	padding: 5px 10px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: #F6F6F6;
+	color: #8A8A8A;
+	position: relative;
+}
+.comment-reply::before{
+	display: block;
+	width: 0px;
+    height: 10px;
+    content: "";
+    position: absolute;
+    top: -17px;
+    left: 1rem;
+    border-bottom: 8px solid #F6F6F6;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+.comment-reply-time{
+	text-align: right;
+	font-size: 12px;
+	color: #AAAAAA;
+}
+.load-more{
+	padding-top: 20px;
+	width: 6.4rem;
+	background-color: #fff;
+	text-align: center;
+}
+.no-comment{
+	text-align: center;
+	margin-top: 4rem;
+	font-size: 16px;
+}
+.img-swiper .slider, .img-swiper .swiper{
+	max-height: 7rem;
+}

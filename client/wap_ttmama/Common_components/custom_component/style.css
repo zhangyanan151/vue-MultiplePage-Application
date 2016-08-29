@@ -1,0 +1,13 @@
+/*.clear:after{content: ''; display:block; clear: both; height:0; width:0;}*/
+
+/*.outer-container{ width:16rem; text-align: center; }
+.outer-container .content{width:15.2rem; padding:0 0.4rem;}*/
+
+.outer-container{width:6.4rem; text-align: center;  background: #fff;}
+.outer-container .content{box-sizing: border-box; width:6.4rem; padding: 0 0 0 0.16rem; overflow: hidden;}
+.outer-container .content .canvas{ position: relative;}
+.outer-container .content .canvas .img_box{position: absolute; /*background: green;*/}
+.outer-container .content .canvas .img_box a{display:block; width:100%; height:100%;}
+.outer-container .content .canvas .img_box .inner-img { width:100%; height:100%; /*background: purple;*/}
+
+.kong_box{width:0; height:0; display: none;}

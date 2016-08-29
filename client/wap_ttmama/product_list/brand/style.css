@@ -1,0 +1,23 @@
+.brand-container{
+	width: 6.4rem;
+	min-height: 100%;
+	background-color: #FEFEFE;
+	position: absolute;
+}
+.brand-head{
+	width: 6.4rem;
+	height: 45px;
+	border-bottom: 1px solid #B3B3B3;
+}
+.brand-head-h{
+	width: 6.4rem;
+	text-align: center;
+	line-height: 45px;
+	font-size: 18px;
+	color: #020202;
+}
+.brand-info{
+	margin: 10px 0;
+    line-height: 20px;
+    color: #5F5F5F;
+}

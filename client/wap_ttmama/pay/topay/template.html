@@ -1,0 +1,5 @@
+<p style="text-align:center">支付跳转中...</p>
+
+<form action="{{payurl}}" v-if="data!=null" v-el:pay-form>
+	<input type="hidden" v-for="(key, value) of data.parameter" :name="key" :value="value">
+</form>

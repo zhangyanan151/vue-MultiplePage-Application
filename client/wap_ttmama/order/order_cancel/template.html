@@ -1,0 +1,14 @@
+<header class="order-head">
+	<a class="page-back" href="javascript:history.go(-1)">返回</a>
+	<span class="page-title">取消订单</span>
+</header>
+<div class="cancel-container">
+	<div class="cancel-type" @click="cancelReason(0)">不想要了</div>
+	<div class="cancel-type" @click="cancelReason(1)">支付不成功</div>
+	<div class="cancel-type" @click="cancelReason(2)">价格较贵</div>
+	<div class="cancel-type" @click="cancelReason(3)">缺货</div>
+	<div class="cancel-type" @click="cancelReason(4)">等待时间过长</div>
+	<div class="cancel-type" @click="cancelReason(5)">拍错了</div>
+	<div class="cancel-type" @click="cancelReason(6)">订单信息填写错误</div>
+	<div class="cancel-type" @click="cancelReason(7)">其他</div>
+</div>

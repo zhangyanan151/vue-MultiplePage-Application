@@ -1,0 +1,18 @@
+<div class="sale-cont category_ranking" v-for="item in productClassify">
+    <div class="title clear">
+        <h2><span class="tit-icon">&nbsp;</span> {{ item.name }}</h2>
+            <a href="{{ item.more_url }}" class="more">查看更多</a>
+    </div>
+    <div class="goods-list clear">
+        <div class="item" v-for="product in item.data">
+            <div class="item-img"><a href="{{ product.link }}"><img class="lazy" :src="defaultImg" height="36" width="24" data-original="{{product.pic}}"></a></div>
+            <div class="item-text">
+                <span v-text="product.name"></span>
+            </div>
+            <div class="item-price">
+                <span class="new-price">{{ product.price | currency '￥' }}</span>
+                <span class="old-price">{{ product.mktprice | currency '￥' }}</span>
+            </div>  
+        </div>
+    </div>
+</div>

@@ -1,0 +1,230 @@
+<div class="bd products">
+    <div class="herder">
+        <a href="javascript:history.back()" class="detail-a-back"><span>返回</span></a>
+        <div class="search_input-product">
+            <div class="input">
+                <form action="/wap/search-result.html" id="submitform" method="post">
+                    <input type="text" name="search_keywords" class="sch" value="">
+                    <button type="submit" class="bitton"></button>
+                </form>
+            </div>
+        </div>
+        <a href="#" class="new-a-tm"><span>团妈键</span></a>
+    </div>
+ <!--main start-->
+<div class="main">
+    <div class="new-tab-type">
+        <div class="new-tal-type">
+            <a href="#" class="new-tbl-cell new-p2">
+                <span class="new-p-re">综合排序<span class="new-icon-down"></span></span>
+            </a>
+            <a href="#" class="new-tbl-cell sales_count">
+                <span class="new-bar"></span>
+                <span class="new-p-re new-sales">销量优先</span>
+            </a>
+            <a href="#" class="new-tbl-cell new-p3">
+                <span class="new-bar"></span>
+                <span class="new-p-re">筛选<span class="new-icon-down new-icon-down2"></span></span>
+            </a>
+            <a href="#" class="new-tbl-cell list-switch list-switch2"><span></span></a>
+        </div>
+    </div>
+
+
+    <div class="droplist" style="display: none;">
+        <ul class="sorts">
+            <li class="sort">综合排序<span class="icons-checked-icon"></span></li>
+            <li class="sort sort2 selected">价格从高到低<span class="icons-checked-icon"></span></li>
+            <li class="sort sort3">价格从低到高<span class="icons-checked-icon"></span></li>
+            <li class="sort sort4">上架时间从新到旧<span class="icons-checked-icon"></span></li>
+            <li class="sort sort5">上架时间从旧到新<span class="icons-checked-icon"></span></li>
+        </ul>
+    </div>
+
+
+    <div class="droplist-re" style="display: none;">
+        <ul class="droplist-ul">
+            <li class="droplist-li">
+                <div id="change-droplist1">
+                    <span class="sp-on droplist-li-sp">品牌</span>
+                    <span class="sp-on droplist-li-an">
+                    &nbsp;&nbsp;...
+                                        </span>
+                    <span class="sp-on droplist-down"></span>
+                </div>
+                <ul class="li-ul" style="display: none;">
+                    <li class="li-ul2">全部<span class="icons-checked-icon"></span></li>
+                    
+                    <li class="li-ul2" brand_id="197">Ajinomoto/味之素<span class="icons-checked-icon"></span></li>
+
+
+                    <li class="li-ul2" brand_id="279">妙古<span class="icons-checked-icon"></span></li>
+
+
+                    <li class="li-ul2" brand_id="364">Ryohin Bolo/良品<span class="icons-checked-icon"></span></li>
+
+
+                    <li class="li-ul2" brand_id="412">Robertsons/罗拔臣<span class="icons-checked-icon"></span></li>
+
+                </ul>
+            </li>
+            <li class="droplist-li droplist-li2">
+                <div class="age" id="change-droplist3"><span class="sp-on droplist-li-sp">年龄</span><span class="sp-on droplist-li-an">0-6个月 6-12个月 1-2岁</span> <span class="sp-on droplist-down"></span></div>
+                <ul class="li-ul-row li-ul-row1" style="display: none;">
+                    <li class="li-ul2">0-3个月<span class="icons-checked-icon"></span><span class="xux"></span></li>
+                    <li class="li-ul2">3-6个月<span class="icons-checked-icon"></span><span class="xux"></span></li>
+                    <li class="li-ul2">6-9个月<span class="icons-checked-icon"></span><span class="xux"></span></li>
+                    <li class="li-ul2">9-12个月<span class="icons-checked-icon"></span><span class="xux"></span></li>
+                    <li class="li-ul2 selected">1-2岁<span class="icons-checked-icon"></span><span class="xux"></span></li>
+                    <li class="li-ul2">2-3岁<span class="icons-checked-icon"></span><span class="xux"></span></li>
+                    <li class="li-ul2">3-4岁<span class="icons-checked-icon"></span><span class="xux"></span></li>
+                    <li class="li-ul2">4-6岁<span class="icons-checked-icon"></span><span class="xux"></span></li>
+                    <li class="li-ul2"><span class="xux"></span></li>
+                </ul>
+            </li>
+            <li class="droplist-li droplist-li2">
+                <div class="age" id="change-droplist2"><span class="sp-on droplist-li-sp">产地</span>
+                    <span class="sp-on droplist-li-an">
+                        &nbsp;&nbsp;                    </span>
+                    <span class="sp-on droplist-down droplist-down2"></span></div>
+                <ul class="li-ul-row li-ul-row2">
+                                    </ul>
+            </li>
+            <li class="droplist-li drop-price">
+                <span class="droplist-li-sp">价格</span>
+                <input class="start-price" name="start_price" type="text" data-role="none" placeholder="最低价">
+                <span class="droplist-li-sp">元~</span>
+                <input class="end-price" name="end_price" type="text" data-role="none" placeholder="最高价">
+                <span class="droplist-li-sp">元</span>
+            </li>
+        </ul>
+        <div class="sift-button"><a class="re-sift">重新筛选</a><a class="re-button">确 定</a></div>
+    </div>
+
+
+    <!--弹出下拉选项框时黑底
+     <div class="bgg pro-bgg"></div>
+    -->
+
+    <!-- 小图列表 -->
+    <div class="new-list1 new-list11">
+        <div class="list-bd">
+          <ul class="new-mu_list">
+            <li class="new-mi-list mi1-list" v-for = 'item in page_data.items'>
+              <div class="mi2">
+                <div class="list-img">
+                  <a href="/wap/product-8830.html">
+                    <img class="list-pic"  :src="item.image_default_url">
+                    <img class="list-pic"  >
+                  </a>
+                </div>
+                  <div class="tit-pric">
+                    <strong class="tit-pric-a">
+                      <a goods_id="2282" max="503" product_id="8830" href="/wap/product-8830.html">
+                        <h3>{{item.name}}</h3>
+                      </a>
+                    </strong>
+                    <span class="tit-pric-b">{{item.price}}<em>{{item.mktprice}}</em></span>
+                    <span class="tit-pric-c">已售9件</span>
+                    <!-- <span class="btn-cart"></span> -->
+                    <span class="btn-cart">加入购物车</span>
+                  </div>
+                </div>
+            </li>
+
+          </ul>
+        </div>
+    </div>
+
+    <!-- 大图列表 -->
+    <div class="new-list1 new-list2">
+        <div class="list-bd">
+            <ul class="new-mu_list">
+              <li class="new-mi-list mi1-list" v-for = 'item in page_data.items'>
+                <div class="mi2">
+                    <div class="list-img">
+                      <a href="/wap/product-8830.html">
+                        <img class="list-pic"  :src="item.image_default_url">
+                        <!-- <img class="list-pic" > -->
+                      </a>
+                    </div>
+                    <div class="tit-pric">
+                        <strong class="tit-pric-a">
+                         <a goods_id="2282" max="503" product_id="8830" href="/wap/product-8830.html">
+                           <h3>{{item.name}}</h3>
+                         </a>
+                        </strong>
+                        <span class="tit-pric-b">{{item.price}}<em>{{item.mktprice}}</em></span>
+                        <span class="tit-pric-c">已售9件</span>
+                        <span class="btn-cart add-car"></span>
+                  <!-- <span class="btn-cart">加入购物车</span> -->
+                    </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<!--main end-->
+
+<!--main end-->
+<div class="pagination" data-pagetotal="1" data-pagecurrent="1">没有了...</div>
+
+<div id="params" data-page="1" data-pagetotal="1" data-params="{}"></div>
+
+    <div class="foot-nav">
+        <ul>
+            <li><a href="/index.html?ignore_ua_check=0"><i class="home"></i><span>首页</span></a></li>
+            <li class="active"><a href="/wap/gallery-all.html"><i class="all"></i><span>全部分类</span></a></li>
+            <li><a href="/wap/find.html"><i class="found"></i><span class="found-text">发现</span></a></li>
+            <li><a href="/wap/cart.html"><i class="car"></i><span>购物车</span></a><span class="success-tip">+1</span></li>
+            <li><a href="/wap/member.html"><i class="user"></i><span>用户中心</span></a></li>
+        </ul>
+    </div>
+    <div class="right-nav">
+        <ul>
+            <!-- <li><a href="/wap/cart.html"><i class="car"></i></a><span class="success-tip">+1</span></li> -->
+            <li><a href="/wap/openim-chat.html"><i class="customer"></i></a></li>
+            <li id="right-top" style="display: none;"><a href="javascript:"><i class="top"></i></a></li>
+        </ul>
+    </div>  
+</div>
+<div class="new-tm-tab">
+    <div class="new-tbl-type">
+        <a href="/index.html?ignore_ua_check=0" class="new-tbl-cell">
+            <span class="icon">首页</span>
+            <p style="color:#6e6e6e;">首页</p>
+        </a>
+        <a href="/wap/openim-chat.html" class="new-tbl-cell">
+            <span class="icon2">客服</span>
+            <p style="color:#6e6e6e;">客服</p>
+        </a>
+        <a href="/wap/member.html" class="new-tbl-cell">
+            <span class="icon4">会员</span>
+            <p style="color:#6e6e6e;">会员</p>
+        </a>
+        <a href="/wap/cart.html" class="new-tbl-cell new-tbb">
+            <span class="icon3">购物车</span>
+            <p style="color:#6e6e6e;">购物车</p>
+        </a>
+    </div>
+</div>
+
+<p>&nbsp;</p><div class="msg" id="success">
+  <table align="center">
+    <tbody><tr>
+      <td>
+        <div class="checkout-success"></div>
+      </td>
+    </tr>
+  </tbody></table>
+</div>
+
+<div id="loading" style="display: none;">
+  <div style="width: 80%;position: fixed;padding: 1em 0;z-index: 99999999;top: 50%;text-align: center;left: 50%;margin-left: -40%;border-radius: 5px;color: #73c0bc;background: #fff;margin-top: -.5em;background:none;">
+    <div class="tools-loading" style="margin: 0 auto;padding: .5em 0;text-indent: 32px;line-height: 64px;"></div>
+  </div>
+  <div style="position: fixed;z-index: 9999999;top: 0;left: 0;width: 100%;height: 100%;-moz-opacity: 0.5;opacity: .50;filter: alpha(opacity=50);background-color: #000;display: block;"></div>
+</div>

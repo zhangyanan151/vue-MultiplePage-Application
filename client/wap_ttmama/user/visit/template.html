@@ -1,0 +1,52 @@
+<header class="page-head">
+	<a href="javascript:;" class="page-back" @click = "pageBack($event)">返回</a>
+	<span class="page-title">浏览记录</span>
+	<a class="page-head-right" @click="visitEmpty">清空</a>
+</header>
+<template v-if="isLogin">
+	<template v-if="!isEmpty || showVisit.length > 0">
+		<div class="visit">
+			<div class="visit-box" v-for="itemList in showVisit">
+				<div class="visit-box-date" id="visit{{$index}}" v-if="itemList.data.length > 0">{{ itemList.date }}</div>
+				<div class="visit-box-text" v-touch:pan="moveLeft($event,item.history_id)" v-touch-options:pan="{ direction: 'left', threshold: 20 }" id="item_desc_{{item.history_id}}" v-for="item in itemList.data">
+					<div class="visit-box-text-l" @click="toDetail(item.product_id)"><a><img :src="item.ad_img"></a></div>
+					<div class="visit-box-text-r" @click="toDetail(item.product_id)">
+						<h3><a>{{ item.title }}</a></h3>
+						<h4>￥{{ item.price }}</h4>
+					</div>
+					<div class="visit-dele-coll">
+						<div class="visit-goods-del" @click="visitDel(item.history_id,$index)">删除</div>
+					</div>
+				</div>
+			</div>
+			<div class="touch-zz" :style="{'zIndex': hideIndex}" v-show="leftId!==null" v-touch:tap="hideTap" v-touch:pan="hideTap"></div>
+		</div>
+	</template>
+	<template v-else>
+		<div class="visit-empty">
+			<div class="visit-empty-box">
+				<div class="visit-empty-img"></div>
+				<p>暂无浏览记录</p>
+				<a  class="visit-empty-btn" href="/">去逛逛</a>
+			</div>
+		</div>
+	</template>
+</template>
+<template v-else>
+	<div class="nologin-area">
+		<section class="nologin-sec">
+			<figure class="nologin-fig">
+				<div class="headImg" style="width: 1.5rem;height: 1.5rem;padding: 0.3rem 0;">
+					<img :src="headImg" alt="">
+				</div>
+				<figcaption>
+					<h2 class="nologin-text">暂未登录</h2>
+				</figcaption>
+			</figure>
+			<a href="/login" class="goto-login-btn">去登录</a>
+		</section>
+	</div>
+</template>
+<template v-if="isLoading">
+    <pop pop-type="spin"></pop>
+</template>

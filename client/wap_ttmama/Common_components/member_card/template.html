@@ -1,0 +1,84 @@
+<template v-if="tag == 'default'">
+	<header class="page-head">
+		<span class="page-back" @click="cardBack">返回</span>
+		<span class="page-title">身份证管理</span>
+	</header>
+	<template v-if="cardList != null && cardList.length != 0">
+		<div class="card-container">
+			<template v-for="item in cardList">
+				<div class="card-item">
+					<div class="card-info" @click="getEditData($index)">
+						<p>{{ item.member_name }}</p>
+						<p class="idcard">{{ item.id }}</p>
+					</div>
+					<div class="default" @click.prevent.stop="setCardDefault($index)">
+						<input type="checkbox" class="defSelect" id="cardDef-{{$index}}" checked="{{item.is_default}}" />
+						<label class="card-label" for="cardDef-{{$index}}">设为默认</label>
+					</div>
+				</div>
+			</template>
+		</div>
+	</template>
+	<template v-else>
+		<div class="card-empty">
+			<div class="card-empty-box">
+				<div class="empty-img"></div>
+				<p>暂无证件信息</p>
+			</div>
+		</div>
+	</template>
+
+	<div class="card-add" @click=" tag = 'addCard' ">
+		<span>+ 添加身份证信息</span>
+	</div>
+</template>
+<template v-if="tag == 'editCard' || tag == 'addCard'">
+	<header class="page-head">
+		<span class="page-back" @click="tag = 'default'">返回</span>
+		<span class="page-title">{{ cardTitle }}</span>
+		<template v-if="tag == 'editCard' ">
+			<span class="page-head-right" @click.prevent.stop="confirmShow = true;">删除</span>
+		</template>
+	</header>
+	<div class="edit-card-con">
+		<div class="edit-item">
+			<label>真实姓名：</label><input type="text" v-model="cardInfo.cardName" v-el:card-name />
+		</div>
+		<div class="edit-item">
+			<label>身份证号：</label><input type="text" v-model="cardInfo.cardId" />
+		</div>
+		<div class="pic-box">
+			<div class="item-pic" @click="picSelect = '.picFront' ">
+				<label>身份证正面</label>
+				<div class="picFront">
+					<template v-if="tag == 'editCard'">
+						<img :src="cardInfo.cardFrontPic" />
+					</template>
+				</div>
+			</div>
+			<div class="item-pic" @click="picSelect = '.picBack' ">
+				<label>身份证反面</label>
+				<div class="picBack">
+					<template v-if="tag == 'editCard'">
+						<img :src="cardInfo.cardBackPic" />
+					</template>
+				</div>
+			</div>
+		</div>
+		<div class="edit-submit-btn" @click=" tag=='addCard'?addCard():editCard() ">
+			<span>保存并使用</span>
+		</div>
+	</div>
+</template>
+
+<!--消息提示框组件-->
+<template v-if="card_tips">
+    <pop pop-type="text" :pop-text="showText"></pop>
+</template>
+<template v-if="isLoading">
+    <pop pop-type="spin"></pop>
+</template>
+<template v-if="picUpload">
+	<pop pop-type="spinText" pop-text="图片上传中..."></pop>
+</template>
+<confirm :show.sync="confirmShow" title="确认删除？" confirm-text="确认" cancel-text="取消" mask-transition=""></confirm>

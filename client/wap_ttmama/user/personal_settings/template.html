@@ -1,0 +1,58 @@
+<header class="page-head">
+	<a class="page-back" href="javascript:history.go(-1)" @click="personalSetBack($event)">返回</a>
+	<span class="page-title">我的账户</span>
+</header>
+<div class="countBox" v-show="countShow">
+	<ul>
+		<li class="countItem" id="select">
+			<span class="countLabel">头像</span>
+			<span class="countInfo" id="pic_review">
+				<img :src="personalInfo.member_pic" />
+			</span>
+		</li>
+		<li class="countItem">
+			<span class="countLabel">用户名</span>
+			<span class="countInfo">{{ personalInfo.uname }}</span>
+		</li>
+		<li class="countItem" @click="setName">
+			<span class="countLabel">昵称</span>
+			<span class="countInfo">{{ personalInfo.name }}</span>
+		</li>
+		<li class="countItem" @click="setSex">
+			<span class="countLabel">性别</span>
+			<span class="countInfo">{{ personalInfo.sex | sexLabel }}</span>
+		</li>
+		<li class="countItem">
+			<span class="countLabel">生日</span>
+			<span class="countInfo">
+				<date-time :value.sync="personalInfo.b_birth" :min-year=1915 :max-year=2016 @on-change="birthChange" title="" confirm-text="确认" cancel-text="取消"></date-time>
+			</span>
+		</li>
+	</ul>
+</div>
+<div class="nameBox" v-show="nameShow">
+    <x-input title="" placeholder="" :value.sync="personalInfo.name"></x-input>
+    <p>4-8字符，可由中英文和数字组成</p>
+</div>
+<div class="sexBox" v-show="sexShow">
+	<ul>
+	    <li class="countItem" @click="personalSetBack($event,'1')">
+			<span class="countLabel">男</span>
+		</li>
+		<li class="countItem" @click="personalSetBack($event,'2')">
+			<span class="countLabel">女</span>
+		</li>
+		<li class="countItem" @click="personalSetBack($event,'0')">
+			<span class="countLabel">保密</span>
+		</li>
+	</ul>
+</div>
+<!--消息提示框组件-->
+<template v-if="perset_tips">
+    <pop pop-type="text" :pop-text="showText"></pop>
+</template>
+<template v-if="picUpload">
+	<pop pop-type="spinText" pop-text="头像上传中..."></pop>
+</template>
+	
+

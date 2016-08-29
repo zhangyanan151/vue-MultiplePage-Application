@@ -1,0 +1,55 @@
+<div class="brand_out_container" v-for="item in child_data">
+    <div class="title clear">
+        <h2>
+           <span class="tit-icon">&nbsp;</span>
+           <span class="tit-green">HOT</span>
+           {{ item.name}}
+        </h2>
+        <!-- <a href="" class="more">查看更多</a> -->
+    </div>
+    <div class="img_container clear">
+        <div class="big_img_container clear">
+            <div class="img img_01">
+                <a v-bind:href="item.data[0].link">
+                    <img v-bind:src="item.data[0].pic" alt="">
+                </a>
+            </div>
+            <div class="img img_02">
+                <a v-bind:href="item.data[0].link">
+                    <img v-bind:src="item.data[1].pic" alt="">
+                </a>
+            </div>
+            <div class="img img_03">
+                <a v-bind:href="item.data[0].link">
+                    <img v-bind:src="item.data[2].pic" alt="">
+                </a>
+            </div>  
+        </div>
+        <div class="little_img_container clear">
+            <div class="title">
+                <span class="title-text">下周品牌预告</span>
+                <span class="more">04月14日-04月21日</span>
+            </div>
+            <div class="img">
+                <a v-bind:href="item.data[0].link">
+                    <img v-bind:src="item.data[3].pic" alt="">
+                </a>
+            </div>
+            <div class="img">
+                <a v-bind:href="item.data[0].link">
+                    <img v-bind:src="item.data[4].pic" alt="">
+                </a>
+            </div>
+            <div class="img img_03">
+                <a v-bind:href="item.data[0].link">
+                    <img v-bind:src="item.data[5].pic" alt="">
+                </a>
+            </div>  
+        </div>
+        
+    </div>
+</div>
+
+
+
+

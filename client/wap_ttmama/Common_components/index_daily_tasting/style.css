@@ -1,0 +1,8 @@
+.index_daily_tasting{width: 6.4rem;/*height: 3.7rem;*/background-color: #fff;overflow: hidden;}
+.tasting-area{width: 6.05rem;/*height: 2.97rem;*/overflow-x: scroll;margin: 0 auto;overflow-y: hidden;}
+.tasting-box{width:1000px;/*height: 2.97rem;*/}
+.tasting-item{width: 2.24rem;/*height: 2.97rem;*/text-align: center;float: left;margin: 0 0.16rem 0 0;}
+.index_daily_tasting .item-img,.item-img img{width: 2.24rem;height: 2.24rem;}
+.index_daily_tasting .item-tit{color: #313131;overflow: hidden;text-overflow: ellipsis;display: block;white-space: nowrap;}
+.index_daily_tasting .item-price{text-align: center;font-size: 12px;line-height: 12px;margin: 5px 0;}
+.index_daily_tasting .item-price .new-price{color: #73C0BC;}

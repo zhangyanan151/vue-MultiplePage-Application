@@ -1,0 +1,35 @@
+<header class="page-head">
+	<a class="page-back" href="javascript:history.go(-1)" @click="touseable($event)">返回</a>
+	<span class="page-title">{{ useable ? '我的卡券包' : '已失效的卡券' }}</span>
+</header>
+<div class="coupon-box"  :style="{ background : useable ? '#eee' : '#fff' }">
+	<ul class="clear" v-if="useable">
+		<li class="coupon-item" @click="getCoupon('0')" :class="{'active': (active == '0') ? true: '' }"><a href="javascript:;"><i class="coupon_a"></i><span>优惠券</span></a></li>
+		<li class="coupon-item" @click="getCoupon('1')" :class="{'active': (active == '1') ? true:'' }"><a href="javascript:;"><i class="coupon_b"></i><span>折扣卡</span></a></li>
+		<li class="coupon-item" @click="getCoupon('2')" :class="{'active': (active == '2') ? true: '' }"><a href="javascript:;"><i class="coupon_c"></i><span>包邮卡</span></a></li>
+	</ul>
+	<div class="coupon-list">
+		<ul v-if="!couponEmpty">
+			<template  v-for="coupon in couponList">
+				<li :style="couponListSty[active]">
+					<div class="couponInfo">
+						<h3 class="couponName">{{ coupon.name }}</h3>
+						<p class="timeBox" :style="{color : useable ? '#707070' : '#d4d4d4'}">{{ coupon.to_time | DateParseParam 'yyyy-MM-dd' }} 到期</p>
+					</div>
+					<div class="couponType">
+						{{ coupon.type }}
+						<span class="typeLine" :style="{ 'border-left-color' : couponListSty[active].borderColor }"></span>
+					</div>
+				</li>
+			</template>	
+		</ul>
+		<template v-else>
+			<div class="couponEmpty">您还没有优惠券</div>
+		</template>
+		
+	</div>
+</div>
+<template v-if="useable">
+	<a href="javascript:;" class="unuseable-btn" @click="toUnuseable">查看已失效卡券</a>
+</template>
+

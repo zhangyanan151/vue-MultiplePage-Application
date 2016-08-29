@@ -1,0 +1,268 @@
+<template v-if="tag=='main'">
+<header class="order-head">
+	<a class="page-back" href="javascript:history.go(-1)">返回</a>
+	<span class="page-title">订单详情</span>
+</header>
+<template v-if="orderDetail!=null">
+<div class="detail-container">
+	<div class="detail-status">
+		<span class="top-text">汤团妈妈诚挚感谢您的惠顾</span>
+		<template v-if="orderDetail.status=='dead'">
+			<span class="top-status order-dead">已作废</span>
+		</template>
+		<template v-if="orderDetail.status=='finish'">
+			<span class="top-status order-finish">交易完成</span>
+		</template>
+		<template v-if="orderDetail.status=='active'">
+			<template v-if="orderDetail.aftersale=='2'">
+				<span class="top-status order-return">售后订单</span>
+			</template>
+			<template v-else>
+				<template v-if="orderDetail.pay_status=='0'">
+					<span class="top-status order-pay-0">待支付</span>
+				</template>
+				<template v-if="orderDetail.pay_status=='4' || orderDetail.pay_status=='5'">
+					<span class="top-status order-return">售后订单</span>
+				</template>
+				<template v-if="orderDetail.pay_status=='1' || orderDetail.pay_status=='2' || orderDetail.pay_status=='3'">
+					<template v-if="orderDetail.ship_status=='0'">
+						<span class="top-status order-pay-0">待发货</span>
+					</template>
+					<template v-if="orderDetail.ship_status=='1'">
+						<span class="top-status order-pay-0">已发货</span>
+					</template>
+					<template v-if="orderDetail.ship_status=='2'">
+						<span class="top-status order-pay-0">部分发货</span>
+					</template>
+					<template v-if="orderDetail.ship_status=='4'">
+						<span class="top-status order-return">售后订单</span>
+					</template>
+					<template v-if="orderDetail.ship_status=='5'">
+						<template v-if="orderDetail.comment_status=='0'">
+							<span class="top-status order-pay-0">未评论</span>
+						</template>
+						<template v-if="orderDetail.comment_status=='1'">
+							<span class="top-status order-pay-0">已评论</span>
+						</template>
+						<template v-if="orderDetail.comment_status=='2'">
+							<span class="top-status order-pay-0">部分评论</span>
+						</template>
+					</template>
+				</template>
+			</template>
+		</template>
+	</div>
+	<div class="detail-addr">
+		<p class="ship-info">
+			<span class="ship-name">{{orderDetail.ship_name}}</span>
+			<span class="ship-mobile">{{orderDetail.ship_mobile}}</span>
+		</p>
+		<p class="ship-addr">{{orderDetail.ship_addr}}</p>
+		<template v-if="orderDetail.order_type=='bonded'">
+			<i class="order-bonded"></i>
+		</template>
+	</div>
+	<div class="detail-list">
+		<div class="order-main-item" v-for="obj of orderDetail.order_info | orderBy 'item_type' -1" @click="goodsDetail(obj.product_id)">
+			<div class="item-img">
+				<img :src="obj.goods_info.image_default_id_url" alt="">
+				<template v-if="obj.item_type == 'gift'">
+					<span class="gift-text">赠品</span>
+				</template>
+			</div>
+			<div class="item-info">
+				<h2 class="item-tit">{{obj.name}}</h2>
+				<p class="item-spec">颜色规格：{{obj.addon | orderDetailSpec}}</p>
+			</div>
+			<div class="item-p">
+				<p class="item-price">{{obj.price | currency '￥'}}</p>
+				<p class="item-num">&times;{{obj.nums}}</p>
+			</div>
+			<template v-if="obj.item_type == 'product'">
+				<template v-if="orderDetail.return_info.aftersale=='0'">
+					<span class="aftersale aftersale-unable" @click="aftersaleAdd($index,$event)">申请售后</span>
+				</template>
+				<template v-if="orderDetail.return_info.aftersale=='1'">
+					<span class="aftersale aftersale-able" @click="aftersaleAdd($index,$event)">申请售后</span>
+				</template>
+				<template v-if="orderDetail.return_info.aftersale=='2'">
+					<template v-if="returnInfo[$index].return_id!=''">
+						<span class="aftersale aftersale-able" @click="returnSche(returnInfo[$index].return_id, $event)">售后进度</span>
+						<span class="aftersale-status">{{returnInfo[$index].return_status=='2'?'审核中':returnInfo[$index].return_status=='3'?'接受申请':returnInfo[$index].return_status=='4'?'售后已完成':returnInfo[$index].return_status=='5'?'拒绝':returnInfo[$index].return_status=='6'?'已收货':returnInfo[$index].return_status=='7'?'已质检':returnInfo[$index].return_status=='8'?'补差价':returnInfo[$index].return_status=='9'?'已拒绝退款':returnInfo[$index].return_status=='10'?'等待入仓':returnInfo[$index].return_status=='14'?'确定退款':returnInfo[$index].return_status=='15'?'确定入仓':''}}</span>
+						
+					</template>
+					<template v-else>
+						<span class="aftersale aftersale-able" @click="aftersaleAdd($index,$event)">申请售后</span>
+					</template>
+				</template>
+			</template>
+		</div>
+	</div>
+	<div class="detail-info">
+		<div class="info-item" v-if="orderDetail.pay_status!='0'">
+			<span class="info-l">支付方式</span>
+			<span class="info-r">{{orderDetail.payment_name}}</span>
+		</div>
+		<div class="info-item">
+			<span class="info-l">配送方式</span>
+			<span class="info-r">{{orderDetail.shipping}}</span>
+		</div>
+		<div class="info-item">
+			<span class="info-l">发票信息</span>
+			<span class="info-r">{{orderDetail.tax_type=='false'?'不需要发票':orderDetail.tax_type=='personal'?'个人':orderDetail.tax_content}}</span>
+		</div>
+	</div>
+	<div class="order-logs">
+		<p>订单号：&nbsp;&nbsp;{{orderDetail.order_id}}</p>
+		<p v-for="item of orderDetail.orderlogs">{{item.behavior}}时间：&nbsp;&nbsp;{{item.alttime | DateParseParam 'yyyy-MM-dd hh:mm'}}</p>
+	</div>
+	<div class="order-price">
+		<div class="price-item">
+			<span class="price-text">商品金额:</span>
+			<span class="price-m">{{orderDetail.cost_item | currency '￥'}}</span>
+		</div>
+		<div class="price-item">
+			<span class="price-text">运费:</span>
+			<span class="price-m">{{orderDetail.cost_freight | currency '￥'}}</span>
+		</div>
+		<div class="price-item">
+			<span class="price-text">优惠金额:</span>
+			<span class="price-m price-m-y">-{{orderDetail.pmt_order | currency '￥'}}</span>
+		</div>
+		<div class="price-item">
+			<span class="price-text">实付金额:</span>
+			<span class="price-m">{{orderDetail.final_amount | currency '￥'}}</span>
+		</div>
+	</div>
+</div>
+<div class="detail-bottom">
+	<div class="detail-btn">
+		<template v-if="orderDetail.status=='dead'">
+			<span class="order-btn-g" @click="deleteOrder($event)">删除订单</span>
+		</template>
+		<template v-if="orderDetail.status=='finish'">
+			<span class="order-btn-b" @click="reAddCart(orderDetail.order_id,$event)">再次购买</span>
+			<span class="order-btn-g" @click="deleteOrder($event)">删除订单</span>
+		</template>
+		<template v-if="orderDetail.status=='active'">
+			<template v-if="orderDetail.aftersale!='2'">
+				<template v-if="orderDetail.pay_status=='0'"><!-- 未支付 -->
+					<span class="order-btn-g" @click="orderCancel(orderDetail.order_id,$event)">取消订单</span>
+					<span class="order-btn-y" @click="toPayment(orderDetail.order_id,orderDetail.payment,$event)">立即支付</span>
+				</template>
+				<template v-if="orderDetail.pay_status=='1' || orderDetail.pay_status=='2' || orderDetail.pay_status=='3'"><!-- 已支付 -->
+					<template v-if="orderDetail.ship_status=='0' || orderDetail.ship_status=='5'">
+						<span class="order-btn-b" @click="reAddCart(orderDetail.order_id,$event)">再次购买</span>
+					</template>
+					<template v-if="orderDetail.ship_status=='1' || orderDetail.ship_status=='2'">
+						<span class="order-btn-g" @click="showDelivery(orderDetail.order_id,$event)">物流追踪</span>
+						<span class="order-btn-b" @click="orderComfirem(orderDetail.order_id,$event)">确认收货</span>
+					</template>
+					<template v-if="orderDetail.ship_status=='3' || orderDetail.ship_status=='4'">
+						<span class="order-btn-g" @click="showDelivery(orderDetail.order_id,$event)">物流追踪</span>
+						<span class="order-btn-g" @click="aftersale(orderDetail.order_id,$event)">查看售后</span>
+					</template>
+					<template v-if="orderDetail.ship_status=='5'">
+						<span class="order-btn-g" @click="showDelivery(orderDetail.order_id,$event)">物流追踪</span>
+						<span class="order-btn-y" @click="discuss(orderDetail.order_id,$event)">立即评价</span>
+					</template>
+				</template>
+				<template v-if="orderDetail.pay_status=='4' || orderDetail.pay_status=='5'">
+					<template v-if="orderDetail.ship_status!='0'">
+						<span class="order-btn-g" @click="showDelivery(orderDetail.order_id,$event)">物流追踪</span>
+					</template>
+					<span class="order-btn-g" @click="aftersale(orderDetail.order_id,$event)">查看售后</span>
+				</template>
+			</template>
+			<template v-if="orderDetail.aftersale=='2'">
+				<template v-if="orderDetail.ship_status!='0'">
+					<span class="order-btn-g" @click="showDelivery(orderDetail.order_id,$event)">物流追踪</span>
+				</template>
+				<span class="order-btn-g" @click="aftersale(orderDetail.order_id,$event)">查看售后</span>
+			</template>
+		</template>
+	</div>
+</div>
+</template>
+</template>
+<template v-if="tag=='aftersale'">
+<header class="order-head">
+	<span class="page-back" @click="goBack">返回</span>
+	<span class="page-title">售后选择</span>
+</header>
+<div class="aftersale-con" v-if="aftersaleObj!=null">
+	<div class="aftersale-goods">
+		<div class="item-img">
+			<img :src="aftersaleObj.goods_info.image_default_id_url" alt="">
+		</div>
+		<div class="item-info">
+			<h2 class="item-tit">{{aftersaleObj.name}}</h2>
+			<p class="item-spec">颜色规格：{{aftersaleObj.addon | orderDetailSpec}}</p>
+		</div>
+		<div class="item-p">
+			<p class="item-price">{{aftersaleObj.price | currency '￥'}}</p>
+			<p class="item-num">&times;{{aftersaleObj.nums}}</p>
+		</div>
+	</div>
+	<div class="aftersale-it">
+		<span class="item-l"><span class="mast">*</span><span class="text">申请数量:</span></span>
+		<div class="item-r">
+			<span class="num-opt" :class="afterNum==1?'opt-unable':''" @click="numDesc">-</span>
+			<span class="num-opt num">{{afterNum}}</span>
+			<span class="num-opt" :class="afterNum==aftersaleObj.nums?'opt-unable':''" @click="numAdd">+</span>
+		</div>
+	</div>
+	<div class="aftersale-it">
+		<span class="item-l"><span class="mast">*</span><span class="text">售后类型:</span></span>
+		<div class="item-r-select">
+			<select name="" id="" class="aftersale-select" v-model="aftersaleReturn.type">
+				<option value="">请选择售后类型</option>
+				<option value="1">已收到货退货</option>
+				<option value="2">未收到货退货</option>
+			</select>
+		</div>
+	</div>
+	<div class="aftersale-it">
+		<span class="item-l"><span class="mast">*</span><span class="text">退货原因:</span></span>
+		<div class="item-r-select">
+			<select name="" id="" class="aftersale-select" v-model="aftersaleReturn.title">
+				<option value="">请选择退换货原因</option>
+				<option value="生产日期与保质期不符合">生产日期与保质期不符合</option>
+				<option value="发错商品">发错商品</option>
+				<option value="使用过敏">使用过敏</option>
+				<option value="质量问题">质量问题</option>
+				<option value="商品破损/有损坏">商品破损/有损坏</option>
+				<option value="拍错/不喜欢/效果不好">拍错/不喜欢/效果不好</option>
+				<option value="大小尺寸与商品描述不符">大小尺寸与商品描述不符</option>
+				<option value="其他">其他</option>
+			</select>
+		</div>
+	</div>
+	<div class="aftersale-it">
+		<p class="item-l"><span class="mast">*</span><span class="text">问题描述:</span></p>
+		<textarea name="" id="" class="aftersale-note" placeholder="请填写问题说明" v-model="aftersaleReturn.content"></textarea>
+	</div>
+	<div class="aftersale-it">
+		<div class="after-pic" @click="picSelect = '.addImg1' ">
+			<div class="addImg1"></div>
+		</div>
+		<div class="after-pic" @click="picSelect = '.addImg2' ">
+			<div class="addImg2"></div>
+		</div>
+		<div class="after-pic" @click="picSelect = '.addImg3' ">
+			<div class="addImg3"></div>
+		</div>
+	</div>
+	<div class="later-sub" @click="submit">提交申请</div>
+</div>
+</template>
+<template v-if="isLoading">
+	<pop pop-type="spin"></pop>
+</template>
+<template v-if="picUpload">
+	<pop pop-type="spinText" pop-text="图片上传中..."></pop>
+</template>
+<template v-if="isPop">
+	<pop pop-type="text" :pop-text="popText"></pop>
+</template>
+<confirm :show.sync="confirmShow" title="请确认删除订单" confirm-text="确认" cancel-text="取消" mask-transition=""></confirm>

@@ -1,0 +1,27 @@
+<header class="pay-head">
+	<span class="page-back" @click="cancelPay">返回</span>
+	<span class="page-title">收银台</span>
+	<span class="page-right" @click="cancelPay">取消</span>
+</header>
+<div class="pay-container" v-if="data!=null && payList!=null">
+	<div class="pay-money-area">
+		<span>订单金额</span>
+		<div class="pay-money">{{data.final_amount | currency '￥'}}</div>
+	</div>
+	<div class="pay-type" @click="changePay(item.app_id)" v-for="item of payList" v-if="!(item.app_id=='wxpayjsapi'&&!isWechat) && !(item.app_id=='wxpay'&&!isWechat)">
+		<div class="pay-icon" :class="item.app_id"></div>
+		<div class="pay-info">
+			<p class="pay-name">{{item.app_name}}</p>
+			<p class="pay-name-info">{{item.app_info}}</p>
+		</div>
+	</div>
+</div>
+
+<template v-if="isLoading">
+	<pop pop-type="spin"></pop>
+</template>
+<confirm :show.sync="confirmShow" title="请确认是否取消支付" confirm-text="确认" cancel-text="取消" mask-transition=""></confirm>
+
+<template v-if="payback=='payback'">
+<confirm :show.sync="payCom" title="是否支付完成" confirm-text="支付完成" cancel-text="支付遇到问题" mask-transition=""></confirm>
+</template>

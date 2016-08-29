@@ -1,0 +1,15 @@
+<div class="swiper-container-box">
+<div class="swiper-container" id={{wapappTabSlide.box_id}} :style="{width:wapappTabSlide.is_sidemargin=='true'?wapappTabSlide.width/100+'rem':'6.4rem',height:wapappTabSlide.height/100+'rem',marginTop:wapappTabSlide.margin_top/100+'rem',marginBottom:wapappTabSlide.margin_bottom/100+'rem'}">
+    <div class="swiper-wrapper">
+        <div v-for = 'item in wapappTabSlide.pdata' class="swiper-slide" :style="{width:wapappTabSlide.width/100+'rem',height:wapappTabSlide.height/100+'rem',marginTop:wapappTabSlide.margin_top/100+'rem',marginBottom:wapappTabSlide.margin_bottom/100+'rem'}">       	
+            <a :href="item.link">
+				<img data-src="{{item.pic}}" class="swiper-lazy">
+            	<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            	<!-- <x-img :src="item.pic"></x-img> -->
+            	<!-- <img data-original="{{item.pic}}" :src="defaultImg" class="lazy"> -->
+            </a>
+        </div>      
+    </div>
+    <div class="swiper-pagination"></div>
+</div>  
+</div>

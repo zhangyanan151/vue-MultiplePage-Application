@@ -1,0 +1,130 @@
+@import '~vux/vux.css';
+.baby-add {
+	width: 6.4rem;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #76C1BC;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+}
+.baby-container {
+	width: 6.4rem;
+	padding: 50px 0;
+}
+.baby-item {
+	position: relative;
+	width: 6.4rem;
+	margin-top: .18rem;
+	padding: .15rem .2rem;
+	border: 1px solid #76C1BC;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.baby-item .baby-info p {
+	padding-bottom: 8px;
+	color: #353535;
+}
+.baby-item .baby-info .babyName {
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
+}
+.baby-item .baby-info .infoLabel {
+	display: inline-block;
+	width: 68px;
+}
+.baby-item p {
+	padding: 2px 0;
+}
+
+
+.default .baby-label {
+	margin-left: 5px;
+	color: #707070;
+}
+
+.edit-baby-con {
+	width: 6.4rem;
+	min-height: 100%;
+	background-color: #fff;
+	position: absolute;
+	top: 0px;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+
+.add-baby-btn {
+	width: 5rem;
+	height: 50px;
+	margin: 30px auto 0 auto;
+	background-color: #76C1BC;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 5px;
+}
+
+.baby-empty {
+	width: 6.4rem;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	padding-top: 50px;
+	box-sizing: border-box;
+}
+.baby-empty-box {
+	width: 6.4rem;
+	margin-top: 2rem;
+	text-align: center;
+	color: #A0A0A0;
+}
+.empty-img {
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0 auto 10px auto;
+	background: url(../../assets/babyPlacehold.png) center center no-repeat;
+	background-size: 100%;
+}
+
+.babyBox, .sexBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6.4rem;
+    padding-top: 50px;
+    font-size: 14px;
+}
+.babyBox .babyItem,
+.sexBox .babyItem {
+	padding: 12px 8px;
+	border-bottom: 1px solid #eee;
+	background: #fff;
+}
+.babyBox .babyItem {
+    background: #fff url(../../assets/RightArrow.png) 6rem center no-repeat;
+    background-size: 8px;
+}
+
+.babyBox .babyInfo {
+    float: right;
+    width: 4rem;
+    overflow: hidden;
+    margin-right: .6rem;
+    text-align: right;
+    color: #b6b6b6;
+}
+.attention {
+	width: 100%;
+	margin: 30px auto;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	font-size: 12px;
+	color: #b6b6b6;
+}

@@ -1,0 +1,68 @@
+<header class="page-head">
+	<span class="page-back" @click="pageBack">返回</span>
+	<span class="page-title">宝宝信息</span>
+</header>
+<template v-if="tag == 'default'">
+	<template v-if="babyList != null && babyList.length != 0">
+		<div class="baby-container">
+			<template v-for="item in babyList">
+				<div class="baby-item">
+					<div class="baby-info">
+						<p class="babyName"><span class="infoLabel">姓名：</span>宝宝 {{$index + 1}}</p>
+						<p><span class="infoLabel">性别：</span>{{ item.sex == '0' ? '女' : '男'}}</p>
+						<p><span class="infoLabel">生日：</span>{{ item.birthday }}</p>
+					</div>
+				</div>
+			</template>
+		</div>
+	</template>
+	<template v-else>
+		<div class="baby-empty">
+			<div class="baby-empty-box">
+				<div class="empty-img"></div>
+				<p>暂无宝宝信息</p>
+			</div>
+		</div>
+	</template>
+	<div class="baby-add" @click=" babyOver ? '' : tag = 'addbaby' " :style="{background: babyOverBg}">
+		<span>+ 添加宝宝信息</span>
+	</div>
+</template>
+<template v-if="tag == 'addbaby'">
+	<div class="babyBox" v-show="babyShow">
+		<ul>
+			<li class="babyItem" @click="setSex">
+				<span class="babyLabel">性别</span>
+				<span class="babyInfo">{{ babysInfo.sex == '0' ? '女' : '男'}}</span>
+			</li>
+			<li class="babyItem">
+				<span class="babyLabel">生日</span>
+				<span class="babyInfo">
+					<date-time :value.sync="babysInfo.birthday" :min-year=1995 :max-year=2016 @on-change="birthChange" title="" confirm-text="确认" cancel-text="取消"></date-time>
+				</span>
+			</li>
+		</ul>
+		<p class="attention">宝宝信息一旦填写无法修改，请确认您填写的信息真实有效。</p>
+		<div class="baby-add" @click="addBabysInfo">
+			<span>确定</span>
+		</div>
+	</div>
+	<div class="sexBox" v-show="sexShow">
+		<ul>
+		    <li class="babyItem" @click="babySexBack($event,'1')">
+				<span class="babyLabel">男</span>
+			</li>
+			<li class="babyItem" @click="babySexBack($event,'0')">
+				<span class="babyLabel">女</span>
+			</li>
+		</ul>
+	</div>
+</template>
+
+<!--消息提示框组件-->
+<template v-if="baby_tips">
+    <pop pop-type="text" :pop-text="showText"></pop>
+</template>
+<template v-if="isLoading">
+    <pop pop-type="spin"></pop>
+</template>

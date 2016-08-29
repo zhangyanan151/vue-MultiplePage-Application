@@ -1,0 +1,59 @@
+.wg3-area{
+	width: 6.4rem;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.wg3-item{
+	width: 1.97rem;
+	height: auto;
+	float: left;
+	overflow: hidden;
+	border-radius: 4px;
+	margin-right: 0.08rem;
+    box-sizing: border-box;
+}
+.wg3-item:nth-child(3n) {
+	margin-right: 0;
+}
+.wg3-item-img{
+	width: 1.97rem;
+	height: 1.97rem;
+	overflow: hidden;
+}
+.wg3-item-img img{
+	width: 1.97rem;
+	height: 1.97rem;
+}
+.wg3-item-text{
+	width: 1.8rem;
+	margin: 0 auto;
+	text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    color: #706F74;
+    line-height: 24px;
+}
+.wg3-item-price{
+	text-align: center;
+    font-size: 12px;
+    color: #73C0BC;
+    width: 1.8rem;
+    overflow: hidden;
+    line-height: 16px;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+.wg3-new-price{
+	font-size: 14px;
+}
+.wg3-mkprice{
+	margin-left: 5px;
+	text-decoration: line-through;
+	color: #A5A5A5;
+	
+}

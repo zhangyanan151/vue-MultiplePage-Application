@@ -1,0 +1,25 @@
+<header class="order-head">
+	<a class="page-back" href="javascript:history.go(-1)">返回</a>
+	<span class="page-title-n">填写退货信息</span>
+</header>
+<div class="return-later-con">
+	<div class="later-item">
+		<span class="item-l"><span class="mast">*</span><span class="text">物流公司:</span></span>
+		<input type="text" class="input-b" v-el:logistics-com v-model="logistics_com">
+	</div>
+	<div class="later-item">
+		<span class="item-l"><span class="mast">*</span><span class="text">物流单号:</span></span>
+		<input type="text" class="input-b" v-model="logistics_no">
+	</div>
+	<div class="later-item">
+		<p class="text">备注</p>
+		<textarea name="" id="" class="later-bz" v-model="logistics_note"></textarea>
+	</div>
+	<div class="later-sub" @click="submit">提交</div>
+</div>
+<template v-show="popShow">
+	<pop pop-type="text" :pop-text="popText"></pop>
+</template>
+<template v-show="spinShow">
+	<pop pop-type="spin"></pop>
+</template>

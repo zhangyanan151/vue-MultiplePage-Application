@@ -1,0 +1,47 @@
+<div class="vux-search-box ttmom-search" v-el:search>
+    <div class="weui_search_bar" id="search_bar" :class="{weui_search_focusing: !isCancel}">
+      <form class="weui_search_outer" @submit="submit()" action="/list" method="get" v-el:form-obj>
+        <div class="vux-search-mask" @click="touch" v-show="!isFixed"></div>
+        <div class="weui_search_inner" :style="{backgroundColor: labelColor, border: isFixed?'1px solid #DCDCDC':'none'}">
+          <i class="weui_icon_search"></i>
+          <input type="text" class="weui_search_input" id="search_input" placeholder="{{placeholder}}" autocomplete="off" required v-model="value" name="search_keywords" v-el:input/>
+          <a href="javascript:" class="weui_icon_clear" id="search_clear" @click="clear"></a>
+        </div>
+        <label for="search_input" class="weui_search_text" id="search_text" :style="{backgroundColor: labelColor,textAlign:value===''||value===null?'center':'left'}">
+          <template v-if="value===''||value===null">
+            <i class="weui_icon_search"></i>
+            <span>{{placeholder}}</span>
+          </template>
+          <template v-if="value!=='' && value!==null">
+            <span>{{value}}</span>
+          </template>
+        </label>
+        <input type="hidden" value="submit" @click="submitClick" v-el:submit-btn>
+      </form>
+      <a href="javascript:" class="weui_search_cancel" id="search_cancel" @click="cancel">{{cancelText}}</a>
+    </div>
+    <div class="weui_cells weui_cells_access search_show" id="search_show" v-show="isFixed">
+      <div class="hot-search">
+        <div class="search-tap">
+          <span>热门搜索</span>
+        </div>
+        <div class="hot-search-item-box">
+          <span v-for="item in hotList" @click="submitItem(item.kw_name)">{{item.kw_name}}</span>
+        </div>
+      </div>
+      <div class="history-search">
+        <div class="history-box">
+          <div class="history-tap">
+            <span>搜索历史</span>
+          </div>
+          <div class="history-list">
+            <div class="history-item" v-for="item in historySearch" @click="submitItem(item)">
+              <span class="history-text">{{item}}</span>
+              <span class="history-del" @click="delHistory(item)"></span>
+            </div>
+            <p class="clear-history" @click="clearHistory">清空历史搜索</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,30 @@
+.back-home{
+	width: 42px;
+	height: 42px;
+	position: fixed;
+	right: 20px;
+	bottom: 50px;
+	border-radius: 50%;
+	border: 1px solid #F2F2F2;
+	box-sizing: border-box;
+	z-index: 9;
+	background-color: #fff;
+	opacity: 0.9;
+	text-align: center;
+}
+.back-home-a{
+	display: block;
+	text-align: center;
+	font-size: 9px;
+	color: #777374;
+	line-height: 10px;
+}
+.back-home-a::before{
+	width: 25px;
+	height: 25px;
+	display: block;
+	content: "";
+	margin: 0 auto;
+	background: url(../../assets/foot_nav.png) 2px -25px no-repeat;
+	background-size: 25px;
+}

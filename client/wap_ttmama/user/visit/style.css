@@ -1,0 +1,184 @@
+@import '~vux/vux.css';
+/*.bg {
+    background-color: #fff !important;
+}*/
+.page-head {
+    position: fixed;
+    width: 6.4rem;
+    height: .8rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: .8rem;
+    z-index: 99;
+    top: 0;
+}
+.page-back {
+    position: absolute;
+    left: 0;
+    width: 1rem;
+    height: .8rem;
+    overflow: hidden;
+    float: left;
+    text-indent: 2rem;
+    background: url(../../assets/back.png) center center no-repeat;
+    background-size: 24px;
+    z-index: 10;
+}
+.page-title {
+    width: 6.4rem;
+    display: block;
+    font-size: 16px;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+    font-weight: 600;
+}
+.page-head-right {
+    position: absolute;
+    right: .35rem;
+    float: right;
+    top: 0px;
+    font-size: 14px;
+    color: #000;
+}
+.visit{
+    position: relative;
+    width: 6.4rem;
+    height: 100%;
+    margin-top: .8rem;
+    overflow: hidden;
+    background: #fff;
+}
+.visit-box{
+    position: relative;
+    width: 6.4rem;
+    overflow: hidden;
+}
+.visit-box-date {
+    width: 6.4rem;
+    height: .58rem;
+    overflow: hidden;
+    line-height: .58rem;
+    color: #707070;
+    padding-left: 0.2rem;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+.visit-box-text {
+    position: relative;
+    width: 6.4rem;
+    height: 2.35rem;
+    border-bottom: 1px solid #eee;
+    z-index: 11;
+    background-color: #fff;
+}
+.visit-box-text-l {
+    float: left;
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    margin: .17rem 0 0 .2rem;
+}
+.visit-box-text-l img {
+    width: 100%;
+    height: 100%;
+}
+.visit-box-text-r {
+    float: left;
+    width: 4rem;
+    overflow: hidden;
+}
+.visit-box-text-r h3 {
+    color: #030303;
+    font-size: 14px;
+    margin: .4rem 0 0 .2rem;
+    height: 42px;
+    overflow: hidden;
+}
+.visit-box-text-r h3 a {
+    color: #030303;
+}
+.visit-box-text-r h4 {
+    margin: .5rem 0 0 .2rem;
+    color: #76c1bc;
+    font-size: 18px;
+}
+.visit-box-date-hide {
+    display: none;
+}
+.visit-box-dele {
+    position: absolute;
+    right: -80px;
+    width: 80px;
+    height: 2.35rem;
+    text-align: center;
+    line-height: 2.35rem;
+    background: #eee;
+    color: #f00;
+    top: 0;
+    border-bottom: 1px solid #c8c7cc;
+}
+.visit-dele-coll {
+    width: .9rem;
+    height: 2.34rem;
+    position: absolute;
+    right: -0.9rem;
+    bottom: 0;
+    z-index: 10;
+}
+.visit-goods-del {
+    width: .9rem;
+    height: 2.34rem;
+    line-height: 2.3rem;
+    text-align: center;
+    background-color: #4AB9A9;
+    color: #fff;
+    font-size: 16px;
+    float: left;
+}
+.touch-zz {
+    width: calc(100% - .9rem) !important;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    opacity: 0;
+    /*display: none;*/
+}
+.visit-empty {
+    width: 6.4rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+}
+.visit-empty-box {
+    width: 5rem;
+    height: 3rem;
+    margin: 45% auto;
+    text-align: center;
+}
+.visit-empty-img {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: url(../../assets/BlankPlaceHolder.png) 36% center no-repeat;
+    background-color: #ddd;
+    background-size: 100%;
+}
+.visit-empty-box p{
+    color: #999;
+    margin-top: 10px;
+}
+.visit-empty-btn {
+    display: block;
+    width: 5rem;
+    height: 40px;
+    margin: 30px auto 0 auto;
+    background-color: #76C1BC;
+    color: #fff;
+    text-decoration: none;
+    line-height: 40px;
+}

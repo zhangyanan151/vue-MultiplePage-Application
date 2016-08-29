@@ -1,0 +1,35 @@
+<header class="order-head">
+	<a class="page-back" href="javascript:history.go(-1)">返回</a>
+	<span class="page-title">物流追踪</span>
+</header>
+<template v-if="deliveryData!=null">
+	<div class="delivery-container">
+		<div class="delivery-item" v-for="item of deliveryData">
+			<div class="delivery-item-tit">
+				<span>包裹{{$index+1}}</span>
+			</div>
+			<div class="delivery-goods-con">
+				<div class="de-goods-img">
+					<img :src="item.image_url" alt="">
+					<span class="de-goods-total">共{{item.total}}件</span>
+				</div>
+				<div class="delivery-info">
+					<p><span class="delivery-status">物流状态：</span><span class="delivery-status-r">{{item.status=='succ'?'已发货':item.status=='failed'?'发货失败':item.status=='cancel'?'已取消':item.status=='lost'?'货物丢失':item.status=='progress'?'配货中':item.status=='timeout'?'超时':item.status=='ready'?'准备发货':''}}</span></p>
+					<p class="delivery-p"><span class="delivery-p-l">物流名称：</span><span>{{item.logi_name}}</span></p>
+					<p class="delivery-p"><span class="delivery-p-l">运单编号：</span><span>{{item.logi_no}}</span></p>
+				</div>
+			</div>
+			<div class="delivery-list">
+				<div class="delivery-list-item" v-for="obj of item.data">
+					<div class="item-text">
+						<p class="delivery-context">{{obj.context}}</p>
+						<p class="delivery-time">{{obj.time}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+<template v-if="isLoading">
+	<pop pop-type="spin"></pop>
+</template>

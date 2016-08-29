@@ -1,0 +1,18 @@
+.w2c-box{
+	width: 6.4rem;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.w2c-area{
+	margin: 0 auto;
+	overflow: hidden;
+}
+.w2c-l-pic{
+	float: left;
+}
+.w2c-r-pic{
+	float: right;
+}
+.w2c-area img{
+	width: 100%;
+}

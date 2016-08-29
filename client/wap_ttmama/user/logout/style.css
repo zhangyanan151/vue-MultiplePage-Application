@@ -1,0 +1,111 @@
+div,ul,li{
+    box-sizing: border-box;
+}
+.logoutBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6.4rem;
+    padding-top: .8rem;
+    font-size: 14px;
+}
+.logoutBox .logoutItem{
+    position: relative;
+    width: 100%;
+    height: 42px;
+    overflow: hidden;
+    padding-left: 12px;
+    line-height: 42px;
+    border-bottom: 1px solid #eee;
+    color: #000;
+    background: #fff url(../../assets/RightArrow.png) 6rem center no-repeat;
+    background-size: 8px;
+}
+
+.btn-box {
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+    margin: 2em auto;
+}
+.btn-box .logout-btn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    -webkit-box-flex: 1;
+    text-align: center;
+    text-decoration: none;
+    background: #73c0bc;
+    color: #fff;
+}
+.btn-box .logout-btn span {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+
+.pwdBox, .foundBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: .8rem;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+.pwdBox .inputBox {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2em;
+    border: 1px #dcdcdc solid;
+}
+.pwdBox .inputBox input {
+    width: 100%;
+    height: 40px;
+    padding-left: 38px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-indent: 0;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+.pwdBox .inputBox:before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    background: url(../../assets/tp.png) 0 0 no-repeat;
+    background-size: 16px;
+}
+.inputBox .eye {
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 16px;
+    width: 25px;
+    height: 25px;
+    background-size: 18px;
+}
+.inputBox .eye1 {
+    background: url(../../assets/eye1.png) no-repeat;
+}
+.inputBox .eye2 {
+    background: url(../../assets/eye2.png) no-repeat;
+}
+.aboutBox {
+    width: 6.4rem;
+    padding-top: .8rem;
+}
+.aboutBox img {
+    width: 100%;
+}

@@ -1,0 +1,194 @@
+.bg {
+    background: transparent;
+}
+body {
+    background: #fff;
+}
+.loginBox {
+    position: relative;
+    min-width: 300px;
+    max-width: 640px;
+    height: auto;
+    padding-bottom: 15px;
+    margin: 0 auto !important;
+    background-color: #fff;
+}
+.header {
+    border-bottom:1px solid #ccc;
+}
+.header .page-back {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 30px;
+    height: 52px;
+}
+.header .page-back span {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    margin-top: 6px;
+    text-indent: -9999px;
+    background: url(../assets/ittb_02.png) center no-repeat;
+    background-size: 90%;
+}
+.header h2 {
+    display: block;
+    overflow: hidden;
+    width: 71%;
+    height: 52px;
+    line-height: 52px;
+    margin: 0px auto;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    color: #000;
+}
+.header .signup {
+    display: inline-block;
+    width: 50px;
+    height: 52px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    overflow: hidden;
+    color: #333;
+}
+.login-form {
+    width: 80%;
+    margin: 0 auto;
+}
+.login-form .inputBox {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    margin-top: 2em;
+    border: 1px #dcdcdc solid;
+}
+.login-form .inputBox input {
+    width: 100%;
+    height: 40px;
+    padding-left: 38px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-indent: 0;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 14px;
+    color: #bfbfbf;
+    background: #fff;
+}
+.login-form .inputBox:before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    background: url(../assets/tp.png) no-repeat;
+    background-size: 16px;
+}
+.login-form .inputBox:nth-of-type(1):before{
+    background-position: 0px -50px;
+}
+.login-form .inputBox:nth-of-type(2):before{
+    background-position: 0 0;
+}
+
+.inputBox .eye {
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 16px;
+    width: 25px;
+    height: 25px;
+    background-size: 18px;
+}
+.inputBox .eye1 {
+    background: url(../assets/eye1.png) no-repeat;
+}
+.inputBox .eye2 {
+    background: url(../assets/eye2.png) no-repeat;
+}
+
+.login-form .both {
+    clear: both;
+}
+.loginBox .login-btn {
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+    margin: 2em auto;
+}
+.loginBox .login-btn .c-btn-blue {
+    float: right;
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    -webkit-box-flex: 1;
+    text-align: center;
+    text-decoration: none;
+    background: #73c0bc;
+    color: #fff;
+}
+.loginBox .login-btn .c-btn-blue span {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.found-pwd {
+    display: inline-block;
+    float: right;
+    margin-right: 10%;
+    text-decoration: underline;
+    color: #bfbfbf;
+}
+.thirdBox {
+    position: fixed;
+    left: 5%;
+    bottom: 0;
+    width: 90%;
+    height: 130px;
+    border-top: 1px solid #dcdcdc;
+}
+.thirdBox .thirdText {
+    position: absolute;
+    left: 35%;
+    top: -9px;
+    width: 30%;
+    text-align: center;
+    font-size: 12px;
+    background: #fff;
+    color: #bfbfbf;
+}
+.thirdBox .thirdLink {
+    width: 230px;
+    height: 45px;
+    margin: 45px auto;
+}
+.thirdBox .thirdLink a {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+
+}
+
+.thirdBox .thirdLink a:nth-of-type(1) {
+    background: url(../assets/qq@2x.png) center center no-repeat;
+    background-size: 43px;
+}
+.thirdBox .thirdLink a:nth-of-type(2) {
+    margin: 0 45px;
+    background: url(../assets/we_chat@2x.png) center center no-repeat;
+    background-size: 43px;
+}
+.thirdBox .thirdLink a:nth-of-type(3) {
+    background: url(../assets/taobao@2x.png) center center no-repeat;
+    background-size: 43px;
+}

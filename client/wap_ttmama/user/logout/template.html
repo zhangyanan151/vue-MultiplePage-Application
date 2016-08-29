@@ -1,0 +1,64 @@
+<header class="page-head">
+	<a class="page-back" href="javascript:history.go(-1)" @click="logoutBack($event)">返回</a>
+	<span class="page-title">{{pageTitle}}</span>
+	<template v-if="changeShow">
+		<a class="page-head-right" href="javascript:;" @click="foundStart">找回密码</a>
+	</template>
+</header>
+<template v-if="setShow">
+	<div class="logoutBox">
+		<ul>
+			<li class="logoutItem" @click="modifyPwd">
+				<span class="logoutLabel">修改/找回密码</span>
+			</li>
+			<li class="logoutItem" @click="aboutTt">
+				<span class="logoutLabel">关于汤团妈妈</span>
+			</li>
+		</ul>
+		<div class="btn-box">
+	    <a @click="logout" href="javascript:;" class="logout-btn"><span>退出登录</span></a>
+		</div>
+	</div>
+</template>
+
+<template v-if="aboutShow">
+	<div class="aboutBox">
+		<template v-for="item in aboutList">
+			<img :src="item" alt="关于汤团妈妈介绍" />
+		</template>
+	</div>
+</template>
+
+<template v-if="changeShow">
+	<div class="pwdBox">
+        <div class="inputBox">
+            <input type="text" placeholder="旧密码"  v-model="oldPwd"/>
+        </div>
+        <div class="inputBox">
+            <input type="text" placeholder="新密码"  v-model="newPwd"/>
+        </div>
+        <div class="inputBox">
+            <input type="text" placeholder="确认新密码"  v-model="newPwd2"/>
+        </div>
+	
+		<div class="btn-box">
+		    <a @click="changOk" href="javascript:;" class="logout-btn"><span>确定</span></a>
+		</div>
+	</div>
+</template>
+
+<template v-if="foundShow">
+	<div class="foundBox">
+		<found-pwd></found-pwd>
+	</div>
+</template>
+
+<!--消息提示框组件-->
+<template v-if="signup_tips">
+    <pop pop-type="text" :pop-text="showText"></pop>
+</template>
+<template v-if="isLoading">
+    <pop pop-type="spin"></pop>
+</template>
+	
+

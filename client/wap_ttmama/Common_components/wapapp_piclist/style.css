@@ -1,0 +1,19 @@
+.wpl-box{
+	width: 6.4rem;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.wpl-area{
+	margin: 0 auto;
+	overflow: hidden;
+}
+.wpl-pic-lists{
+	width: 100%;
+	height: auto;
+}
+.wpl-pic-item{
+	float: left;
+}
+.wpl-pic-item img{
+	width: 100%;
+}

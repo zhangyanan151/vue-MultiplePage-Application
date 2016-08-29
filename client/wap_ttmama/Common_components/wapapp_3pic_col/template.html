@@ -1,0 +1,12 @@
+<div class="w3c-box">
+<div class="w3c-area" :style="{width:wapapp3picCol.width/100+'rem',height:wapapp3picCol.height/100+'rem',marginTop:wapapp3picCol.margin_top/100+'rem',marginBottom:wapapp3picCol.margin_bottom/100+'rem'}">
+    <template v-for="item in wapapp3picCol.pdata.slide_pic">
+        <div class="w3c-pic" :style="{width:wapapp3picCol.pic_width/100+'rem',height:wapapp3picCol.pic_height/100+'rem'}">
+            <a href="{{item.link}}">
+                <!-- <img :src="item.pic"> -->
+                <x-img :src="item.pic"></x-img>
+            </a>
+        </div>
+    </template>
+</div>
+</div>

@@ -1,0 +1,74 @@
+<div class="user-container">
+	<div class="user-con-head" :style="headBack?{backgroundImage: 'url('+headBack+')'}:{}" id="headBox">
+		<div class="user-con-head-t" :class="scrollDown?'head-mini':''" v-el:head-t :style="{opacity: userHeadOpc}">
+			<div class="left-setup" @click="checkLogin($event)" v-link="{path:'/user/logout'}"></div>
+			<a class="right-customer" @click="checkLogin($event)" href="/openim"></a>
+		</div>
+		<template v-if="!isLogin">
+			<div class="user-head" @click="goLogin" :class="scrollDown?'user-head-fix':''">
+				<div class="user-head-nologin" :class="scrollDown?'headerUp':''" v-el:user-head :style="{width: userHeadWidth,height: userHeadWidth}"></div>
+			</div>
+			<p class="head-text login-bt" @click="goLogin">请点击登录</p>
+		</template>
+		<template v-if="isLogin">
+			<div class="user-head" :class="scrollDown?'user-head-fix':''">
+				<div class="user-head-h" :style="{backgroundImage: 'url('+member_pic+')',width: userHeadWidth,height: userHeadWidth}" v-link="{path: '/user/perset'}" v-el:user-head></div>
+			</div>
+			<p class="head-text setName" v-text="name==null||name==''?'请设置昵称':name" v-link="{path: '/user/perset'}"></p>
+		</template>
+		<div class="order-all" @click="goOrder('all')">
+			<i class="order-icon"></i><span class="my-order">我的订单</span>
+			<span class="all-my-order" >查看全部订单 &gt;</span>
+		</div>
+	</div>
+	<div class="order-container">
+		<ul>
+			<li class="order-item" @click="goOrder('nopayed')"><a href="javascript:;"><i class="order-fk"></i><span>待付款</span>
+				<template v-if="myData!=null">
+					<span v-show="myData.un_pay_orders>0" class="mini-num">{{myData.un_pay_orders}}</span>
+				</template>
+			</a></li>
+			<li class="order-item" @click="goOrder('noship')"><a href="javascript:;"><i class="order-fh"></i><span>待发货</span>
+				<template v-if="myData!=null">
+					<span v-show="myData.un_ship_orders>0" class="mini-num">{{myData.un_ship_orders}}</span>
+				</template>
+			</a></li>
+			<li class="order-item" @click="goOrder('nodiscuss')"><a href="javascript:;"><i class="order-pj"></i><span>待评价</span>
+				<template v-if="myData!=null">
+					<span v-show="myData.un_comment>0" class="mini-num">{{myData.un_comment}}</span>
+				</template>
+			</a></li>
+			<li class="order-item" @click="goOrder('aftersale')"><a href="javascript:;"><i class="order-th"></i><span>退/换货</span>
+				<template v-if="myData!=null">
+					<span v-show="myData.return_product>0" class="mini-num">{{myData.return_product}}</span>
+				</template>
+			</a></li>
+		</ul>
+	</div>
+	<div class="user-box">
+		<ul>
+			<li class="user-op-item"><a href="/cart"><i class="user-cart"></i><span>购物车</span><span v-show="cartNum>0" class="cart-num">{{cartNum}}</span></a></li>
+			<li class="user-op-item"><a href="/user/favorite"><i class="user-scj"></i><span>收藏夹</span></a></li>
+			<li class="user-op-item"><a @click="checkLogin($event)" v-link="{ path: '/user/coupon' }"><i class="user-kqb"></i><span>我的卡券包</span></a></li>
+			<li class="user-op-item"><a href=""><i class="user-ycp"></i><span>演出票</span></a></li>
+			<li class="user-op-item"><a v-link="{ path: '/user/visit' }"><i class="user-lljl"></i><span>浏览记录</span></a></li>
+			<li class="user-op-item"><a href="/aftersale"><i class="user-shfw"></i><span>售后服务</span></a></li>
+			<li class="user-op-item"><a @click="checkLogin($event)" v-link="'/user/address'"><i class="user-shdz"></i><span>收货地址</span></a></li>
+			<li class="user-op-item"><a @click="checkLogin($event)" v-link="{ path: '/user/memberCard' }"><i class="user-idcard"></i><span>身份证管理</span></a></li>
+		</ul>
+	</div>
+	<div v-if="slideData!=null" class="user-slide">
+		<swiper :list="slideData" height="80" :auto=true></swiper>
+	</div>
+	<div class="user-box">
+		<ul>
+			<li class="user-op-item"><a v-link="{ path: '/user/grade' }"><i class="user-hydj"></i><span>会员等级</span></a></li>
+			<li class="user-op-item"><a @click="checkLogin($event)" v-link="{ path: '/user/baby' }"><i class="user-bbxx"></i><span>宝宝信息</span></a></li>
+			<li class="user-op-item"><a @click="checkLogin($event)" v-link="{path: '/user/bound'}"><i class="user-bdsj"></i><span>绑定手机</span></a></li>
+			<li class="user-op-item"><a href="tel:400-000-5580"><i class="user-kfdh"></i><span>客服电话</span></a></li>
+			<li class="user-op-item"><a href=""><i class="user-sys"></i><span>扫一扫</span></a></li>
+			<li class="user-op-item"><a @click="checkLogin($event)" v-link="{path: '/user/suggest'}"><i class="user-tsjy"></i><span>投诉建议</span></a></li>
+		</ul>
+	</div>
+</div>
+<foot-index state="user"></foot-index>

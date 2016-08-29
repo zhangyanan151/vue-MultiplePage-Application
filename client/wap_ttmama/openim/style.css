@@ -1,0 +1,36 @@
+html {
+    font-size: 25px !important;;
+}
+.openim-head {
+    position: relative;
+    z-index: 888;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    line-height: 50px;
+    background-color: #fff;
+}
+.openim-back {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    overflow: hidden;
+    z-index: 10;
+    width: 30px;
+    height: 50px;
+    text-indent: 50%;
+    background: url(../assets/back.png) center center no-repeat;
+    background-size: 24px;
+}
+.openim-title {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+    font-weight: 600;
+}
+
+#wkit-content .wkit-chat-wrap{
+    top: 50px;
+}
+

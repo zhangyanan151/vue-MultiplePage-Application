@@ -1,0 +1,1 @@
+export const LOAD_INDEX = 'LOAD_INDEX';

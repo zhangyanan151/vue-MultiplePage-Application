@@ -1,0 +1,165 @@
+@import '~vux/vux.css';
+.spec-box{
+	width: 6.4rem;
+	height: 100%;
+	position: fixed;
+	left: 50%;
+	margin-left: -3.2rem;
+	z-index: 99999;
+	transition: all 0.3s;
+}
+.spec-mask{
+	width: 6.4rem;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.5;
+}
+.spec-area{
+	width: 6.4rem;
+	background-color: #fff;
+	position: absolute;
+	bottom: 0;
+	top: 20%;
+	margin-bottom: 45px;
+}
+.spec-opt{
+	width: 6.4rem;
+	height: 45px;
+	position: absolute;
+	bottom: 0;
+}
+.spec-opt .add-cart,.spec-opt .buy{
+	width: 3.2rem;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	font-size: 18px;
+	color: #fff;
+	float: left;
+}
+.spec-opt .add-cart{
+	background-color: #F3BE3C;
+}
+.spec-opt .buy{
+	background-color: #4AB9A9;
+}
+.spec-top{
+	width: 6.04rem;
+	height: 65px;
+	margin:  0 auto;
+	padding: 10px 0;
+	border-bottom: 1px solid #DDDDDD;
+	position: relative;
+}
+.spec-img{
+	width: 85px;
+	height: 85px;
+	border: 1px solid #DCDCDC;
+	box-sizing: border-box;
+	position: absolute;
+    bottom: 15px;
+    background-color: #fff;
+}
+.spec-img img{
+	width: 100%;
+	height: 100%;
+}
+.chosed-text{
+	margin-left: 100px;
+}
+.chosed-text .price{
+	font-size: 18px;
+	color: #73c0bc;
+}
+.chosed-text .store,.chosed-text .spec{
+	font-size: 13px;
+	color: #000;
+	line-height: 15px;
+}
+.spec-close{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 0.17rem;
+	top: 0.17rem;
+	background: url(../../assets/del.png) center center no-repeat;
+	background-size: 20px;
+}
+.chose-area{
+	width: 6.4rem;
+	position: absolute;
+	top: 85px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: scroll;
+}
+.chose-box{
+	width: 6.4rem;
+	padding: 0 0.27rem;
+	box-sizing: border-box;
+}
+.chose-spec{
+	/*border-bottom: 1px solid #DCDCDC;*/
+}
+.spec-item{
+	margin-bottom: 5px;
+}
+.spec-item-tit{
+	line-height: 30px;
+	font-size: 14px;
+	color: #545454;
+}
+.spec-item-s{
+	display: inline-block;
+	min-width: 1.7rem;
+	text-align: center;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	margin: 5px 0.2rem 5px 0;
+	line-height: 20px;
+	color: #1B1B1B;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.spec-item-s.active{
+	background-color: #4AB9A9;
+	color: #fff;
+	border-color: #4AB9A9;
+}
+.spec-item-s.unable{
+	color: #A1A1A1;
+}
+.num-box{
+	width: 6.4rem;
+	padding: 15px 0.27rem;
+	box-sizing: border-box;
+	line-height: 28px;
+	border-top: 1px solid #DCDCDC;
+}
+.num-opt{
+	display: inline-block;
+	float: right;
+}
+.num-opt em{
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	background-color: #F3F1F2;
+	font-style: normal;
+	color: #757374;
+	margin-right: 2px;
+	float: left;
+	font-size: 20px;
+}
+.num-opt em.num-cur{
+	font-size: 14px;
+	color: #555354;
+	width: 35px;
+}
+.num-opt em.unable{
+	background-color: #FCFAFB;
+	color: #DCDADB;
+}

@@ -1,0 +1,6 @@
+header{width: 100%;}
+header.top-search-box {background-color: rgba(255,255,255,0); position: fixed; top: 0; z-index: 999; padding: 5px 0; min-width: 300px; max-width: 640px;}
+header.top-search-box .center{height:30px; width:90%; border:1px solid #dcdcdc; background: #ffffff; border-radius: 6px;margin:0 auto; overflow: hidden;}
+header.top-search-box .search-inp{ left: 0.2em; height:100%; width: 99%; line-height: 30px;}
+header.top-search-box .fid-icon{float:left; width: 12%; height:100%; margin-left: 0.45em; background: url(../../assets/find_icon.png) no-repeat center; background-size:21px;}
+header.top-search-box .search-box{display: block; width: 85%; float:left; margin: 0; background-color: #fff; height: 100%; line-height: 2.5em; background-size: 20px; position: relative; }

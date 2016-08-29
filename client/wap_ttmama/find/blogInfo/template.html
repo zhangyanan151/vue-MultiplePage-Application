@@ -1,0 +1,66 @@
+<header class="find-head">
+	<a href="javascript:history.back()" class="page-back"></a>
+	<span class="art-tit">{{data.title}}</span>
+	<span class="art-share" @click="shareShow=true"></span>
+</header>
+<div class="artinfo-con">
+	<div class="article-con">
+		<div class="art-info">
+			{{{data.content}}}
+		</div>
+		<div class="art-opt">
+			<span class="art-zan" :class="data.params_type=='true'?'zaned':''" @click="zan"></span>
+			<span class="art-pl" @click="addComment"></span>
+		</div>
+	</div>
+	<div class="comment-area">
+		<div class="comment-tab">
+			<span class="tab-item" :class="tag=='pl'?'active':''" @click="tag = 'pl'">评论 {{data.comments_count == 0 ? '':data.comments_count}}</span>
+			<span class="tab-item" :class="tag=='zan'?'active':''"  @click="tag = 'zan'">赞 {{data.praise_count == 0 ? '':data.praise_count}}</span>
+			<i class="active-line" :style="{left:tag=='pl'?'0.15rem':'1.25rem'}"></i>
+		</div>
+		<div class="commemt-list">
+			<template v-if="tag=='pl'">
+				<template v-if="data.comments_count==0">
+					<div class="com-empty">快去抢沙发</div>
+				</template>
+				<template v-if="commentData!=null && commentData.items.length!=0">
+					<div class="comment-item" v-for="item of commentData.items" @click="data.blog_reply=='true'?reply(item.comment_id,item.author_id,item.member_name):'javascript:;'">
+						<div class="com-user">
+							<div class="user-head">
+								<img :src="item.headpic" alt="">
+							</div>
+							<div class="user-name name-gray">{{item.member_name}}</div>
+							<div class="com-time">{{item.time | DateParseParam 'MM-dd hh:mm'}}</div>
+						</div>
+						<div class="com-desc">
+							<span class="for-comment" v-if="item.for_comment_id!='0'">
+								回复<span class="repay-name">{{item.to_uname}}</span>:
+							</span>
+							{{{item.comment | emotionFormat emotion}}}
+						</div>
+					</div>
+				</template>
+			</template>
+			<template v-if="tag=='zan'">
+				<template v-if="data.praise_count==0">
+					<div class="com-empty">快去点赞吧</div>
+				</template>
+				<template v-else>
+					<div class="comment-item" v-for="item of data.praise_list" v-if="item.pratype == 'b'">
+						<div class="user-head">
+							<img :src="item.headpic" alt="">
+						</div>
+						<div class="user-name">{{item.member_name}}</div>
+						<div class="com-time">{{168475 | DateParseParam 'MM-dd hh:mm'}}</div>
+					</div>
+				</template>
+			</template>
+		</div>
+	</div>
+</div>
+<ttmama-emotion :member-name.sync="member_name" :for-comment-id.sync="for_comment_id" :to-id.sync="to_id"></ttmama-emotion>
+<template v-if="showText">
+	<pop pop-type="text" :pop-text="popText"></pop>
+</template>
+<share-component :share-show.sync=shareShow></share-component>

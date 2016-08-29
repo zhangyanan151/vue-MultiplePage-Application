@@ -1,0 +1,183 @@
+.comment-container{
+	width: 6.4rem;
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+.comment-type{
+	width: 6.4rem;
+	padding: 10px 0.3rem;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-bottom: 1px solid #C8C7CC;
+	overflow: hidden;
+}
+.comment-text{
+	display: inline-block;
+	float: left;
+	color: #1B1B1B;
+	line-height: 20px;
+}
+.comment-star{
+	float: right;
+}
+.star-i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../../assets/CommentStar-checked.png) center center no-repeat;
+	background-size: 18px;
+}
+.star-i.star-un{
+	background: url(../../assets/CommentStar-unchecked.png) center center no-repeat;
+	background-size: 18px;
+}
+.comment-goods{
+	width: 6.4rem;
+	background-color: #fff;
+	margin-top: 10px;
+	padding: 0.2rem;
+	box-sizing: border-box;
+}
+.goods-tit{
+	overflow: hidden;
+}
+.goods-tit .tit{
+	color: #1B1B1B;
+}
+.goods-tit .tit-gray{
+	color: #A0A0A0;
+	margin-left: 20px;
+}
+.goods-item{
+	margin-top: 10px;
+	border-bottom: 1px solid #C8C7CC;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+.goods-item:last-child{
+	border: none;
+}
+.goods-img{
+	float: left;
+	width: 1.2rem;
+	height: 1.2rem;
+	border: 1px solid #DCDCDC;
+	box-sizing: border-box;
+	margin-right: 10px;
+}
+.goods-img img{
+	width: 100%;
+}
+.goods-name{
+	width: 3.3rem;
+	float: left;
+	box-sizing: border-box;
+}
+.goods-name p{
+	font-size: 10px;
+	color: #434343;	
+}
+.goods-dis{
+	width: 1.4rem;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	text-align: center;
+	border: 1px solid #F4BE3D;
+	color: #F4BE3D;
+	border-radius: 4px;
+}
+.goods-up{
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: url(../../assets/next.png) center center no-repeat;
+	background-size: 8px;
+	transform: rotate(270deg);
+}
+.goods-down{
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: url(../../assets/next.png) center center no-repeat;
+	background-size: 8px;
+	transform: rotate(90deg);
+}
+.comment-area{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-bottom: 1px solid #DCDCDC;
+}
+.comment-note{
+	display: block;
+	width: 6rem;
+	height: 1.2rem;
+	border-radius: 5px;
+	resize: none;
+	margin: 10px auto;
+	box-sizing: border-box;
+}
+.comment-img {
+	width: 6.4rem;
+	height: auto;
+	padding: 5px;
+	background-color: #fff;
+	overflow-x: hidden;
+}
+
+.comment-img .comment-pic {
+	float: left;
+}
+.comment-img .comment-pic span {
+	display: inline-block;
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: 6px 8px 6px;
+}
+.comment-img .comment-pic span canvas {
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.comment-img .imgBox {
+	float: left;
+	position: relative;
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: 6px;
+	background: url(../../assets/biankuang.png) center center no-repeat;
+	background-size: 100%;
+}
+.comment-img .imgBox .addImg {
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.comment-submit {
+	width: 6.4rem;
+	height: 40px;
+	position: fixed;
+	left: 50%;
+	margin-left: -3.2rem;
+	bottom: 0;
+	background-color: #76C1BC;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+.goods-pl .comment-text {
+	line-height: 1.2rem;
+}
+.goods-pl .comment-star {
+	line-height: 1.2rem;
+}
+.comment-area-g {
+	width: 6.4rem;
+	background-color: #fff;
+	overflow: hidden;
+	box-sizing: border-box;
+	border-bottom: 1px solid #DCDCDC;
+}

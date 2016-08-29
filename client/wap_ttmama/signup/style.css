@@ -1,0 +1,244 @@
+.bg {
+    background: transparent;
+}
+body {
+    background: #fff;
+}
+.bd {
+    position: relative;
+    min-width: 300px;
+    max-width: 640px;
+    height: auto;
+    padding-bottom: 15px;
+    margin: 0 auto !important;
+    background-color: #fff;
+}
+.header {
+    border-bottom:1px solid #ccc;
+}
+.header .page-back {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 30px;
+    height: 52px;
+}
+.header .page-back span {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    margin-top: 6px;
+    text-indent: -9999px;
+    background: url(../assets/ittb_02.png) center no-repeat;
+    background-size: 90%;
+}
+.header h2 {
+    display: block;
+    overflow: hidden;
+    width: 71%;
+    height: 52px;
+    line-height: 52px;
+    margin: 0px auto;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    color: #000;
+}
+
+.signup-form {
+    width: 88%;
+    margin: 0 auto;
+}
+.signup-form .inputBox {
+    position: relative;
+    display: inline-block;
+    height: 42px;
+    width: 100%;
+    margin-top: 2.2em;
+    border: 1px #dcdcdc solid;
+}
+.signup-form .inputBox:nth-of-type(4){
+    margin-top: 1.4em;
+}
+.signup-form .inputBox input {
+    width: 100%;
+    height: 42px;
+    padding-left: 38px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-indent: 0;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 16px;
+    color: #bfbfbf;
+    background: #fff;
+}
+.signup-form .inputBox:before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    width: 25px;
+    height: 25px;
+    background: url(../assets/tp.png) no-repeat;
+    background-size: 18px;
+}
+.signup-form .inputBox:nth-of-type(1):before{
+    background-position: 0px -56px;
+}
+
+.signup-form .inputBox:nth-of-type(2):before {
+    background-position: 0px -28px;
+}
+.signup-form .inputBox:nth-of-type(3):before,
+.signup-form .inputBox:nth-of-type(4):before {
+    background-position: 0 0;
+}
+
+.inputBox .eye {
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 16px;
+    width: 25px;
+    height: 25px;
+    background-size: 18px;
+}
+.inputBox .eye1 {
+    background: url(../assets/eye1.png) no-repeat;
+}
+.inputBox .eye2 {
+    background: url(../assets/eye2.png) no-repeat;
+}
+.signup-form .vcode_first {
+    display: inline-block;
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    width: 90px;
+    height: 25px;
+    text-align: right;
+    color: #ccc;
+}
+.signup-form .vcode_again {
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    z-index: 20;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background: #fcbe00;
+    border-radius: 2px;
+}
+.signup-form .vcode_first > span {
+    padding-right: 4px;
+    color: orange;
+}
+.signup-form .both {
+    clear: both;
+}
+.mtm .dgsc-ft {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+.mtm .dgsc-ft .c-btn-blue {
+    float: right;
+    display: block;
+    width: 88%;
+    height: 40px;
+    line-height: 40px;
+    -webkit-box-flex: 1;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 6%;
+    background: #73c0bc;
+    color: #fff;
+}
+.mtm .dgsc-ft .c-btn-blue span {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+}
+.mtm .protocol {
+    overflow: hidden;
+    width: 88%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    font-size: 12px;
+}
+.mtm .protocol em {
+    font-style:normal;
+}
+.mtm .protocol em:before {
+    content: '';
+    display: block;
+    float: left;
+     margin-right: .2em;
+    border-radius: 10px;
+    border: 1px #dcdcdc solid;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+}
+.mtm .protocol .prot_ok:before {
+    border: 1px solid #73c0bc;
+    background: #73c0bc url(../assets/dg1.png) 1px center no-repeat;
+    background-size: 80%;
+}
+.mtm .protocol .prot_text {
+    margin-left: 8px;
+    text-decoration: none;
+    color: #73c0bc;
+}
+.mtm .protocol #license {
+    -webkit-appearance: radio;
+    width: 15px;
+    height: 15px;
+}
+
+.signup_prot {
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.signup_prot .header .close {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    width: 30px;
+    height: 52px;
+    line-height: 52px;
+    color: #000;
+}
+.signup_prot .content {
+    padding: 4px;
+}
+.signup_prot .content h3 {
+    margin: 10px 0 12px;
+}
+.signup_prot .content p span {
+    padding: 0 8px;
+}
+
+.signup_prot h2 {
+    font-weight: normal;
+}
+
+.signup_prot .content h2 {
+    font-size: 16px;
+}
+.signup_prot .content p {
+    text-indent: 2em;
+}

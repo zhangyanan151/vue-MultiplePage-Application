@@ -1,0 +1,41 @@
+<header class="find-head">
+    <div class="head-box">
+        <div class="box1" :style="{width:nodeFind.length * 80+'px'}">
+            <div class="box1-item" :class="{'box1-item-is':node_id===node.node_id}" @click="nodeid($event,node.node_id)" v-for='node in nodeFind'><span class="item-tit">{{ node.node_name }}</span></div>
+        </div>
+    </div>
+</header>
+<div class="find-container">
+    <div class="find-tit-box" v-for='item in findData.alist' @click="blogInfo(item.article_id)">
+        <div class="find-tit-top">
+            <div class="find-tit-top-l">
+                <h2><a href="javascript:;">{{ item.title }}</a></h2>
+                <span>{{ item.pubtime | findstrtime }}</span>
+            </div>
+            <div class="find-tit-top-r">
+                <a href="javascript:;" class="find-tit-top-r-2" @click="share(item.article_id,$event)"></a>
+                <a href="javascript:;" class="find-tit-top-r-1" :class="{'find-tit-top-r-3':item.fav_type==='fav'}" @click="substractNum(item.article_id,item,$event)"></a>
+            </div>
+        </div>
+        <div class="find-tit-mid">
+            <a href="javascript:;"><img :src="item.image_id_list"></a>
+        </div>
+        <div class="find-tit-foo">
+            <ul>
+                <li style="border-right: 1px solid #DDDDDD"><a href="javascript:;"><i class="i-1"></i><span>{{ item.visits }}</span></a></li>
+                <li><a href="javascript:;"><i class="i-2"></i><span>{{ item.contentnums }}</span></a></li>
+                <li style="border-left: 1px solid #DDDDDD"><a href="javascript:;"><i class="i-3"></i><span>{{ item.praise }}</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<foot-index state="found"></foot-index>
+
+<share-component :share-show.sync=shareShow :share-url="shareUrl"></share-component>
+
+<template v-if="islogin">
+    <pop pop-type="text" :pop-text="nologintext"></pop>
+</template>
+<template v-if="isLoading">
+    <pop pop-type="spin"></pop>
+</template>

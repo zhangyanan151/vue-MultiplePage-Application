@@ -1,0 +1,71 @@
+<header class="order-head">
+	<span class="page-back" @click="goBack">返回</span>
+	<span class="page-title">退货进度</span>
+</header>
+<div class="returnshe-con" v-if="data!=null">
+	<div class="log-item" v-for="item in data.log" >
+		<div :class="item.log_text_app.author=='member'?'return-member':'return-admin'">
+			<div class="sche-time">{{item.alttime | DateParseParam 'MM-dd hh:mm'}}</div>
+			<span class="op-name">{{item.op_name=='admin'?'汤团售后':item.op_name}}</span>
+			<div class="sche-log">
+				<p>
+					<template v-if="item.behavior=='申请退货'">
+						<span class="log-text">{{item.log_text_app.data}}，货物状态：{{item.log_text_app.type}}，原因：{{item.log_text_app.title}}，{{item.log_text_app.content}}
+						</span>
+					</template>
+					<template v-if="item.behavior=='取消申请'">
+						<span class="log-text">{{item.log_text_app.data}}
+						</span>
+					</template>
+					<template v-if="item.behavior=='确认申请'">
+						<span class="log-text">{{item.log_text_app.data}}
+							<template v-if="item.log_text_app.data=='卖家已同意申请，可以发起退货'">
+								，退货地址：{{data.back_address}}
+							</template>
+						</span>
+					</template>
+					<template v-if="item.behavior=='温馨提示'">
+						<span class="log-text">温馨提示：
+							麻烦将产品包装好，包裹里您写上用户名和原因，方便我们收到以后给您处理，如果收到的退货发现没有质量问题，则不予处理，并将影响二次销售，协商垫付运费发顺丰按照普通快递费用退还。
+						</span>
+					</template>
+					<template v-if="item.behavior=='拒绝申请'">
+						<span class="log-text">{{item.log_text_app.data}}
+						</span>
+					</template>
+					<template v-if="item.behavior=='等待入仓'">
+						<span class="log-text">{{item.log_text_app.data}}，快递名称：{{item.log_text_app.logis}}，快递单号：{{item.log_text_app.courier_number}}
+						</span>
+					</template>
+					<template v-if="item.behavior=='确认入仓'">
+						<span class="log-text">{{item.log_text_app.data}}
+						</span>
+					</template>
+					<template v-if="item.behavior=='退款'">
+						<span class="log-text">{{item.log_text_app.data}}，退款金额：{{item.log_text_app.return_price}}
+						</span>
+					</template>
+					<template v-if="item.behavior=='拒绝退款'">
+						<span class="log-text">{{item.log_text_app.data}}
+						</span>
+					</template>
+				</p>
+				<div class="img-item" v-for="img of item.log_text_app.images_url">
+					<img :src="img" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="aftersale-opt" v-if="data.current_status=='2'||data.current_status=='3'">
+		<div class="opt-box" v-if="data.current_status=='2'">
+			<span class="order-btn-g" @click="cancelReturn">撤销申请</span>
+		</div>
+		<div class="opt-box" v-if="data.current_status=='3'">
+			<span class="order-btn-g" @click="addReturn">填写物流</span>
+			<span class="order-btn-g" @click="cancelReturn">撤销申请</span>
+		</div>
+	</div>
+</div>
+<template v-if="isLoading">
+	<pop pop-type="spin"></pop>
+</template>

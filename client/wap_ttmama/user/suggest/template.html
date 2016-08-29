@@ -1,0 +1,15 @@
+<header class="page-head">
+    <a class="page-back" href="javascript:history.go(-1)">返回</a>
+    <span class="page-title">投诉建议</span>
+    <a class="page-head-right" href="javascript:;" @click="suggestSubmit">提交</a>
+</header>
+<div class="suggest-form">
+    <p>反馈内容(必填)</p>
+    <textarea name="comment" rows="10" maxlength="460" placeholder="欢迎来吐槽(460个字符以内)" v-model="comment"></textarea>
+</div>
+
+<!--消息提示框组件-->
+<template v-if="suggest_tips">
+    <pop pop-type="text" :pop-text="showText"></pop>
+</template>
+

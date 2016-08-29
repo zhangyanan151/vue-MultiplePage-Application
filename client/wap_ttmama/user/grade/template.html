@@ -1,0 +1,42 @@
+<header class="page-head">
+	<a class="page-back" href="javascript:history.go(-1)">返回</a>
+	<span class="page-title">会员等级</span>
+</header>
+<template v-if="!show">
+	<div class="nologin-area">
+		<section class="nologin-sec">
+			<figure class="nologin-fig">
+				<div class="headImg">
+					<img :src="headImg" alt="">
+				</div>
+				<figcaption>
+					<h2 class="nologin-text">暂未登录</h2>
+				</figcaption>
+			</figure>
+			<a href="/login" class="goto-login-btn">去登录</a>
+		</section>
+	</div>
+</template>
+<div class="grade-box" v-if='show'>
+	<div class="grade-img"><img :src="member_pic"><span :class="[gradeData.lv_rank==='1'?'t1':'',gradeData.lv_rank==='2'?'t2':'',gradeData.lv_rank==='3'?'t3':'',gradeData.lv_rank==='4'?'t4':'']"></span></div>
+	<div class="grade-name">{{ gradeData.uname }}</div>
+	<div class="grade-hello">您好！</div>
+	<div class="grade-text">您已是<span>V<span class="sp">{{ gradeData.lv_rank }}</span></span><i>{{ gradeData.levelname }}</i><b :class="gradeData.lv_rank==='4'?'hide':''">，{{ gradeData.next_lv }}</b></div>
+	<ul>
+		<li><span class="v-1" :class="gradeData.lv_rank==='1'?'v-v1':'v-1'"></span><p>注册/完善资料</p></li>
+		<li><span class="v-2" :class="gradeData.lv_rank==='2'?'v-v2':'v-2'"></span><p>满1000积分</p></li>
+		<li><span class="v-3" :class="gradeData.lv_rank==='3'?'v-v3':'v-3'"></span><p>满4000积分</p></li>
+		<li><span class="v-4" :class="gradeData.lv_rank==='4'?'v-v4':'v-4'"></span><p>满13000积分</p></li>		
+	</ul>
+</div>
+<header class="privilege"  v-if='show'>
+	<span class="page-title">会员特权</span>
+</header>
+<div class="grade-privilege"  v-if='show'>
+	<ul>
+		<li><span class="i-1"></span><h3>生日礼包</h3><p>生日当天下单</br>送精美小礼品</p></li>
+		<li><span class="i-2"></span><h3>优先发货</h3><p>享受优先发货</br>缩短收货时间</p></li>
+		<li><span class="i-3"></span><h3>专属客服</h3><p>金牌客服服务</br>更贴心更省心</p></li>
+		<li><span class="i-4"></span><h3>折扣专享</h3><p>会员折扣专项</br>享9.8折更优惠</p></li>
+	</ul>
+</div>

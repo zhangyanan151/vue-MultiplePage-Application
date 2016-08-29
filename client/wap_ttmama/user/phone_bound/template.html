@@ -1,0 +1,50 @@
+<header class="page-head">
+	<a class="page-back" href="javascript:history.go(-1)">返回</a>
+	<span class="page-title">绑定手机号</span>
+</header>
+<template v-if="isBound">
+	<div class="opeArea">
+		<div class="boundBox">
+			<div class="phone-img"></div>
+			<p>您已绑定手机号 : {{ uname }}</p>
+			<span>若有其他问题请</span> <a  class="" href="tel:400-000-5580">联系客服</a>
+		</div>
+	</div>
+</template>
+<template v-else>
+	<div class="bound-form">
+        <div class="inputBox">
+            <input type="text" id="uname" name="uname" placeholder="请输入手机号" v-model="uname" @keyup="uname.length > 0 ? unameClear = true : unameClear = false" v-el:user-name />
+            <div class="vcode_first" v-show="vcodeGet"><span>{{ countdown }}</span>秒后重试</div>
+            <div class="vcode_again" v-show="!vcodeGet" @click="getVerify">获取验证码</div>
+            <!--清空输入框组件-->
+            <template v-if="unameClear">
+                <clearinput :show-clear.sync="unameClear" :input-text.sync="uname"  :right-dis=100></clearinput>
+            </template>
+        </div>
+        <div class="inputBox">
+            <input type="text" id="vcode" name="vcode" placeholder="请输入验证码"  v-model="vcode"  @keyup="vcode.length > 0 ? vcodeClear = true : vcodeClear = false" />
+            <!--清空输入框组件-->
+            <template v-if="vcodeClear">
+                <clearinput :show-clear.sync="vcodeClear" :input-text.sync="vcode"  :right-dis=6></clearinput>
+            </template>
+        </div>
+        <div class="inputBox">
+                <input :type="eye ? 'password':'text' " id="password" name="password" placeholder="请设置登录密码"  v-model="password" @keyup="password.length > 0 ? pwdClear = true : pwdClear = false" />
+                <span class="eye" @click="eye = !eye" :class="eye ? 'eye1':'eye2' "></span>
+                <!--清空输入框组件-->
+                <template v-if="pwdClear">
+                    <clearinput :show-clear.sync="pwdClear" :input-text.sync="password" :right-dis=40></clearinput>
+                </template>
+            </div>
+        <div class="dgsc-ft">
+	        <a @click="bound" href="javascript:;" class="c-btn-blue"><span>绑定</span></a>
+	    </div>
+    </div>
+</template>
+
+<!--消息提示框组件-->
+<template v-if="bound_tips">
+    <pop pop-type="text" :pop-text="showText"></pop>
+</template>
+

@@ -1,0 +1,11 @@
+<div class="big-img-box" :style="{opacity:showBigImg?'1':'0',zIndex:showBigImg?'999999':'-1',top:showBigImg?'0':''}"> 
+	<div class="big-img-top">
+		<!-- <span class="big-img-tit">{{bigImgCur}} of {{bigImgs.length}}</span> -->
+		<div class="close-big-img" @click="showBigImg=false"></div>
+	</div>
+	<div class="swiper-box" @click="showBigImg=false">
+		<template v-if="showBigImg">
+		<swiper :list="bigImgs"  :aspect-ratio="1"></swiper>
+		</template>
+	</div>
+</div>

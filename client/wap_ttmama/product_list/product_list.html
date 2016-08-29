@@ -1,0 +1,148 @@
+<sticky style="z-index:99;width:6.4rem">
+	<div class="top-box">
+		<div class="pru-back" @click="goBack"></div>
+		<div class="pru-search-box">
+			<search  label-color="#E9EAEC" placeholder="查询全球精选宝宝产品" :value=searchKeywords cancel-text="取消"></search>
+		</div>
+		<div class="cart-top">
+			<mini-car></mini-car>
+		</div>
+	</div>
+</sticky>
+<template v-if="brandId!=null && brandData!=null">
+	<div class="brand-box" v-el:brand transition="brand-tran">
+		<div class="brand-tit">
+			<img :src="brandData.brand_logo" alt="">
+			<span>{{brandData.brand_name}}</span>
+		</div>
+		<div class="brand-con">
+			<p>{{brandData.brand_desc}}</p>
+		</div>
+		<div class="brand-all">
+			<a href="/brand">查看全部</a>
+		</div>
+	</div>
+</template>
+<sticky style="z-index:99;width:6.4rem;top:45px;">
+	<div class="order-box">
+		<ul class="order-ul">
+			<li :class="orderType===''?'active':''" class="down" @click="orderTap('')">综合</li>
+			<li :class="[orderType==='buy_count'?'active':'',order.buy_count===1?'down':'up']" @click="orderTap('buy_count')">销量</li>
+			<li :class="[orderType==='price'?'active':'',order.price===1?'down':'up']" @click="orderTap('price')">价格</li>
+			<li @click="tag?showScreen():'javascript:;'">筛选</li>
+		</ul>
+		<div class="change-class" @click="bigImgTag = bigImgTag * -1"><span :class="bigImgTag===1?'big-img':'small-img'"></span></div>
+	</div>
+</sticky>
+<template v-if="productData.items && productData.items.length>0">
+	<div class="pro-list-box" :class="bigImgTag===1?'big-img':'small-img'">
+		<ul>
+			<li v-for="item in productData.items" class="pro-item">
+				<a href="/details?goods_id={{item.goods_id}}">
+				<div class="item-area">
+					<div class="item-img">
+						<x-img :src="item.image_default_url" alt=""></x-img>
+					</div>
+					<div class="item-text-box">
+						<div class="item-title">
+							<h3>{{item.name}}</h3>
+						</div>
+						<div class="item-sale-num">
+							已售{{item.buy_count}}件
+						</div>
+						<div class="item-price-box">
+							<span class="price">{{item.price | currency '￥'}}</span>
+							<span class="mk-price">{{item.mktprice | currency '￥'}}</span>
+						</div>
+					</div>
+					<div class="item-buy">
+						<span class="buy" @click="buyClick(item.product_id, item.goods_id, item.store, item.spec_desc, $event)"></span>					
+					</div>
+				</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="load-more" v-show="loadingMore">
+		<spinner :type="type" slot="value"></spinner>
+	</div>
+</template>
+<template v-if="!isLoading && (!productData.items || productData.items.length == 0)">
+	<div class="pro-empty">
+		<p class="no-pro">当前分类暂无相关商品，请重新选择筛选条件</p>
+	</div>
+</template>
+<back-home></back-home>
+<template v-if="isLoading">
+	<pop pop-type="spin"></pop>
+</template>
+<template v-if="isAlert">
+	<pop pop-type="text" :pop-text="showText"></pop>
+</template>
+
+<div class="screen-area" :style="{right: screenShow?'0':'-100%'}">
+	<div class="screen-mask" @click="screenShow=false"></div>
+	<div class="sreen-box">
+		<div class="sreen-tit">
+			<h2>筛选</h2>
+			<span @click="screenShow=false">取消</span>
+		</div>
+		<template v-if="chosedTag.length>0">
+			<div class="tag-box">
+				<div class="tag-arr">
+					<span v-for="item in chosedTag" class="tag-item tag-chosed" @click="delScreenTag(item.type)">{{item.name}}</span>
+				</div>
+			</div>
+		</template>
+		<template v-if="screenTag">
+			<template v-if="screenTag.price">
+				<template v-if="screenTag.price.length>0">
+					<div class="tag-box">
+						<span v-show="tagHeight.price!==0" class="tag-down"></span>
+						<div class="tag-tit">价格区间(￥)</div>
+						<div class="tag-arr" :style="{height:tagHeight.price === 1?'2.1rem':Math.ceil(screenTag.price.length/2)*0.7+'rem'}">
+							<span v-for="item in screenTag.price" class="tag-item" @click="$index !== chosedTagName.priceId ? getDataByPrice(item.min+'~'+item.max, $index) : 'javascript:;'" :class="$index === chosedTagName.priceId ? 'active' : ''">{{item.min}}~{{item.max}}</span>
+						</div>
+					</div>
+				</template>
+			</template>
+			<template v-if="screenTag.brand">
+				<template v-if="screenTag.brand.length>0">
+					<div class="tag-box">
+						<span v-show="tagHeight.brand!==0" class="tag-down" @click="tagHeight.brand = tagHeight.brand * -1"></span>
+						<div class="tag-tit">品牌</div>
+						<div class="tag-arr" :style="{height:tagHeight.brand === 1?'2.1rem':Math.ceil(screenTag.brand.length/2)*0.7+'rem'}">
+							<span v-for="item in screenTag.brand" class="tag-item" @click="item.id !== chosedTagName.brandId ? getDataByBrand(item.name, item.id) : 'javascript:;'" :class="item.id === chosedTagName.brandId ? 'active' : ''">{{item.name}}</span>
+						</div>
+					</div>
+				</template>
+			</template>
+			<template v-if="screenTag.sub_cat">
+				<template v-if="screenTag.sub_cat.length>0">
+					<div class="tag-box">
+						<span v-show="tagHeight.sub_cat!==0" class="tag-down"></span>
+						<div class="tag-tit">分类</div>
+						<div class="tag-arr" :style="{height:tagHeight.sub_cat === 1?'2.1rem':Math.ceil(screenTag.sub_cat.length/2)*0.7+'rem'}">
+							<span v-for="item in screenTag.sub_cat" class="tag-item" @click="item.cat_id !== chosedTagName.catId ? getDataByCatid(item.cat_name, item.cat_id) : 'javascript:;'" :class="item.cat_id === chosedTagName.catId ? 'active' : ''">{{item.cat_name}}</span>
+						</div>
+					</div>
+				</template>
+			</template>
+			<!-- <template v-if="screenTag.tags && screenTag.tags.promotion.tags_promotion">
+				<template v-if="screenTag.tags.promotion.tags_promotion.length>0">
+					<div class="tag-box">
+						<span v-show="tagHeight.tags_promotion!==0" class="tag-down"></span>
+						<div class="tag-tit">促销标签</div>
+						<div class="tag-arr" :style="{height:tagHeight.tags_promotion === 1?'2.1rem':Math.ceil(screenTag.tags.promotion.tags_promotion.length/2)*0.7+'rem'}">
+							<span v-for="item in screenTag.tags.promotion.tags_promotion" class="tag-item">{{item.name}}</span>
+						</div>
+					</div>
+				</template>
+			</template> -->
+		</template>
+	</div>
+</div>
+
+<spec-product :show=showSpec :product-spec="productSpec"></spec-product>
+
+<confirm :show.sync="confirmShow" title="是否加入购物车" confirm-text="确认" cancel-text="取消" mask-transition=""></confirm>

@@ -1,0 +1,15 @@
+<div class="brand-container">
+	<div class="brand-head">
+		<div class="pru-back" @click="goBack"></div>
+		<h2 class="brand-head-h">品牌详情</h2>
+	</div>
+	<div class="brand-box">
+		<div class="brand-tit">
+			<img :src="brandData.brand_logo" alt="">
+			<span>{{brandData.brand_name}}</span>
+		</div>
+		<div class="brand-info">
+			<p>{{brandData.brand_desc}}</p>
+		</div>
+	</div>
+</div>

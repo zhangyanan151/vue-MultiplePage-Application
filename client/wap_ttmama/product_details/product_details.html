@@ -1,0 +1,186 @@
+<div class="detail-area" :style="{backgroundColor:detailData==null?'#fff':''}">
+	<div class="detail-head">
+		<div class="detail-head-con">
+			<a class="page-back" href="javascript:history.go(-1)">返回</a>
+			<div class="detail-tit-box">
+				<div class="tit-box">
+					<tab :line-width=2 active-color='#76c1bc' default-color="#323232">
+					    <tab-item :selected="showTag==0" @click="showTag=0">商品</tab-item>
+						<tab-item :selected="showTag==1" @click="showTag=1">详情</tab-item>
+						<tab-item :selected="showTag==2" @click="showTag=2">评价</tab-item>
+					</tab>
+				</div>
+			</div>
+			<div class="detail-top-r">
+				<span class="goods-coll" :class="is_fav==='true'?'goods-coll-y':''" @click="favGoods"></span>
+				<span class="goods-share" @click="shareShow=true"></span>
+			</div>
+		</div>
+	</div>
+	<template v-if="showTag==0 && detailData!=null">
+		<div class="detail-container">
+			<div class="detail-main">
+				<div class="img-swiper" @click="showBigImg=true">
+					<swiper :list="swiperImgs" :aspect-ratio="1" auto height="400"></swiper>
+				</div>
+				<div class="detail-title">
+					<h2>{{detailData.name}}</h2>
+				</div>
+				<div class="detail-price">
+					<span class="price">{{nowProduct.price | currency '￥'}}元</span>
+					<span class="mktprice">{{nowProduct.mktprice | currency '￥'}}元</span>
+					<a href="/list?brand_id={{detailData.brand_id}}" class="brand">{{detailData.brand_name}} &gt;</a>
+				</div>
+				<div class="sale-num">
+					{{detailData.buy_count}}人已购买
+				</div>
+			</div>
+			<template v-if="detailData.product.spec[0]">
+				<div class="product-spec" @click="showSpec=true">
+					<span class="product-spec-t">规格</span>
+					<span class="product-spec-c">{{nowSpec}}</span>
+				</div>
+			</template>
+			<div class="product-comment">
+				<p class="product-comment-t">商品评论</p>
+				<div class="product-discuss">
+					<span class="discuss-point">{{parseFloat(detailData.discuss_point).toFixed(1)}}</span>
+					<div class="discuss-star">
+						<div class="star">
+							<div class="star-above"  :style="{width:Math.floor(detailData.discuss_point/5*100)+'%'}"><span></span></div>
+							<div class="star-below"><span></span></div>
+						</div>
+						<span class="discuss-g">好评率{{parseFloat(detailData.discuss_point/5*100).toFixed(1)}}%</span>
+					</div>
+					<span class="discuss-count">{{detailData.discuss_count}}条评论</span>
+				</div>
+				<template v-if="detailData.comment.length==0">
+					<div class="no-discuss">暂无评论</div>
+				</template>
+				<template v-if="detailData.comment.comment_id">
+					<div class="discuss-item">
+						<div class="discuss-item-top">
+							<div class="user">
+								<i :style="{backgroundImage:detailData.comment.member_pic!=''?'url('+detailData.comment.member_pic+')':''}"></i><span>{{detailData.comment.author}}</span>
+							</div>
+							<div class="user-star">
+								<div class="star">
+									<div class="star-above"  :style="{width:Math.floor(detailData.discuss_point/5*100)+'%'}"><span></span></div>
+									<div class="star-below"><span></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="dis-item-con">
+							<p>{{detailData.comment.comment}}</p>
+							<template v-if="detailData.comment.img_list.length>0">
+								<div class="dis-img-box">
+									<div class="dis-img" v-for="item in detailData.comment.img_list" :style="{backgroundImage:item!=''?'url('+item+')':''}" track-by="$index">
+									</div>
+								</div>
+							</template>
+							<div class="dis-desc">
+								<span class="dis-desc-spec">{{detailData.comment.spec_info==null?'规格:默认':detailData.comment.spec_info}}</span>
+								<span class="dis-desc-time">{{detailData.comment.time | DateParse}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="more-comment" @click="showTag=2">查看全部评论</div>
+				</template>
+			</div>
+			<div class="product-comment">
+				<p class="product-comment-t">商品属性</p>
+				<div class="com-con">
+					{{detailData.base_information_txt}}
+				</div>
+				<div class="com-con">
+					<p>产品卖点：</p>
+					{{detailData.product_intruduce_txt}}
+				</div>
+			</div>
+			<template v-if="goodsLinkDate!=null">
+				<div class="product-comment">
+					<p class="product-comment-t">推荐搭配</p>
+					<div class="goods-link-box" >
+						<div :style="{width: 100*goodsLinkDate.length+'px'}">
+							<a class="goods-link-item" v-for="item in goodsLinkDate" href="/details?goods_id={{item.goods_id}}">
+								<img :src="item.image_default_url" alt="" class="link-img">
+								<h2 class="link-tit">{{item.name}}</h2>
+								<p class="link-price">{{item.price | currency '￥'}}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</template>
+		</div>
+		<template v-if="detailData.product.spec[0]">
+			<spec-product :show=showSpec :product-spec="detailData.product"></spec-product>
+		</template>
+	</template>
+	<template v-if="showTag==1 && detailData!=null">
+		<div class="detail-container">
+			<div class="content-pic" v-for="item in detailData.content_pic">
+				<x-img :src="item" alt=""></x-img>
+			</div>
+		</div>
+	</template>
+	<template v-if="showTag==2">
+		<div class="detail-container">
+			<div class="comment-container" v-if="commentData!=null">
+				<div class="discuss-item" v-for="obj in commentData.discuss" >
+					<div class="discuss-item-top">
+						<div class="user">
+							<i :style="{backgroundImage:obj.member_pic!=''?'url('+obj.member_pic+')':''}"></i><span>{{obj.author}}</span>
+						</div>
+						<div class="user-star">
+							<div class="star">
+								<div class="star-above"  :style="{width:Math.floor(obj.goods_point/5*100)+'%'}"><span></span></div>
+								<div class="star-below"><span></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="dis-item-con">
+						<p>{{obj.comment}}</p>
+						<template v-if="obj.img_list.length>0">
+							<div class="dis-img-box">
+								<div class="dis-img" v-for="item in obj.img_list" :style="{backgroundImage:item!=''?'url('+item+')':''}" track-by="$index">
+								</div>
+							</div>
+						</template>
+						<div class="dis-desc">
+							<span class="dis-desc-spec">{{obj.spec_info==null?'规格:默认':obj.spec_info}}</span>
+							<span class="dis-desc-time">{{obj.time | DateParse}}</span>
+						</div>
+					</div>
+					<template v-if="obj.items.length>0">
+						<div class="comment-reply">
+							<p>团妈回复：{{obj.items[0].comment}}</p>
+							<p class="comment-reply-time">{{obj.items[0].time | DateParse}}</p>
+						</div>
+					</template>
+				</div>
+				<div class="load-more" v-show="loadingMore">
+					<spinner :type="type" slot="value"></spinner>
+				</div>
+			</div>
+			<template v-if="commentData!=null && !commentData.discuss">
+				<div class="no-comment">该商品暂无评论</div>
+			</template>
+		</div>
+	</template>
+	<div class="detail-foot">
+		<a class="service" @click="checkLogin($event)" href="/openim?productName={{productName}}&productUrl={{current_url}}"><i></i><span class="foot-text">客服</span></a>
+		<div class="foot-line"></div>
+		<div class="cart"><mini-car></mini-car><span class="foot-text">购物车</span></div>
+		<div class="add-order" @click="toBuy">立即购买</div>
+		<div class="add-cart" @click="toAddCart">加入购物车</div>
+	</div>
+	<template v-if="isLoading">
+		<pop pop-type="spin"></pop>
+	</template>
+</div>
+<back-home :style="{bottom: '60px'}"></back-home>
+<template v-if="isAlert">
+	<pop pop-type="text" :pop-text="showText"></pop>
+</template>
+<share-component :share-show.sync=shareShow></share-component>
+<big-swiper :big-imgs="swiperImgs" :show-big-img=showBigImg></big-swiper>

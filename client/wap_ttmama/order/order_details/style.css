@@ -1,0 +1,257 @@
+.detail-container{
+	width: 6.4rem;
+	margin-top: 50px;
+	padding-bottom: 50px;
+}
+.detail-status{
+	width: 6.4rem;
+	padding: 0.2rem;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.detail-status .top-text{
+	color: #F5BE58;
+}
+.detail-status .top-status{
+	display: inline-block;
+	float: right;
+	color: #fff;
+	padding: 0 10px;
+}
+.detail-addr{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0.2rem;
+	box-sizing: border-box;
+	position: relative;
+}
+.ship-info{
+	line-height: 30px;
+	font-size: 16px;
+	color: #4A4A4A;
+}
+.ship-info .ship-name{
+	margin-right: 0.8rem;
+}
+.ship-addr{
+	line-height: 30px;
+	color: #707070; 
+}
+.order-bonded{
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 1.7rem;
+	width: 88px;
+	height: 64px;
+	background: url(../../assets/baoshuicangdingdan.png) top center no-repeat;
+	background-size: 100%;
+}
+.detail-list{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0 0.1rem;
+	box-sizing: border-box;
+	position: relative;
+}
+.detail-list .order-main-item:last-child{
+	border-bottom: none;
+}
+.aftersale{
+	display: block;
+	float: right;
+	padding: 2px 12px;
+	border-radius: 4px;
+}
+.aftersale-unable{
+	color: #fff;
+	background-color: #DCDCDC;
+}
+.aftersale-able{
+	border: 1px solid #F4BE3D;
+	color: #F4BE3D;
+}
+.detail-info{
+	width: 6.4rem;
+	margin-top: 10px;
+	padding: 0 0.2rem;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.info-item{
+	width: 6rem;
+	line-height: 45px;
+	border-bottom: 1px solid #DCDCDC;
+	overflow: hidden;
+}
+.info-item:last-child{
+	border-bottom: none;
+}
+.info-l{
+	display: block;
+	float: left;
+	color: #A7A7A7;
+}
+.info-r{
+	display: block;
+	float: right;
+	color: #1F1F1F;
+}
+.order-logs{
+	width: 6.4rem;
+	margin-top: 10px;
+	padding: 0 0.2rem;
+	background-color: #fff;
+	box-sizing: border-box;
+	font-size: 13px;
+	color: #717171;
+	line-height: 20px;
+}
+.order-price{
+	width: 6.4rem;
+	margin-top: 10px;
+	padding: 0.2rem;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.price-item{
+	width: 6rem;
+	line-height: 20px;
+	overflow: hidden;
+}
+.price-item .price-text{
+	float: left;
+	color: #1F1F1F;
+}
+.price-item .price-m{
+	float: right;
+	color: #76C1BC;
+}
+.price-item .price-m-y{
+	color: #F5BE58;
+}
+.detail-bottom{
+	width: 6.4rem;
+	height: 50px;
+	padding: 0 0.2rem;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-top: 1px solid #DCDCDC;
+	position: fixed;
+	left: 50%;
+	margin-left: -3.2rem;
+	bottom: 0;
+}
+.detail-bottom .detail-btn{
+	width: auto;
+	float: right;
+}
+.aftersale-status{
+	float: right;
+	line-height: 27px;
+	margin-right: 15px;
+	color: #A7A7A7;
+}
+.aftersale-goods{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0.2rem 0.1rem;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.aftersale-it{
+	width: 6.4rem;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0 0.1rem;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.aftersale-it .item-r{
+	display: inline-block;
+	width: 4.7rem;
+	text-align: right;
+}
+.item-r .num-opt{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	background-color: #F2F2F2;
+	color: #767676;
+	font-size: 20px;
+	vertical-align: middle;
+}
+.item-r .num-opt.num{
+	width: 38px;
+	color: #565656;
+	font-size: 14px;
+	margin: 0 -2px;
+}
+.item-r .num-opt.opt-unable{
+	background-color: #FCFBFB;
+	color: #DDDDDD;
+}
+.aftersale-it .item-r-select{
+	display: inline-block;
+	width: 4.7rem;
+	text-align: right;
+	position: relative;
+}
+.aftersale-select{
+	-webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    width: 100%;
+    position: relative;
+    color: #1B1B1B;
+    z-index: 1;
+    font-size: inherit;
+}
+.item-r-select::after{
+	display: block;
+	content: "";
+	width: 15px;
+	height: 24px;
+	position: absolute;
+	top: 0;
+	right: 0.1rem;
+	background: url(../../assets/next.png) center center no-repeat;
+	background-size: 8px;
+	transform: rotate(90deg);
+}
+.aftersale-note{
+	display: block;
+	width: 6rem;
+	height: 1.5rem;
+	border: 1px solid #DCDCDC;
+	border-radius: 5px;
+	resize: none;
+	margin: 0 auto 10px auto;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.aftersale-it .after-pic {
+	float: left;
+	position: relative;
+	margin: 8px;
+}
+.aftersale-it .after-pic div {
+	width: 75px;
+	height: 75px;
+	background: url(../../assets/biankuang.png) center center no-repeat;
+	background-size: 100%;
+}
+
+.aftersale-it .after-pic div canvas {
+	display: block;
+	width: 75px;
+	height: 75px;
+}
+

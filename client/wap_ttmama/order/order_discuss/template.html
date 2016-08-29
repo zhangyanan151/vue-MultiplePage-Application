@@ -1,0 +1,103 @@
+<template v-if="tag=='main'">
+<header class="order-head">
+	<span class="page-back" @click="goBack">返回</span>
+	<span class="page-title">订单评价</span>
+</header>
+<div class="comment-container" v-if="data!=null">
+	<div class="comment-type-box">
+		<div class="comment-type" v-for="item of data.comment_goods_type">
+			<span class="comment-text">{{item.name}}</span>
+			<div class="comment-star">
+				<i class="star-i" :class="star[$index].score<1?'star-un':''" @click="star[$index].score=1"></i>
+				<i class="star-i" :class="star[$index].score<2?'star-un':''" @click="star[$index].score=2"></i>
+				<i class="star-i" :class="star[$index].score<3?'star-un':''" @click="star[$index].score=3"></i>
+				<i class="star-i" :class="star[$index].score<4?'star-un':''" @click="star[$index].score=4"></i>
+				<i class="star-i" :class="star[$index].score<5?'star-un':''" @click="star[$index].score=5"></i>
+			</div>
+		</div>
+	</div>
+	<div class="comment-goods">
+		<div class="goods-tit">
+			<span class="tit">商品</span>
+			<span class="tit-gray">({{data.goods.length}})</span>
+			<span v-if="data.goods.length>1" :class="showGoodsList?'goods-up':'goods-down'" @click="showGoodsList = !showGoodsList"></span>
+		</div>
+		<div class="goods-list">
+			<div class="goods-item" v-for="item of data.goods"  v-if="data.goods.length<=1 || showGoodsList">
+				<div class="goods-img">
+					<img :src="item.image_default_url" alt="">
+				</div>
+				<div class="goods-name">
+					<p>{{item.product_name}}</p>
+				</div>
+				<div class="goods-dis" @click="goodsDis($index)">评价晒单</div>
+			</div>
+			<div class="goods-item" v-if="data.goods.length>1 && !showGoodsList">
+				<div class="goods-img" v-for="item of data.goods">
+					<img :src="item.image_default_url" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="comment-area">
+		<div class="comment">
+			<textarea placeholder="请填写评价" class="comment-note" v-model="orderComment"></textarea>
+		</div>
+	</div>
+	<div class="comment-img" @click="initQiniu">
+		<div class="comment-pic"></div>
+		<div class="imgBox" v-show="orderImgAdd">
+			<div class="addImg"></div>
+		</div>
+	</div>
+</div>
+<div class="comment-submit" @click="orderCommentSubmit">提交</div>
+</template>
+
+
+<template v-if="tag=='goods'">
+<header class="order-head">
+	<span class="page-back" @click="backMain">返回</span>
+	<span class="page-title">商品评价</span>
+</header>
+<div class="comment-container" v-if="curGoods!=null">
+	<div class="comment-type-box">
+		<div class="comment-type">
+			<div class="goods-img">
+				<img :src="curGoods.image_default_url" alt="">
+			</div>
+			<div class="goods-pl">
+				<span class="comment-text">商品评分</span>
+				<div class="comment-star">
+					<i class="star-i" :class="goodsStar<1?'star-un':''" @click="goodsStar=1"></i>
+					<i class="star-i" :class="goodsStar<2?'star-un':''" @click="goodsStar=2"></i>
+					<i class="star-i" :class="goodsStar<3?'star-un':''" @click="goodsStar=3"></i>
+					<i class="star-i" :class="goodsStar<4?'star-un':''" @click="goodsStar=4"></i>
+					<i class="star-i" :class="goodsStar<5?'star-un':''" @click="goodsStar=5"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="comment-area-g">
+		<div class="comment">
+			<textarea placeholder="请填写评价" class="comment-note" v-model="goodsComment"></textarea>
+		</div>
+	</div>
+	<!--
+	<div class="comment-img" @click="initQiniu">
+		<div class="comment-pic"></div>
+		<div class="imgBox" v-show="goodsImgAdd"><div class="addImg"></div></div>
+	</div>
+	-->
+</div>
+<div class="comment-submit" @click="goodsCommentSubmit()">提交</div>
+</template>
+<template v-if="popShow">
+	<pop pop-type="text" :pop-text="popText"></pop>
+</template>
+<template v-if="isSubmit">
+	<pop pop-type="spinText" pop-text="评价提交中"></pop>
+</template>
+<template v-if="picUpload">
+	<pop pop-type="spinText" pop-text="图片上传中..."></pop>
+</template>

@@ -1,0 +1,46 @@
+<header class="favorite-head">
+	<a href="javascript:history.go(-1)" class="page-back-btn">返回</a>
+	<div class="favorite-tit">
+		<div class="fav-tit-box">
+			<span class="fav-tit-i" :class="tag=='goods'?'active':''" @click="tagClick('goods')">商品</span>
+			<span class="fav-tit-i" :class="tag=='log'?'active':''" @click="tagClick('log')">文章</span>
+			<i class="fav-tit-line" :style="{left:tag=='goods'?'0':'50px'}"></i>
+		</div>
+	</div>
+</header>
+<div class="favorite-container" v-if="data != null && tag == 'goods'">
+	<div class="fav-item" v-for="item of data.item">
+		<div class="fav-goods" v-touch:pan="moveLeft($event,$index)" v-touch-options:pan="{ direction: 'left', threshold: 20 }" id="item_desc_{{$index}}"  @click="toDetail(item.goods_id)">
+			<div class="fav-goods-img">
+				<img :src="item.image_default_url" alt="">
+			</div>
+			<div class="fav-goods-txt">
+				<h2 class="fav-goods-tit">{{item.name}}</h2>
+				<p class="fav-sale-num">已售{{item.buy_count}}件</p>
+				<p class="fav-price"><span class="price">{{item.price | currency '￥'}}</span><span class="mkprice">{{item.mktprice | currency '￥'}}</span></p>
+			</div>
+		</div>
+		<div class="fav-dele-coll">
+			<div class="fav-goods-del" @click="cancelFavGoods(item.goods_id, $index)">取消</div>
+		</div>
+	</div>
+</div>
+<div class="item-hide" :style="{'zIndex': hideIndex}" v-show="leftId!==null" v-touch:tap="hideTap" v-touch:pan="hideTap"></div>
+<div class="favorite-container" v-if="data != null && tag == 'log'">
+	<div class="fav-item" v-for="item of data.items">
+		<div class="fav-log" v-touch:pan="moveLeft($event,$index)" v-touch-options:pan="{ direction: 'left', threshold: 20 }" id="item_desc_{{$index}}">
+			<div class="fav-log-img">
+				<img :src="item.image_id_list" alt="">
+			</div>
+			<div class="fav-log-txt">
+				<h2 class="fav-log-tit">{{item.title}}</h2>
+				<p class="fav-log-time">{{item.pubtime | DateParseParam 'yyyy-MM-dd hh:mm'}}</p>
+			</div>
+		</div>
+		<div class="fav-dele-coll" style="width:1.8rem;">
+			<div class="fav-log-del" @click="cancelFavLog(item.article_id, $index)">取消</div>
+			<div class="fav-log-share" @click="logShare(item.article_id)">分享</div>
+		</div>
+	</div>
+</div>
+<share-component :share-show.sync=shareShow :share-url='shareUrl'></share-component>

@@ -1,0 +1,241 @@
+.grade-box{
+	width: 6.4rem;
+	height: auto;
+	padding-top: .8rem;
+	overflow: hidden;
+	background: #fff;
+}
+.grade-box .grade-img{
+	width: 1.53rem;
+	height: 1.53rem;
+	border-radius: 50%;
+	margin:0.45rem 0 0 2.43rem;
+	position: relative;
+}
+.grade-box .grade-img img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.grade-box .grade-img span{
+	display: block;
+	width: 0.35rem;
+	height: 0.35rem;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	top:1.35rem;
+	left:0.55rem;
+}
+.grade-box .grade-img .t1{
+	background:url(../../assets/grade-V1.png) no-repeat;
+    background-size: 98%;	
+}
+.grade-box .grade-img .t2{
+	background:url(../../assets/grade-V2.png) no-repeat;
+    background-size: 100%;	
+}
+.grade-box .grade-img .t3{
+	background:url(../../assets/grade-V3.png) no-repeat;
+    background-size: 100%;	
+}
+.grade-box .grade-img .t4{
+	background:url(../../assets/grade-V4.png) no-repeat;
+    background-size: 100%;	
+}
+.grade-box .grade-name{
+	color: #6a6a6a;
+	width: 6.4rem;
+    text-align: center;
+    margin-top: 0.55rem;
+    font-size: 20px;
+}
+.grade-box .grade-hello{
+	width: 6.4rem;
+	text-align: center;
+	color: #000;
+	margin-top: 0.36rem;
+	font-size: 16px;
+}
+.grade-box .grade-text{
+	width: 6.4rem;
+	text-align: center;
+	color: #9f9f9f;
+	margin-top: 0.33rem;
+}
+.grade-box>ul{
+	width: 6.4rem;
+    margin-top: 1rem;
+}
+.grade-box>ul li{
+	width: 1.5rem;
+    float: left;
+    margin-left: 0.1rem;  
+    text-align: center;
+    margin-bottom: 0.45rem;
+}
+.grade-box>ul li span{
+	width: 0.56rem;
+	height: 0.48rem;
+	overflow: hidden;
+	display: block;
+	margin: 0 auto;
+}
+.grade-box>ul li .v-1{
+	background:url(../../assets/v1hui.png) no-repeat;
+    background-size: 100%;
+}
+.grade-box>ul li .v-2{
+	background:url(../../assets/v2hui.png) no-repeat;
+    background-size: 100%;	
+}
+.grade-box>ul li .v-3{
+	background:url(../../assets/v3hui.png) no-repeat;
+    background-size: 100%;	
+}
+.grade-box>ul li .v-4{
+	background:url(../../assets/v4hui.png) no-repeat;
+    background-size: 84%;	
+}
+.grade-box>ul li .v-v1{
+	background:url(../../assets/V1huang.png) no-repeat;
+    background-size: 100%;
+}
+.grade-box>ul li .v-v2{
+	background:url(../../assets/V2huang.png) no-repeat;
+    background-size: 98%;
+}
+.grade-box>ul li .v-v3{
+	background:url(../../assets/V3huang.png) no-repeat;
+    background-size: 100%;
+}
+.grade-box>ul li .v-v4{
+	background:url(../../assets/V4huang.png) no-repeat;
+    background-size: 84%;
+}
+.grade-box>ul li p{
+	display: block;
+    color: #545454;
+	font-size: 12px;
+	margin-top: 0.25rem;
+}
+.privilege{
+	position: relative;
+    width: 6.4rem;
+    height: 0.8rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 0.8rem;
+    z-index: 99;
+    margin-top: 0.2rem;
+}
+.grade-privilege{
+	width: 6.4rem;
+	overflow: hidden;
+	background: #fff;
+}
+.grade-privilege>ul{
+	overflow: hidden;
+}
+.grade-privilege>ul li{
+	width: 1.55rem;
+    overflow: hidden;
+    float: left;
+    margin: 0.53rem 0 0.3rem 0.02rem;
+}
+.grade-privilege>ul li span{
+	width: 0.5rem;
+	height: 0.5rem;
+	display: block;
+	margin: 0 auto;
+}
+.grade-privilege>ul li h3{
+	font-size: 14px;
+	text-align: center;
+	margin-top: 0.2rem;
+}
+.grade-privilege>ul li p{
+	font-size: 12px;
+	margin-top: 0.2rem;
+	text-align: center;
+}
+.grade-privilege>ul li .i-1{
+	background:url(../../assets/grade-img3.png) no-repeat;
+    background-size: 100%;
+}
+.grade-privilege>ul li .i-2{
+	background:url(../../assets/grade-img4.png) no-repeat;
+    background-size: 100%;
+}
+.grade-privilege>ul li .i-3{
+	background:url(../../assets/grade-img1.png) no-repeat;
+    background-size: 100%;
+}
+.grade-privilege>ul li .i-4{
+	background:url(../../assets/grade-img2.png) no-repeat;
+    background-size: 100%;
+}
+.grade-text span{
+	font-size: 20px;
+    font-weight: bold;
+    color: #f3be3c;
+    position: relative;
+}
+.grade-text .sp{
+	vertical-align:sub;
+	font-size: 10px;
+	position: absolute;
+	top: 7px;
+}
+.grade-text b{
+	font-weight: normal;
+}
+.hide{
+	display: none;
+}
+.grade-text i{
+	margin-left: 0.15rem;
+	font-style:normal;
+}
+.nologin-area{
+	width: 6.4rem;
+	height: 100%;
+	position: fixed;
+	background-color: #fff;
+}
+.nologin-sec{
+	width: 6.4rem;
+	text-align: center;
+}
+.nologin-fig{
+	margin-top: 2.5rem;
+}
+.nologin-fig .headImg{
+	width: 1rem;
+	height: 1rem;
+	padding: 0.3rem;
+	margin: 0 auto;
+	border-radius: 50%;
+	background-color: #ddd;
+}
+.nologin-fig .headImg img{
+	width: 1rem;
+	margin: 0 auto;
+}
+.nologin-text{
+	margin-top: 5px;
+	color: #bbb;
+}
+.goto-login-btn{
+	display: block;
+	margin: 40px auto 0;
+	width: 5rem;
+	height: 0.8rem;
+	background-color: #76C1BC;
+	color: #fff;
+	text-align: center;
+	line-height: 0.8rem;
+	text-decoration: none;
+}

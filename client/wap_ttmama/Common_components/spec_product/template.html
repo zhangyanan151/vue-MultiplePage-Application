@@ -1,0 +1,42 @@
+
+<div class="spec-box" :style="{bottom: bottom}">
+	<div class="spec-mask" @click="hideSpec"></div>
+	<div class="spec-area">
+		<template v-if="productSpec.spec">
+		<div class="spec-top">
+			<div class="spec-img" @click="showBigImg=true">
+				<img :src="defaultImg" alt="">
+			</div>
+			<div class="chosed-text">
+				<p class="price">{{productSpec.data[defaultIndex].price | currency '￥'}}</p>
+				<p class="store">库存{{productSpec.data[defaultIndex].store}}件</p>
+				<p class="spec">已选择: {{productSpec.data[defaultIndex].spec_desc.toString()}}</p>
+			</div>
+			<div class="spec-close" @click="hideSpec"></div>
+		</div>
+		<div class="chose-area">
+			<div class="chose-box">
+				<div class="chose-spec">
+					<div class="spec-item" v-for="(index,spec) in productSpec.spec">
+						<div class="spec-item-tit">请选择：{{spec[0].spec_name}}</div>
+						<span v-for="item in spec" class="spec-item-s" :class="[arrExits(curSpec, item.spec_value_id)?'active':'',hasNum(item.spec_value_id, index)?'':'unable']"  @click="hasNum(item.spec_value_id, index)?choseSpec(item.spec_value_id, index):'javascript:;'">{{item.spec_value}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="num-box">
+				购买数量:
+				<span class="num-opt">
+					<em class="num-dec" :class="curNum==1?'unable':''" @click="curNum==1?'javascript:;':curNum=curNum-1">-</em>
+					<em class="num-cur">{{curNum}}</em>
+					<em class="num-add" @click="curNum==productSpec.data[defaultIndex].store?'javascript:;':curNum=curNum+1">+</em>
+				</span>
+			</div>
+		</div>
+		</template>
+	</div>
+	<div class="spec-opt">
+		<div class="add-cart" @click="addCart">加入购物车</div>
+		<div class="buy" @click="addOrder">立即购买</div>
+	</div>
+</div>
+<big-swiper :big-imgs="bigImgs" :show-big-img=showBigImg></big-swiper>

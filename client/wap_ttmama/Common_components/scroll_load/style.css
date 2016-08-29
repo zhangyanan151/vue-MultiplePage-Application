@@ -1,0 +1,110 @@
+
+
+*{padding: 0;margin: 0;}
+ul,li{list-style: none;}
+
+.scroll-load-goods-list .title{
+	width: 94%;
+	margin: 10px auto;
+	line-height: 2em;
+}
+.scroll-load-goods-list .title h2{
+	float: left;
+	font-size: 18px;
+	color: #828282;
+	line-height: 33px;
+}
+.scroll-load-goods-list .title h2 .tit-icon{
+	display: inline-block;
+	width: 4px;
+	height: 15px;
+	background-color: #73C0BC;
+	margin-right: 5px;
+	vertical-align: middle;
+	margin-top: -3px;
+}
+.scroll-load-goods-list .title h2 .tit-green{
+	color: #73C0BC;
+}
+.scroll-load-goods-list .title .more{
+	float: right;
+	text-decoration: none;
+	color: #828282;
+	font-size: 14px;
+}
+
+
+.scroll-load-goods-list{
+	width: 99%;
+	margin: 0 auto 10px auto;
+}
+.scroll-load-goods-list .item{
+	float: left;
+}
+
+.scroll-load-goods-list.tree .item{
+	width: 2rem;
+	margin: 0 0.8%;
+	margin-bottom: 1em;
+}
+/*.scroll-load-goods-list .item:nth-child(4){
+	    clear: both;
+}*/
+.scroll-load-goods-list.tree .item .item-img img{
+	width: 2rem;
+	height: 2rem;
+	margin: 0 auto;
+}
+.scroll-load-goods-list .item .item-price{
+	text-align: center;
+	font-size: 12px;
+	line-height: 12px;
+	margin-top: 5px;
+}
+.scroll-load-goods-list .item .item-price .new-price{
+	color: #73C0BC;
+}
+@media screen and (max-device-width: 320px){
+	.scroll-load-goods-list .item .item-price .new-price{
+		display: block;
+	}
+	.scroll-load-goods-list .item .item-price .old-price{
+		display: block;
+		margin-left: 0;
+		/*margin-top: -8px;*/
+		color: #949494;
+		text-decoration: line-through;
+		display: none;
+	}
+}
+@media screen and (min-device-width: 321px){
+	.scroll-load-goods-list .item .item-price .old-price{
+		color: #949494;
+		text-decoration: line-through;
+		margin-left: 5px;
+		display: none;
+	}
+}
+
+.scroll-load-goods-list .item .item-text{
+	color: #313131;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	display: block;
+	white-space: nowrap;
+
+}
+.scroll-load-goods-list .item .item-text span{
+	font-size: 12px;
+}
+
+.scroll-load-goods-list.two .item{
+	width:3.06rem;
+	margin: 0 0.8%;
+	margin-bottom: 1em;
+}
+.scroll-load-goods-list.two .item .item-img img{
+	width: 3.06rem;
+	height: 3.06rem;
+	margin: 0 auto;
+}

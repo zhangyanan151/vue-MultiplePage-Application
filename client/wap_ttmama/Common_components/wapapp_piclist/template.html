@@ -1,0 +1,14 @@
+<div class="wpl-box">
+<div class="wpl-area" :style="{width:wapappPiclist.width/100+'rem',height:wapappPiclist.height/100+'rem',marginTop:wapappPiclist.margin_top/100+'rem',marginBottom:wapappPiclist.margin_bottom/100+'rem'}">
+    <div class="wpl-pic-lists">
+    	<template v-for="item in wapappPiclist.pdata">
+    		<div class="wpl-pic-item" :style="{width:wapappPiclist.pic_width/100+'rem',height:wapappPiclist.pic_height/100+'rem'}">
+	            <a href="{{item.link}}">
+	                <!-- <img :src="item.pic"> -->
+	                <x-img :src="item.pic"></x-img>
+	            </a>
+	        </div>
+    	</template>
+    </div>
+</div>
+</div>

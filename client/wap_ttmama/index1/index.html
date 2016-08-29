@@ -1,0 +1,61 @@
+<!-- 公共头部 搜索框-->
+<search-bar></search-bar>
+
+<!-- 轮播图 1 -->
+<div class="tab_slide_1_container">
+	<div class="tab_slide_1">
+		<tab-slide :child_data = 'tab_slide_data_1'></tab-slide>
+	</div>
+</div>
+<div class="space_div"></div>
+
+<!-- 单张图片广告 -->
+<div class="index_small_adv">
+	<single_img_component :child_data = 'index_small_adv'></single_img_component>
+</div>
+<div class="space_div"></div>
+
+<!-- 新品尝鲜 -->
+<daily-tasting :daily-tasting='dailyTasting'></daily-tasting>
+<div class="space_div"></div>
+
+<!-- 本周编辑推荐 -->
+<div class="recommend_this_week_container">
+	<div class="recommend_this_week">
+		<multiple_img_component :child_data = 'recommend'></multiple_img_component>
+	</div>
+</div>
+<div class="space_div"></div>
+
+<!-- 轮播图 2 -->
+<div class='tab_slide_2_container'>
+	<div class="tab_slide_2">
+		<tab-slide :child_data = 'tab_slide_data_2'></tab-slide>
+	</div>
+</div>
+<div class="space_div"></div>
+
+<!-- 热销排行榜 -->
+<hot_salerank :child_data = 'hot_salerank_data'></hot_salerank>
+<div class="space_div"></div>
+
+<!-- 本周品牌折扣 -->
+<brand_discount :child_data = 'brand_discount_data'></brand_discount>
+<div class="space_div"></div>
+
+
+<!-- 轮播图 3 -->
+<div class="tab_slide_3_container">
+	<div class="tab_slide_3">
+		<tab-slide :child_data = 'tab_slide_data_3'></tab-slide>
+	</div>
+</div>
+<div class="space_div"></div>
+
+<!-- 商品列表 -->
+<product-classify :product-classify='productClassify'></product-classify> 
+<div class="space_div"></div>
+
+<!-- 公共底部 -->
+<foot-index></foot-index>
+

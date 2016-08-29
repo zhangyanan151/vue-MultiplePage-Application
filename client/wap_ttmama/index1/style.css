@@ -1,0 +1,13 @@
+.space_div{width:100%; height:0.16rem;}
+.index_small_adv{ height:1.6rem; padding: 0.14rem; background: #fff; overflow: hidden;}
+.recommend_this_week_container{width:100%; background: #fff;overflow: hidden;}
+.recommend_this_week{width:6.08rem; margin:0 auto;}
+
+.tab_slide_1_container{ width:100%; height:4rem; background: #fff; overflow: hidden;}
+.tab_slide_1{width:100%; height:100%;}
+
+.tab_slide_2_container{ width:100%;  background: #fff; overflow: hidden;}
+.tab_slide_2{width:96%;  height:100%; height:3.5rem; margin:0 auto; padding:2% 0 ;}
+
+.tab_slide_3_container{ width:100%; height:3.04rem; background: #fff; overflow: hidden;}
+.tab_slide_3{width:100%; height:100%; margin:0 auto;}

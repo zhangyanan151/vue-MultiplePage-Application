@@ -1,0 +1,19 @@
+.suggest-form {
+	position: absolute;
+	top: .8rem;
+    width: 6.4rem;
+}
+.suggest-form textarea {
+    width: 100%;
+    padding: 5px;
+    resize: none;
+    background: #fff;
+}
+
+.suggest-form p{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.suggest-form .inputBox textarea {
+    background: #fff;
+}

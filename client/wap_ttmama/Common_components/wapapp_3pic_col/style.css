@@ -1,0 +1,15 @@
+.w3c-box{
+	width: 6.4rem;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.w3c-area{
+	margin: 0 auto;
+	overflow: hidden;
+}
+.w3c-pic{
+	float: left;
+}
+.w3c-pic img{
+	width: 100%;
+}

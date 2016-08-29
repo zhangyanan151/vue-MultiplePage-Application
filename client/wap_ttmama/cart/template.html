@@ -1,0 +1,116 @@
+<header class="cart-head" @click="showType=!showType">
+	<span class="page-back" @click="goBack($event)">返回</span>
+	<span class="page-title">{{headTit}}</span><i class="page-sj" :class="showType?'page-sj-up':''"></i>
+</header>
+<div class="order-type-con" v-show="showType">
+	<div class="order-mk" @click="showType=false"></div>
+	<div class="type-con">
+		<div class="type-item" v-for="item of typeHead" :class="sale_type==item.type?'active':''" @click="choseType(item.type)">
+			<span>{{item.name}}</span>
+		</div>
+	</div>
+</div>
+<template v-if="!isLogin">
+	<div class="nologin-area">
+		<section class="nologin-sec">
+			<figure class="nologin-fig">
+				<div class="headImg">
+					<img :src="headImg" alt="">
+				</div>
+				<figcaption>
+					<h2 class="nologin-text">暂未登录</h2>
+				</figcaption>
+			</figure>
+			<a href="/login" class="goto-login-btn">去登录</a>
+		</section>
+	</div>
+</template>
+<template v-if="isLogin && cartData.object">
+	<template v-if="cartData.object.goods.length == 0">
+		<div class="cart-empty">
+			<div class="empty-box">
+				<div class="empty-img"></div>
+				<p>购物车暂无商品</p>
+				<a  class="empty-btn" href="/">去逛逛</a>
+			</div>
+		</div>
+	</template>
+	<template v-if="curData.length > 0">
+	<sticky style="z-index:99999;width:6.4rem">
+	  <!-- <tab :line-width=2 active-color='#76c1bc'>
+	    <tab-item :selected="cartTab.stock" :disabled="stockData.length<=0" @click="stockData.length>0?tabClick('stock'):''" :disabled="stockData.length<=0">现货订单({{stockData.length}})</tab-item>
+		<tab-item :selected="cartTab.bonded" :disabled="bandedData.length<=0" @click="bandedData.length>0?tabClick('bonded'):''">保税仓订单({{bandedData.length}})</tab-item>
+	  </tab> -->
+	  <p class="cart-tab">商品列表</p>
+	</sticky>
+	<div class="cart-area">
+		<div class="cart-list">
+			<ul>
+				<li v-for="item in curData" class="cart-item" @click="goDetails(item.goods_id)">
+					<div class="item-desc" v-touch:pan="moveLeft($event,$index)" v-touch-options:pan="{ direction: 'left', threshold: 20 }" id="item_desc_{{$index}}">
+						<div class="list-radio">
+							<input type="checkbox" :checked="item.is_submit=='true'" @click="checkSubmit($index, $event)" class="choose-inp">
+						</div>
+						<div class="list-img">
+							<img :src="item.thumbnail_url" alt="">
+						</div>
+						<div class="list-op">
+							<a href="javascript:;" class="pro-tit">
+								<h3>
+									{{item.name}}
+								</h3>
+							</a>
+							<span class="pro-spec-info">{{item.spec_info}}</span>
+							<div class="money-num">
+								<p class="price-p"><span class="pro-price">{{item.price.price | currency '￥'}}</span><span class="pro-price-mk">{{item.price.mktprice | currency '￥'}}</span></p>
+								<div class="change-num">
+									<em class="num-subtract" @click="item.quantity>1?substractNum($index,$event):'javascript:'" :class="item.quantity>1?'':'sub-unable'">-</em>
+									<em class="num-pro">{{item.quantity}}</em>
+									<em class="num-add" @click="item.quantity<item.store?addNum($index,$event):'javascript:'" :class="item.quantity<item.store?'':'sub-unable'">+</em>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item-dele-coll">
+						<div class="item-collection" @click="addFav($index,$event)">收藏</div>
+						<div class="item-delete" @click="deleteCart($index,$event)">删除</div>
+					</div>
+				</li>
+				<div class="item-hide" :style="{'zIndex': hideIndex}" v-show="leftId!==null" v-touch:tap="hideTap" v-touch:pan="hideTap"></div>
+			</ul>
+
+		</div>
+		
+	</div>
+
+	<div class="cart-total-area">
+		<div class="chose-all">
+			<input type="checkbox" :checked="checkAll" id="chose-all" @click="changeAll(checkAll)" class="choose-inp"><label for="chose-all">全选</label>
+		</div>
+		<div class="sum-price">合计:<span class="sum-money">{{sumPrice | currency '￥'}}</span>
+			<span class="nofreight">不含运费</span>
+		</div>
+		<div class="checkout-btn" :class="sumPrice==0?'gray-btn':''" @click="submitCart">
+			结算({{checkNum}})
+		</div>
+	</div>
+	</template>
+	<template v-else>
+		<div class="cart-empty">
+			<div class="empty-box">
+				<div class="cart-empty-img"></div>
+				<p>暂无<span v-text="sale_type=='stock'?'现货':sale_type=='bonded'?'保税仓':sale_type=='directmail'?'直邮':''"></span>商品</p>
+			</div>
+		</div>
+	</template>
+</template>
+
+<template v-if="isLoading">
+	<pop pop-type="spin"></pop>
+</template>
+<template v-if="isSubmit">
+	<pop pop-type="spinText" pop-text="订单生成中..."></pop>
+</template>
+<template v-if="submitDesc">
+	<pop pop-type="text" :pop-text="showText"></pop>
+</template>

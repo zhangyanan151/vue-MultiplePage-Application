@@ -1,0 +1,43 @@
+.order-head .page-title-n{
+	display: inline-block;
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+}
+.return-later-con{
+	width: 6.4rem;
+	margin-top: 50px;
+	position: absolute;
+}
+.later-item{
+	width: 6.4rem;
+	padding: 0 0.2rem;
+	box-sizing: border-box;
+	background-color: #fff;
+	line-height: 45px;
+	margin-bottom: 10px;
+}
+.later-item .input-b{
+	width: 4.5rem;
+	line-height: 45px;
+}
+.later-bz{
+	width: 6rem;
+	height: 1.5rem;
+	border: 1px solid #DCDCDC;
+	border-radius: 5px;
+	resize: none;
+}
+.later-sub{
+	width: 5.4rem;
+	height: 40px;
+	margin: 20px auto;
+	background-color: #76C1BC;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 5px;
+}

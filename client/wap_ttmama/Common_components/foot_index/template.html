@@ -1,0 +1,16 @@
+<div style="padding-bottom:44px;"></div>
+<div class="foot-nav">
+    <ul>
+        <li :class="state=='home'?'active':''"><a href="/"><i class="home"></i><span>首页</span></a></li>
+        <li :class="state=='all'?'active':''"><a href="/classify"><i class="all"></i><span>全部分类</span></a></li>
+        <li :class="state=='found'?'active':''"><a href="/find"><i class="found"></i><span class="found-text">发现</span></a></li>
+        <li :class="state=='car'?'active':''"><a href="/cart"><i class="car"></i><span>购物车</span></a></li>
+        <li :class="state=='user'?'active':''"><a href="/user"><i class="user"></i><span>用户中心</span></a></li>
+    </ul>
+</div>
+<div class="right-nav">
+    <ul>
+        <li><a href="/"><i class="customer"></i></a></li>
+        <li id="right-top" v-show="topShow"><a href="javascript:scrollTo(0,0);"><i class="top"></i></a></li>
+    </ul>
+</div>
