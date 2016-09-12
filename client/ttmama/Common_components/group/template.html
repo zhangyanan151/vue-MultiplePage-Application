@@ -1,0 +1,95 @@
+
+<!-- <div class="area">
+-->
+<div class="tab-bar-container">
+    <div class="tab-item {{ activity.alive ? 'active' : '' }}" @click="changeTab('alive')">
+        <p>限时特卖</p>
+    </div>
+    <div class="tab-item {{ activity.next ? 'active' : '' }}" @click="changeTab('next')">
+        <p>
+            下期预告
+            <span class="nuderline-num" > {{underline_goodsObj.total}}</span>
+        </p>
+    </div>
+</div>
+<div class="tab-content-container">
+  <div class="xs-area flash-sale" v-show="activity.alive">
+    <ul>
+      <li class="xs-item" v-for="goods in flash_sale_goodsObj.items">
+        <div class="item-pic">
+          <div class="item-pic-tag {{ goods.deliveryloc.is_bonded ? 'bsc' : 'xhc' }}"></div>
+          <a href="{{ goods.url | addUrl }}">
+            <img :src="goods.image_url"></a>
+        </div>
+        <div class="item-cont">
+          <h2>{{ goods.name }}</h2>
+          <ul class="item-cont-ul">
+            <li>{{ goods.brief }}</li>
+          </ul>
+          <p class="item-price">
+            <span class="price-now"> <em>￥</em>
+              {{ goods.products.price | checkPrice }} <em>{{ goods.products.price | checkPriceChange }}</em>
+            </span>
+            <span class="price-old">￥{{ goods.products.mktprice }}</span>
+            <span class="item-by" v-show="goods.products.sms_remind"></span>
+          </p>
+          <p class="item-buy">
+            <a href="{{ goods.url | addUrl }}" class="buy">立即购买</a>
+            <span class="num">
+              <em>{{ goods.products.initial_num }}</em>
+              人已购买&nbsp;剩余
+              <em>{{ goods.products.store }}</em>
+              件
+            </span>
+          </p>
+          <p class="item-time">
+            距特卖结束：
+            <span>{{ goods.timeStr }}</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="xs-area underline" v-show="activity.next">
+    <ul>
+      <li class="xs-item" v-for="goods in underline_goodsObj.items">
+        <div class="item-pic">
+          <div class="item-pic-tag {{ goods.deliveryloc.is_bonded ? 'bsc' : 'xhc' }}"></div>
+          <a href="{{ goods.url | addUrl }}">
+            <img :src="goods.image_url"></a>
+        </div>
+        <div class="item-cont">
+          <h2>{{ goods.name }}</h2>
+          <ul class="item-cont-ul">
+            <li>{{ goods.brief }}</li>
+          </ul>
+          <p class="item-price">
+            <span class="price-now">
+              <em>￥</em>
+              {{ goods.products.price | checkPrice }}
+              <em>{{ goods.products.price | checkPriceChange }}</em>
+            </span>
+            <span class="price-old">￥{{ goods.products.mktprice }}</span>
+            <span class="item-by" v-show="goods.promotion_tags | isFreeShipping"></span>
+          </p>
+          <p class="item-buy">
+            <a href="{{ goods.url | addUrl }}" class="buy">立即购买</a>
+            <span class="num">
+              <em>{{ goods.products.initial_num }}</em>
+              人已购买&nbsp;剩余
+              <em>{{ goods.products.store }}</em>
+              件
+            </span>
+          </p>
+          <p class="item-time">
+            距特卖结束：
+            <span>{{ goods.timeStr }}</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="loading" v-show="isLoading"><p>努力加载中...</p></div>
+</div>
+<!-- </div>
+-->
